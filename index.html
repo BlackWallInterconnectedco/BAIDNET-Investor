@@ -669,7 +669,7 @@
     <div class="ai-msg assistant">Welcome. Ask about BAIDNET's commercialization strategy, platform readiness, sponsor-bank dependencies, technical architecture, or investor materials.<small>Answers should be grounded in approved BAIDNET source materials.</small></div>
   </div>
   <div class="ai-input-wrap">
-    <div class="ai-input-row"><textarea id="ai-input" placeholder="Ask a question about BAIDNET..." aria-label="Ask BAIDNET AI"></textarea><button class="ai-send" id="ai-send" type="button">➤</button></div>
+    <div class="ai-input-row"><textarea id="ai-input" placeholder="Ask about readiness, architecture, controls, APIs, sponsor-bank dependencies, or the platform roadmap..." aria-label="Ask BAIDNET AI"></textarea><button class="ai-send" id="ai-send" type="button">➤</button></div>
     <div class="ai-disclaimer">Voice uses your browser microphone and speech capabilities. For production AI answers, connect this panel to a secure backend endpoint; never place model API keys in this HTML.</div>
   </div>
 </aside>
@@ -937,7 +937,10 @@ Please review the requested date and time and send a Zoom invitation after avail
      Production requirement: set AI_API_ENDPOINT to your backend route.
      Example: https://api.yourdomain.com/baidnet/ask
      ========================================================= */
-  const AI_API_ENDPOINT = "YOUR_SECURE_BACKEND_AI_ENDPOINT";
+  const AI_API_ENDPOINT =
+    window.BAIDNET_AI_API_ENDPOINT ||
+    localStorage.getItem("baidnetAiEndpoint") ||
+    "https://YOUR-BAIDNET-BACKEND.vercel.app/api/baidnet-ai";
   const aiLauncher = document.getElementById("ai-launcher");
   const aiPanel = document.getElementById("ai-panel");
   const aiClose = document.getElementById("ai-close");
@@ -969,12 +972,38 @@ Please review the requested date and time and send a Zoom invitation after avail
     aiMessages.scrollTop=aiMessages.scrollHeight;
   }
 
-  function speakText(text){
-    if(!spokenRepliesEnabled || !('speechSynthesis' in window)) return;
+  async function speakText(text, audioBase64=null, audioMime="audio/mpeg"){
+    if(!spokenRepliesEnabled) return;
+
+    if(audioBase64){
+      try{
+        if(window.__baidnetAudio){
+          window.__baidnetAudio.pause();
+          window.__baidnetAudio=null;
+        }
+        const audio=new Audio(`data:${audioMime};base64,${audioBase64}`);
+        window.__baidnetAudio=audio;
+        await audio.play();
+        return;
+      }catch(error){
+        console.warn("BAIDNET generated voice unavailable; using browser fallback.", error);
+      }
+    }
+
+    if(!('speechSynthesis' in window)) return;
     window.speechSynthesis.cancel();
     const utterance=new SpeechSynthesisUtterance(text);
-    utterance.rate=1;
-    utterance.pitch=1;
+    utterance.lang="en-US";
+    utterance.rate=.94;
+    utterance.pitch=.92;
+    utterance.volume=1;
+
+    const voices=window.speechSynthesis.getVoices();
+    const preferred=voices.find(v =>
+      /Microsoft (Guy|Christopher|Eric|Andrew)|Google US English|Samantha|Daniel/i.test(v.name)
+    ) || voices.find(v => /^en-US/i.test(v.lang)) || voices.find(v => /^en/i.test(v.lang));
+
+    if(preferred) utterance.voice=preferred;
     window.speechSynthesis.speak(utterance);
   }
 
@@ -985,11 +1014,11 @@ Please review the requested date and time and send a Zoom invitation after avail
     aiInput.value="";
     aiStatus.textContent="Thinking...";
 
-    if(!AI_API_ENDPOINT || AI_API_ENDPOINT === "YOUR_SECURE_BACKEND_AI_ENDPOINT"){
-      const demo="The intelligence layer is installed, but the secure AI backend endpoint has not been configured yet. Connect this panel to your server-side RAG/API route so answers can be grounded in the BAIDNET knowledge base and investor documents.";
-      addAiMessage("assistant",demo,"Frontend ready • backend connection pending");
+    if(!AI_API_ENDPOINT || AI_API_ENDPOINT.includes("YOUR-BAIDNET-BACKEND")){
+      const demo="BAIDNET Intelligence is ready, but the secure backend URL has not been set on this deployment. Configure the backend endpoint to connect the live knowledge base.";
+      addAiMessage("assistant",demo,"Knowledge layer ready • backend URL pending");
       speakText(demo);
-      aiStatus.textContent="Backend not configured";
+      aiStatus.textContent="Backend URL not configured";
       return;
     }
 
@@ -999,7 +1028,12 @@ Please review the requested date and time and send a Zoom invitation after avail
       const data=await response.json();
       const answer=data.answer || "I could not produce an answer from the approved source material.";
       addAiMessage("assistant",answer,data.sourceLabel || "Grounded BAIDNET response");
-      speakText(answer);
+
+      if(Array.isArray(data.sources) && data.sources.length){
+        addAiMessage("system","Evidence: " + data.sources.join(" · "));
+      }
+
+      speakText(answer, data.audioBase64 || null, data.audioMime || "audio/mpeg");
       aiStatus.textContent="Ready";
     }catch(err){
       addAiMessage("assistant","The BAIDNET AI service is temporarily unavailable. Please review the investor materials or contact BWICO directly.");
