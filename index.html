@@ -1,23 +1,17 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<meta
- name="description"
- content="BAIDNET commercialization and market-entry information portal by BlackWall-Interconnected Co."
-/>
+  <meta
+    name="description"
+    content="BAIDNET commercialization and market-entry information portal by BlackWall-Interconnected Co."
+  />
 
   <title>BAIDNET | Commercialization & Market Entry</title>
 
   <style>
-    /* =========================================================
-       BAIDNET 3D LANDING PAGE
-       BlackWall-Interconnected Co.
-       ========================================================= */
-
     :root{
       --bg:#020303;
       --bg-soft:#050706;
@@ -87,7 +81,6 @@
         sans-serif;
 
       line-height:1.5;
-
       overflow-x:hidden;
     }
 
@@ -95,4 +88,2272 @@
       content:"";
       position:fixed;
       inset:0;
-      pointer-events:non
+      pointer-events:none;
+      z-index:-5;
+
+      background-image:
+        linear-gradient(
+          rgba(217,164,65,.028) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(217,164,65,.028) 1px,
+          transparent 1px
+        );
+
+      background-size:70px 70px;
+
+      mask-image:
+        linear-gradient(
+          to bottom,
+          rgba(0,0,0,.9),
+          transparent 92%
+        );
+    }
+
+    body::after{
+      content:"";
+      position:fixed;
+      width:500px;
+      height:500px;
+      border-radius:50%;
+
+      left:var(--mouse-x, 50%);
+      top:var(--mouse-y, 20%);
+
+      transform:translate(-50%,-50%);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(244,207,118,.055),
+          transparent 68%
+        );
+
+      pointer-events:none;
+      z-index:-2;
+    }
+
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .shell{
+      width:min(1480px,94%);
+      margin:auto;
+      position:relative;
+    }
+
+    .gold{
+      color:var(--gold-bright);
+    }
+
+    .green{
+      color:var(--green);
+    }
+
+    /* HEADER */
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+
+      border-bottom:
+        1px solid rgba(217,164,65,.15);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(3,5,4,.95),
+          rgba(3,5,4,.78)
+        );
+
+      backdrop-filter:
+        blur(18px)
+        saturate(140%);
+    }
+
+    .nav{
+      min-height:88px;
+
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+
+      gap:24px;
+    }
+
+    .brands{
+      display:flex;
+      align-items:center;
+      gap:19px;
+      flex-shrink:0;
+    }
+
+    .brands img{
+      width:auto;
+      max-width:145px;
+      object-fit:contain;
+
+      filter:
+        drop-shadow(
+          0 0 8px
+          rgba(217,164,65,.15)
+        );
+    }
+
+    .brands img:nth-child(1){
+      height:50px;
+    }
+
+    .brands img:nth-child(2){
+      height:46px;
+    }
+
+    .brands img:nth-child(3){
+      height:47px;
+    }
+
+    nav{
+      display:flex;
+      align-items:center;
+      gap:24px;
+
+      color:#d8d1c4;
+      font-size:.93rem;
+    }
+
+    nav > a{
+      position:relative;
+      transition:.25s ease;
+    }
+
+    nav > a:not(.nav-cta)::after{
+      content:"";
+      position:absolute;
+
+      left:0;
+      bottom:-8px;
+
+      width:0;
+      height:1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          var(--gold),
+          var(--green)
+        );
+
+      transition:.25s ease;
+    }
+
+    nav > a:hover{
+      color:var(--gold-bright);
+    }
+
+    nav > a:hover::after{
+      width:100%;
+    }
+
+    .nav-cta{
+      padding:11px 19px;
+
+      border-radius:999px;
+
+      border:
+        1px solid rgba(217,164,65,.55);
+
+      background:
+        linear-gradient(
+          135deg,
+          rgba(217,164,65,.10),
+          rgba(140,198,62,.035)
+        );
+
+      box-shadow:
+        inset 0 0 18px
+        rgba(217,164,65,.035);
+
+      color:var(--gold-bright);
+    }
+
+    /* HERO */
+
+    .hero{
+      position:relative;
+
+      min-height:820px;
+
+      display:grid;
+      grid-template-columns:
+        1.03fr
+        .97fr;
+
+      align-items:center;
+      gap:56px;
+
+      padding:
+        90px 0
+        70px;
+
+      perspective:1600px;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+
+      width:760px;
+      height:760px;
+
+      right:-250px;
+      top:-100px;
+
+      border-radius:50%;
+
+      border:
+        1px solid
+        rgba(217,164,65,.075);
+
+      box-shadow:
+        inset 0 0 120px
+        rgba(217,164,65,.025),
+        0 0 120px
+        rgba(217,164,65,.02);
+
+      pointer-events:none;
+    }
+
+    .hero-copy{
+      position:relative;
+      z-index:4;
+    }
+
+    .eyebrow{
+      color:#d5cec1;
+
+      text-transform:uppercase;
+
+      letter-spacing:.34em;
+
+      font-size:.79rem;
+
+      margin-bottom:22px;
+    }
+
+    h1{
+      margin:0;
+
+      font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+      font-size:
+        clamp(
+          3.3rem,
+          6vw,
+          6.7rem
+        );
+
+      line-height:.91;
+
+      letter-spacing:-.045em;
+    }
+
+    .hero h1 .gold{
+      text-shadow:
+        0 0 30px
+        rgba(217,164,65,.16);
+    }
+
+    .lead{
+      max-width:760px;
+
+      margin:
+        32px 0
+        30px;
+
+      color:#d0c9bc;
+
+      font-size:1.19rem;
+    }
+
+    /* BUTTONS */
+
+    .actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .btn{
+      position:relative;
+      overflow:hidden;
+
+      min-height:54px;
+
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+
+      padding:0 25px;
+
+      border-radius:12px;
+
+      border:
+        1px solid
+        rgba(217,164,65,.65);
+
+      font-weight:700;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+    }
+
+    .btn::before{
+      content:"";
+      position:absolute;
+
+      width:100%;
+      height:100%;
+
+      left:-110%;
+      top:0;
+
+      background:
+        linear-gradient(
+          120deg,
+          transparent,
+          rgba(255,255,255,.20),
+          transparent
+        );
+
+      transition:.65s ease;
+    }
+
+    .btn:hover::before{
+      left:110%;
+    }
+
+    .btn:hover{
+      transform:
+        translateY(-3px)
+        scale(1.015);
+    }
+
+    .btn.primary{
+      color:#151008;
+
+      background:
+        linear-gradient(
+          135deg,
+          var(--gold-bright),
+          var(--gold)
+        );
+
+      box-shadow:
+        0 14px 35px
+        rgba(217,164,65,.16),
+        inset 0 1px
+        rgba(255,255,255,.28);
+    }
+
+    .btn.secondary{
+      background:
+        linear-gradient(
+          180deg,
+          rgba(255,255,255,.025),
+          rgba(255,255,255,.005)
+        );
+
+      box-shadow:
+        inset 0 0 22px
+        rgba(217,164,65,.025);
+
+      color:var(--text);
+    }
+
+    /* TRUST */
+
+    .trust-row{
+      display:grid;
+
+      grid-template-columns:
+        repeat(4,1fr);
+
+      gap:10px;
+
+      margin-top:42px;
+    }
+
+    .trust{
+      position:relative;
+
+      padding:
+        16px 12px;
+
+      color:#d5cec2;
+
+      font-size:.87rem;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.28);
+
+      background:
+        linear-gradient(
+          180deg,
+          rgba(217,164,65,.025),
+          transparent
+        );
+    }
+
+    .trust::before{
+      content:"";
+      position:absolute;
+
+      width:5px;
+      height:5px;
+
+      top:-3px;
+      left:0;
+
+      border-radius:50%;
+
+      background:var(--green);
+
+      box-shadow:
+        0 0 12px
+        var(--green);
+    }
+
+    .trust strong{
+      display:block;
+
+      margin-bottom:5px;
+
+      color:var(--gold-bright);
+
+      font-size:.76rem;
+
+      letter-spacing:.10em;
+
+      text-transform:uppercase;
+    }
+
+    /* 3D HERO */
+
+    .visual{
+      position:relative;
+
+      min-height:620px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      perspective:1400px;
+
+      transform-style:preserve-3d;
+    }
+
+    .orb{
+      position:absolute;
+
+      width:560px;
+      height:560px;
+
+      border-radius:50%;
+
+      border:
+        1px solid
+        rgba(217,164,65,.22);
+
+      background:
+        radial-gradient(
+          circle at 50% 50%,
+          rgba(217,164,65,.105),
+          rgba(140,198,62,.035) 27%,
+          transparent 63%
+        );
+
+      box-shadow:
+        0 0 110px
+        rgba(217,164,65,.10),
+
+        inset 0 0 90px
+        rgba(217,164,65,.035);
+
+      animation:
+        orbPulse 6s ease-in-out infinite;
+    }
+
+    .orb::before,
+    .orb::after{
+      content:"";
+
+      position:absolute;
+      inset:8%;
+
+      border-radius:50%;
+
+      border:
+        1px solid
+        rgba(217,164,65,.13);
+    }
+
+    .orb::after{
+      inset:20%;
+
+      border-color:
+        rgba(140,198,62,.16);
+    }
+
+    @keyframes orbPulse{
+      0%,100%{
+        transform:
+          scale(1)
+          rotate(0deg);
+      }
+
+      50%{
+        transform:
+          scale(1.035)
+          rotate(5deg);
+      }
+    }
+
+    .orbit{
+      position:absolute;
+
+      width:650px;
+      height:260px;
+
+      border:
+        1px solid
+        rgba(217,164,65,.16);
+
+      border-radius:50%;
+
+      transform:
+        rotateX(68deg)
+        rotateZ(-14deg);
+
+      animation:
+        orbitSpin
+        12s linear infinite;
+    }
+
+    .orbit.two{
+      width:480px;
+      height:480px;
+
+      transform:
+        rotateY(72deg)
+        rotateZ(20deg);
+
+      border-color:
+        rgba(140,198,62,.13);
+
+      animation-duration:18s;
+    }
+
+    @keyframes orbitSpin{
+      from{
+        rotate:0deg;
+      }
+
+      to{
+        rotate:360deg;
+      }
+    }
+
+    .cards{
+      position:relative;
+      z-index:5;
+
+      width:100%;
+      max-width:690px;
+
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:15px;
+
+      align-items:end;
+
+      transform-style:preserve-3d;
+    }
+
+    .card{
+      --rotate-x:0deg;
+      --rotate-y:0deg;
+
+      position:relative;
+
+      min-height:345px;
+
+      padding:27px 19px;
+
+      border-radius:20px;
+
+      border:
+        1px solid
+        rgba(217,164,65,.34);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(25,24,19,.92),
+          rgba(5,7,6,.96)
+        );
+
+      backdrop-filter:blur(18px);
+
+      box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.55),
+
+        inset 0 1px
+        rgba(255,255,255,.05),
+
+        0 0 35px
+        rgba(217,164,65,.055);
+
+      text-align:center;
+
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+
+      transform-style:preserve-3d;
+
+      transform:
+        perspective(900px)
+        rotateX(var(--rotate-x))
+        rotateY(var(--rotate-y))
+        translateZ(0);
+
+      transition:
+        transform .15s ease-out,
+        border-color .3s ease,
+        box-shadow .3s ease;
+    }
+
+    .card::before{
+      content:"";
+
+      position:absolute;
+
+      inset:0;
+
+      border-radius:inherit;
+
+      background:
+        linear-gradient(
+          130deg,
+          rgba(255,255,255,.09),
+          transparent 28%,
+          transparent 70%,
+          rgba(217,164,65,.035)
+        );
+
+      pointer-events:none;
+    }
+
+    .card::after{
+      content:"";
+
+      position:absolute;
+
+      width:70%;
+      height:14px;
+
+      left:15%;
+      bottom:-23px;
+
+      border-radius:50%;
+
+      background:
+        rgba(217,164,65,.13);
+
+      filter:blur(15px);
+
+      transform:
+        rotateX(80deg);
+
+      pointer-events:none;
+    }
+
+    .card.main{
+      min-height:405px;
+
+      border-color:
+        rgba(217,164,65,.65);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(33,28,18,.94),
+          rgba(5,7,6,.98)
+        );
+
+      box-shadow:
+        0 35px 90px
+        rgba(0,0,0,.65),
+
+        0 0 50px
+        rgba(217,164,65,.10);
+    }
+
+    .card:hover{
+      border-color:
+        rgba(244,207,118,.75);
+
+      box-shadow:
+        0 40px 90px
+        rgba(0,0,0,.68),
+
+        0 0 45px
+        rgba(217,164,65,.12);
+    }
+
+    .card img{
+      position:relative;
+      z-index:3;
+
+      height:105px;
+      width:100%;
+
+      object-fit:contain;
+
+      margin-bottom:20px;
+
+      transform:
+        translateZ(35px);
+
+      filter:
+        drop-shadow(
+          0 10px 14px
+          rgba(0,0,0,.45)
+        );
+    }
+
+    .card.main img{
+      height:135px;
+    }
+
+    .card h3{
+      position:relative;
+      z-index:3;
+
+      margin:0 0 8px;
+
+      font-family:
+        Georgia,
+        serif;
+
+      color:var(--gold-bright);
+
+      font-size:1.5rem;
+
+      transform:
+        translateZ(28px);
+    }
+
+    .card p{
+      position:relative;
+      z-index:3;
+
+      color:#c8b98a;
+
+      text-transform:uppercase;
+
+      letter-spacing:.13em;
+
+      font-size:.72rem;
+
+      transform:
+        translateZ(20px);
+    }
+
+    /* SECTIONS */
+
+    .section{
+      position:relative;
+
+      padding:100px 0;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+    }
+
+    .section::before{
+      content:"";
+
+      position:absolute;
+
+      width:350px;
+      height:350px;
+
+      border-radius:50%;
+
+      left:-150px;
+      top:20%;
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(140,198,62,.035),
+          transparent 70%
+        );
+
+      pointer-events:none;
+    }
+
+    .section-head{
+      display:flex;
+
+      align-items:flex-end;
+
+      justify-content:
+        space-between;
+
+      gap:30px;
+
+      margin-bottom:44px;
+    }
+
+    .section h2{
+      margin:0;
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:
+        clamp(
+          2.2rem,
+          4vw,
+          4.2rem
+        );
+
+      line-height:1;
+    }
+
+    .section-head p{
+      max-width:680px;
+
+      margin:0;
+
+      color:var(--muted);
+
+      font-size:1.02rem;
+    }
+
+    /* MATERIAL CARDS */
+
+    .materials{
+      display:grid;
+
+      grid-template-columns:
+        repeat(
+          auto-fit,
+          minmax(320px,1fr)
+        );
+
+      gap:24px;
+
+      max-width:1200px;
+    }
+
+    .material{
+      position:relative;
+
+      padding:32px 24px;
+
+      border-radius:var(--radius);
+
+      border:
+        1px solid
+        rgba(217,164,65,.28);
+
+      background:
+        linear-gradient(
+          145deg,
+          rgba(25,24,19,.85),
+          rgba(5,7,6,.92)
+        );
+
+      backdrop-filter:blur(18px);
+
+      box-shadow:
+        0 20px 50px
+        rgba(0,0,0,.48),
+
+        inset 0 1px
+        rgba(255,255,255,.03);
+
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .material:hover{
+      transform:translateY(-4px);
+
+      border-color:
+        rgba(217,164,65,.48);
+
+      box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.55),
+
+        0 0 30px
+        rgba(217,164,65,.08);
+    }
+
+    .material span{
+      display:block;
+
+      color:#8f8b84;
+
+      font-size:.75rem;
+
+      letter-spacing:.12em;
+
+      text-transform:uppercase;
+    }
+
+    .material h4{
+      margin:0;
+
+      font-size:1.35rem;
+
+      color:var(--gold-bright);
+
+      font-family:
+        Georgia,
+        serif;
+
+      line-height:1.2;
+    }
+
+    .material p{
+      margin:8px 0 0;
+
+      font-size:.95rem;
+
+      color:#c8b98a;
+
+      line-height:1.5;
+
+      flex-grow:1;
+    }
+
+    .material a{
+      margin-top:16px;
+
+      display:inline-flex;
+
+      font-size:.9rem;
+
+      color:var(--gold-bright);
+
+      border-bottom:
+        1px solid
+        rgba(217,164,65,.35);
+
+      padding-bottom:4px;
+
+      transition:.25s ease;
+    }
+
+    .material a:hover{
+      border-color:
+        rgba(217,164,65,.65);
+
+      color:#f4cf76;
+    }
+
+    /* READINESS */
+
+    .readiness{
+      display:grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:40px;
+
+      align-items:start;
+
+      margin-bottom:40px;
+    }
+
+    .readiness-column h4{
+      margin:0 0 20px;
+
+      color:var(--gold-bright);
+
+      font-family:
+        Georgia,
+        serif;
+
+      font-size:1.15rem;
+    }
+
+    .readiness-column ul{
+      margin:0;
+      padding:0;
+
+      list-style:none;
+    }
+
+    .readiness-column li{
+      position:relative;
+
+      padding:
+        12px 0
+        12px 22px;
+
+      color:#c8b98a;
+
+      font-size:.95rem;
+
+      border-bottom:
+        1px solid
+        rgba(217,164,65,.12);
+    }
+
+    .readiness-column li::before{
+      content:"";
+
+      position:absolute;
+
+      width:6px;
+      height:6px;
+
+      left:0;
+      top:50%;
+
+      transform:
+        translateY(-50%);
+
+      border-radius:50%;
+
+      background:var(--green);
+
+      box-shadow:
+        0 0 8px
+        rgba(140,198,62,.4);
+    }
+
+    .readiness-statement{
+      margin:40px 0;
+
+      padding:24px;
+
+      border-radius:var(--radius);
+
+      border:
+        1px solid
+        rgba(217,164,65,.20);
+
+      background:
+        rgba(217,164,65,.035);
+
+      color:#d0c9bc;
+
+      font-size:1.02rem;
+
+      line-height:1.7;
+    }
+
+    .readiness-statement p{
+      margin:0;
+    }
+
+    /* CONTACT */
+
+    .contact{
+      display:grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:50px;
+
+      align-items:center;
+
+      max-width:1100px;
+    }
+
+    .contact-copy h3{
+      margin:0 0 20px;
+
+      font-family:
+        Georgia,
+        serif;
+
+      color:var(--gold-bright);
+
+      font-size:2rem;
+
+      line-height:1.1;
+    }
+
+    .contact-copy p{
+      margin:0 0 20px;
+
+      color:#c8b98a;
+
+      line-height:1.6;
+    }
+
+    .contact-copy p:last-of-type{
+      margin:0;
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .input-group{
+      position:relative;
+
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .input-group label{
+      font-size:.85rem;
+
+      color:#aaa79e;
+
+      letter-spacing:.05em;
+
+      text-transform:uppercase;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      padding:14px 16px;
+
+      border-radius:8px;
+
+      border:
+        1px solid
+        rgba(217,164,65,.25);
+
+      background:
+        rgba(5,7,6,.6);
+
+      color:var(--text);
+
+      font-family:inherit;
+
+      font-size:.95rem;
+
+      transition:.25s ease;
+    }
+
+    .input-group textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder{
+      color:
+        rgba(255,255,255,.25);
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus{
+      outline:none;
+
+      border-color:
+        rgba(217,164,65,.55);
+
+      background:
+        rgba(5,7,6,.8);
+
+      box-shadow:
+        0 0 20px
+        rgba(217,164,65,.08);
+    }
+
+    .contact-form .btn{
+      margin-top:12px;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:
+        60px 0
+        40px;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(217,164,65,.02)
+        );
+    }
+
+    .footer-content{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3,1fr);
+
+      gap:40px;
+
+      margin-bottom:40px;
+    }
+
+    .footer-section h4{
+      margin:
+        0 0
+        16px;
+
+      color:var(--gold-bright);
+
+      font-size:1rem;
+
+      letter-spacing:.08em;
+
+      text-transform:uppercase;
+    }
+
+    .footer-section ul{
+      margin:0;
+      padding:0;
+
+      list-style:none;
+    }
+
+    .footer-section li{
+      margin-bottom:10px;
+    }
+
+    .footer-section a{
+      color:#aaa79e;
+
+      font-size:.9rem;
+
+      transition:.25s ease;
+    }
+
+    .footer-section a:hover{
+      color:var(--gold-bright);
+    }
+
+    .footer-bottom{
+      padding-top:30px;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+
+      display:flex;
+
+      justify-content:
+        space-between;
+
+      align-items:center;
+
+      gap:20px;
+
+      font-size:.85rem;
+
+      color:#8f8b84;
+    }
+
+    .footer-bottom p{
+      margin:0;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:1024px){
+
+      .hero{
+        grid-template-columns:1fr;
+
+        min-height:auto;
+
+        gap:40px;
+
+        padding:
+          60px 0
+          40px;
+      }
+
+      .visual{
+        min-height:500px;
+      }
+
+      .orb{
+        width:380px;
+        height:380px;
+      }
+
+      .cards{
+        max-width:100%;
+
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .readiness{
+        grid-template-columns:1fr;
+      }
+
+      .contact{
+        grid-template-columns:1fr;
+        gap:30px;
+      }
+
+      .footer-content{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+
+    @media(max-width:768px){
+
+      .nav{
+        min-height:76px;
+
+        flex-direction:row;
+
+        gap:12px;
+      }
+
+      .brands{
+        gap:10px;
+      }
+
+      .brands img:nth-child(1){
+        height:42px;
+      }
+
+      .brands img:nth-child(2){
+        height:38px;
+      }
+
+      .brands img:nth-child(3){
+        height:39px;
+      }
+
+      nav a:not(.nav-cta){
+        display:none;
+      }
+
+      .nav-cta{
+        padding:
+          9px 13px;
+
+        font-size:.8rem;
+      }
+
+      .cards{
+        grid-template-columns:1fr;
+        max-width:430px;
+        margin:auto;
+      }
+
+      .card,
+      .card.main{
+        min-height:240px;
+      }
+
+      .trust-row{
+        grid-template-columns:
+          repeat(2,1fr);
+      }
+
+      .contact-copy h3{
+        font-size:1.5rem;
+      }
+
+      .footer-content{
+        grid-template-columns:1fr;
+      }
+
+      .materials{
+        grid-template-columns:1fr;
+      }
+
+      h1{
+        font-size:
+          clamp(
+            2.7rem,
+            12vw,
+            4.5rem
+          );
+      }
+
+      .section h2{
+        font-size:
+          clamp(
+            1.8rem,
+            7vw,
+            2.8rem
+          );
+      }
+
+      .section-head{
+        display:block;
+      }
+
+      .section-head p{
+        margin-top:16px;
+      }
+
+      .orbit{
+        display:none;
+      }
+    }
+
+    @media(max-width:520px){
+
+      .brands img:nth-child(2),
+      .brands img:nth-child(3){
+        display:none;
+      }
+
+      .trust-row{
+        grid-template-columns:1fr;
+      }
+
+      .actions{
+        display:grid;
+      }
+
+      .actions .btn{
+        width:100%;
+      }
+    }
+
+    @media(prefers-reduced-motion:reduce){
+
+      *,
+      *::before,
+      *::after{
+        animation-duration:.001ms !important;
+        animation-iteration-count:1 !important;
+        transition-duration:.001ms !important;
+        scroll-behavior:auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="shell nav">
+
+    <div class="brands">
+
+      <!--
+        IMPORTANT:
+        GitHub Pages asset paths are case-sensitive.
+        These use the SAME filenames as the working hero cards below.
+      -->
+
+      <img
+        src="assets/BWICOicon2.png"
+        alt="BlackWall-Interconnected Co."
+      >
+
+      <img
+        src="assets/BaidNet.png"
+        alt="BAIDNET"
+      >
+
+      <img
+        src="assets/BAIDPAY.png"
+        alt="BAIDPAY"
+      >
+
+    </div>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#readiness">Readiness</a>
+      <a href="#materials">Materials</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#materials">View Materials</a>
+    </nav>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section
+    id="home"
+    class="shell hero"
+  >
+
+    <div class="hero-copy">
+
+      <div class="eyebrow">
+        Built for a more connected tomorrow
+      </div>
+
+      <h1>
+        <span class="gold">
+          One Ecosystem.
+        </span>
+        <br>
+        Greater
+        <span class="gold">
+          Possibilities.
+        </span>
+      </h1>
+
+      <p class="lead">
+        BlackWall-Interconnected Co. (BWICO) powers BAIDNET and BAIDPAY —
+        a unified ecosystem bridging blockchain infrastructure and modern financial technology.
+      </p>
+
+      <div class="actions">
+
+        <a
+          class="btn primary"
+          href="#platform"
+        >
+          Explore the Ecosystem →
+        </a>
+
+        <a
+          class="btn secondary"
+          href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+          target="_blank"
+          rel="noopener"
+        >
+          View Deck
+        </a>
+
+      </div>
+
+      <div class="trust-row">
+
+        <div class="trust">
+          <strong>Secure</strong>
+          Designed for controlled access and accountability.
+        </div>
+
+        <div class="trust">
+          <strong>Auditable</strong>
+          Evidence-driven transaction and operational records.
+        </div>
+
+        <div class="trust">
+          <strong>Integrated</strong>
+          Blockchain and fintech paths within one architecture.
+        </div>
+
+        <div class="trust">
+          <strong>Market Entry</strong>
+          External readiness gaps clearly identified.
+        </div>
+
+      </div>
+    </div>
+
+    <div class="visual">
+
+      <div class="orb"></div>
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+
+      <div class="cards">
+
+        <article class="card tilt">
+
+          <img
+            src="assets/BaidNet.png"
+            alt="BAIDNET"
+          >
+
+          <h3>BAIDNET</h3>
+
+          <p>
+            Blockchain · Real Utility
+          </p>
+
+        </article>
+
+        <article class="card main tilt">
+
+          <img
+            src="assets/BWICOicon2.png"
+            alt="BlackWall-Interconnected Co."
+          >
+
+          <h3>BWICO</h3>
+
+          <p>
+            People · Platforms · Progress
+          </p>
+
+        </article>
+
+        <article class="card tilt">
+
+          <img
+            src="assets/BAIDPAY.png"
+            alt="BAIDPAY"
+          >
+
+          <h3>BAIDPAY</h3>
+
+          <p>
+            Modern Payments · Real Impact
+          </p>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PLATFORM -->
+
+  <section
+    id="platform"
+    class="section"
+  >
+
+    <div class="shell">
+
+      <div class="section-head">
+
+        <h2>
+          Platform Overview
+        </h2>
+
+        <p>
+          BAIDNET provides a blockchain-backed infrastructure for modern fintech applications,
+          combining security, auditability, and integration at its core.
+        </p>
+
+      </div>
+
+      <div class="materials">
+
+        <article class="material">
+
+          <span>
+            Infrastructure
+          </span>
+
+          <h4>
+            Blockchain Core
+          </h4>
+
+          <p>
+            Permissioned blockchain infrastructure with governance controls and auditability built in.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Learn more →
+          </a>
+
+        </article>
+
+        <article class="material">
+
+          <span>
+            Integration
+          </span>
+
+          <h4>
+            Modern Fintech
+          </h4>
+
+          <p>
+            Integration layer for payment systems and financial services built on proven blockchain technology.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Learn more →
+          </a>
+
+        </article>
+
+        <article class="material">
+
+          <span>
+            Controls
+          </span>
+
+          <h4>
+            Governance Framework
+          </h4>
+
+          <p>
+            Enterprise-grade governance with operational controls and participant validation systems.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Learn more →
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- READINESS -->
+
+  <section
+    id="readiness"
+    class="section"
+  >
+
+    <div class="shell">
+
+      <div class="section-head">
+
+        <h2>
+          Readiness Assessment
+        </h2>
+
+        <p>
+          BAIDNET demonstrates strong platform readiness with clear identification
+          of external requirements for market entry.
+        </p>
+
+      </div>
+
+      <div class="readiness">
+
+        <div class="readiness-column">
+
+          <h4>
+            Strong / Established Areas
+          </h4>
+
+          <ul>
+            <li>Governance framework</li>
+            <li>Auditability controls</li>
+            <li>Participant validation</li>
+            <li>Closed-loop controls</li>
+            <li>Sponsor-bank boundary definition</li>
+            <li>Customer protection framework</li>
+          </ul>
+
+        </div>
+
+        <div class="readiness-column">
+
+          <h4>
+            Areas Requiring External Closure
+          </h4>
+
+          <ul>
+            <li>Legal classification review</li>
+            <li>Securities analysis</li>
+            <li>MSB / money-transmission review</li>
+            <li>Sponsor-bank due diligence and onboarding</li>
+            <li>Contractual responsibility allocation</li>
+            <li>Partner-specific production connectivity</li>
+            <li>Procedural formalization and applicable sign-offs</li>
+          </ul>
+
+        </div>
+
+      </div>
+
+      <div class="readiness-statement">
+
+        <p>
+          BAIDNET demonstrates strong readiness for sponsor-bank engagement.
+          The primary remaining commercialization requirements are external legal,
+          regulatory, contractual, sponsor-bank, and production-enablement steps
+          rather than rebuilding the core platform.
+        </p>
+
+      </div>
+
+      <a
+        class="btn secondary"
+        href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
+        target="_blank"
+        rel="noopener"
+      >
+        Review Readiness Assessment →
+      </a>
+
+    </div>
+  </section>
+
+  <!-- MATERIALS -->
+
+  <section
+    id="materials"
+    class="section"
+  >
+
+    <div class="shell">
+
+      <div class="section-head">
+
+        <h2>
+          Investor & Partner Materials
+        </h2>
+
+        <p>
+          Access the complete set of materials for investors, partners,
+          advisors, and sponsor-bank representatives.
+        </p>
+
+      </div>
+
+      <div class="materials">
+
+        <article class="material">
+
+          <span>
+            Executive Overview
+          </span>
+
+          <h4>
+            BAIDNET Ecosystem / Platform Experience
+          </h4>
+
+          <p>
+            Platform overview, ecosystem structure, product experience,
+            and readiness positioning.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Open presentation →
+          </a>
+
+        </article>
+
+        <article class="material">
+
+          <span>
+            Funding Initiative
+          </span>
+
+          <h4>
+            Commercialization & Market Entry Initiative
+          </h4>
+
+          <p>
+            External gap-closure workstreams, market-entry objectives,
+            and funding requirements.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Open initiative →
+          </a>
+
+        </article>
+
+        <article class="material">
+
+          <span>
+            Readiness
+          </span>
+
+          <h4>
+            Sponsor-Bank Readiness Assessment
+          </h4>
+
+          <p>
+            Governance, controls, sponsor-bank boundaries,
+            and outstanding external requirements.
+          </p>
+
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
+            target="_blank"
+            rel="noopener"
+          >
+            Open assessment →
+          </a>
+
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+
+  <section
+    id="contact"
+    class="section"
+  >
+
+    <div class="shell">
+
+      <div class="section-head">
+
+        <h2>
+          Get in Touch
+        </h2>
+
+        <p>
+          Have questions? Contact our team to discuss partnership,
+          investment, or integration opportunities.
+        </p>
+
+      </div>
+
+      <div class="contact">
+
+        <div class="contact-copy">
+
+          <h3>
+            Reach Out
+          </h3>
+
+          <p>
+            Whether you're an investor, potential partner, or sponsor-bank representative,
+            we're here to discuss how BAIDNET can support your objectives.
+          </p>
+
+          <p>
+            Connect with our team to learn more about platform capabilities,
+            market-entry requirements, and collaboration opportunities.
+          </p>
+
+        </div>
+
+        <form
+          class="contact-form"
+          method="POST"
+          action="mailto:contact@blackwallinterconnected.co"
+          enctype="text/plain"
+        >
+
+          <div class="input-group">
+
+            <label for="name">
+              Name
+            </label>
+
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your name"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="email">
+              Email
+            </label>
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="inquiry">
+              Inquiry Type
+            </label>
+
+            <input
+              type="text"
+              id="inquiry"
+              name="inquiry"
+              placeholder="e.g. Investment, Partnership, Integration"
+            >
+
+          </div>
+
+          <div class="input-group">
+
+            <label for="message">
+              Message
+            </label>
+
+            <textarea
+              id="message"
+              name="message"
+              required
+              placeholder="Tell us more..."
+            ></textarea>
+
+          </div>
+
+          <button
+            class="btn primary"
+            type="submit"
+          >
+            Send Message →
+          </button>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+
+  <div class="shell">
+
+    <div class="footer-content">
+
+      <div class="footer-section">
+
+        <h4>
+          Product
+        </h4>
+
+        <ul>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#readiness">Readiness</a></li>
+          <li><a href="#materials">Materials</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-section">
+
+        <h4>
+          Company
+        </h4>
+
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-section">
+
+        <h4>
+          Resources
+        </h4>
+
+        <ul>
+
+          <li>
+            <a
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+              target="_blank"
+              rel="noopener"
+            >
+              View Deck
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
+              target="_blank"
+              rel="noopener"
+            >
+              Readiness Assessment
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+      <p>
+        &copy; 2026 BlackWall-Interconnected Co. All rights reserved.
+      </p>
+
+      <p>
+        BAIDNET • BAIDPAY • Commercialization & Market Entry Portal
+      </p>
+
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+  /* Cursor glow */
+
+  document.addEventListener(
+    "pointermove",
+    event => {
+
+      document.documentElement.style.setProperty(
+        "--mouse-x",
+        event.clientX + "px"
+      );
+
+      document.documentElement.style.setProperty(
+        "--mouse-y",
+        event.clientY + "px"
+      );
+
+    }
+  );
+
+
+  /* 3D tilt interaction */
+
+  const tiltCards =
+    document.querySelectorAll(".tilt");
+
+
+  tiltCards.forEach(
+    card => {
+
+      card.addEventListener(
+        "pointermove",
+        event => {
+
+          const rect =
+            card.getBoundingClientRect();
+
+          const x =
+            event.clientX -
+            rect.left;
+
+          const y =
+            event.clientY -
+            rect.top;
+
+          const centerX =
+            rect.width / 2;
+
+          const centerY =
+            rect.height / 2;
+
+          const rotateY =
+            (
+              (x - centerX)
+              / centerX
+            ) * 7;
+
+          const rotateX =
+            (
+              (centerY - y)
+              / centerY
+            ) * 6;
+
+          card.style.setProperty(
+            "--rotate-x",
+            rotateX + "deg"
+          );
+
+          card.style.setProperty(
+            "--rotate-y",
+            rotateY + "deg"
+          );
+
+        }
+      );
+
+      card.addEventListener(
+        "pointerleave",
+        () => {
+
+          card.style.setProperty(
+            "--rotate-x",
+            "0deg"
+          );
+
+          card.style.setProperty(
+            "--rotate-y",
+            "0deg"
+          );
+
+        }
+      );
+
+    }
+  );
+</script>
+
+</body>
+</html>
