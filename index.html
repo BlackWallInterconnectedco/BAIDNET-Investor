@@ -998,280 +998,179 @@
         linear-gradient(
           145deg,
           rgba(25,24,19,.85),
-          rgba(5,7,6,.92)
+          rgba(5,7,6,.9)
         );
 
       backdrop-filter:blur(18px);
 
       box-shadow:
-        0 20px 50px
-        rgba(0,0,0,.48),
+        0 25px 55px
+        rgba(0,0,0,.45),
 
         inset 0 1px
-        rgba(255,255,255,.03);
+        rgba(255,255,255,.035),
 
-      display:flex;
-      flex-direction:column;
-      gap:12px;
+        0 0 30px
+        rgba(217,164,65,.04);
 
       transition:
-        transform .25s ease,
-        border-color .25s ease,
-        box-shadow .25s ease;
+        border-color .3s ease,
+        box-shadow .3s ease;
     }
 
     .material:hover{
-      transform:translateY(-4px);
-
       border-color:
-        rgba(217,164,65,.48);
+        rgba(217,164,65,.50);
 
       box-shadow:
         0 30px 70px
         rgba(0,0,0,.55),
 
-        0 0 30px
-        rgba(217,164,65,.08);
+        0 0 35px
+        rgba(217,164,65,.065);
     }
 
-    .material span{
-      display:block;
-
-      color:#8f8b84;
-
-      font-size:.75rem;
-
-      letter-spacing:.12em;
-
-      text-transform:uppercase;
-    }
-
-    .material h4{
-      margin:0;
-
-      font-size:1.35rem;
-
-      color:var(--gold-bright);
+    .material h3{
+      margin:0 0 12px;
 
       font-family:
         Georgia,
         serif;
 
-      line-height:1.2;
+      color:var(--gold-bright);
+
+      font-size:1.3rem;
     }
 
     .material p{
-      margin:8px 0 0;
+      margin:0;
 
-      font-size:.95rem;
+      color:var(--muted);
 
-      color:#c8b98a;
+      font-size:.96rem;
 
-      line-height:1.5;
-
-      flex-grow:1;
+      line-height:1.6;
     }
 
     .material a{
+      display:inline-block;
+
       margin-top:16px;
 
-      display:inline-flex;
+      color:var(--gold);
 
-      font-size:.9rem;
-
-      color:var(--gold-bright);
+      font-weight:600;
 
       border-bottom:
         1px solid
-        rgba(217,164,65,.35);
-
-      padding-bottom:4px;
+        rgba(217,164,65,.0);
 
       transition:.25s ease;
     }
 
     .material a:hover{
-      border-color:
-        rgba(217,164,65,.65);
-
-      color:#f4cf76;
-    }
-
-    /* READINESS */
-
-    .readiness{
-      display:grid;
-
-      grid-template-columns:
-        1fr 1fr;
-
-      gap:40px;
-
-      align-items:start;
-
-      margin-bottom:40px;
-    }
-
-    .readiness-column h4{
-      margin:0 0 20px;
-
       color:var(--gold-bright);
 
-      font-family:
-        Georgia,
-        serif;
-
-      font-size:1.15rem;
-    }
-
-    .readiness-column ul{
-      margin:0;
-      padding:0;
-
-      list-style:none;
-    }
-
-    .readiness-column li{
-      position:relative;
-
-      padding:
-        12px 0
-        12px 22px;
-
-      color:#c8b98a;
-
-      font-size:.95rem;
-
-      border-bottom:
-        1px solid
-        rgba(217,164,65,.12);
-    }
-
-    .readiness-column li::before{
-      content:"";
-
-      position:absolute;
-
-      width:6px;
-      height:6px;
-
-      left:0;
-      top:50%;
-
-      transform:
-        translateY(-50%);
-
-      border-radius:50%;
-
-      background:var(--green);
-
-      box-shadow:
-        0 0 8px
-        rgba(140,198,62,.4);
-    }
-
-    .readiness-statement{
-      margin:40px 0;
-
-      padding:24px;
-
-      border-radius:var(--radius);
-
-      border:
-        1px solid
-        rgba(217,164,65,.20);
-
-      background:
-        rgba(217,164,65,.035);
-
-      color:#d0c9bc;
-
-      font-size:1.02rem;
-
-      line-height:1.7;
-    }
-
-    .readiness-statement p{
-      margin:0;
+      border-bottom-color:
+        var(--gold-bright);
     }
 
     /* CONTACT */
 
     .contact{
+      position:relative;
+
+      min-height:480px;
+
       display:grid;
 
       grid-template-columns:
-        1fr 1fr;
+        1.1fr
+        .9fr;
 
-      gap:50px;
+      gap:80px;
 
       align-items:center;
 
-      max-width:1100px;
+      padding:100px 0;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+    }
+
+    .contact::before{
+      content:"";
+
+      position:absolute;
+
+      width:300px;
+      height:300px;
+
+      border-radius:50%;
+
+      right:-100px;
+      top:50%;
+
+      transform:translateY(-50%);
+
+      background:
+        radial-gradient(
+          circle,
+          rgba(217,164,65,.04),
+          transparent 70%
+        );
+
+      pointer-events:none;
     }
 
     .contact-copy h3{
-      margin:0 0 20px;
+      margin:0 0 24px;
 
       font-family:
         Georgia,
         serif;
 
-      color:var(--gold-bright);
+      font-size:2.4rem;
 
-      font-size:2rem;
+      color:var(--text);
 
       line-height:1.1;
     }
 
     .contact-copy p{
-      margin:0 0 20px;
+      margin:0 0 32px;
 
-      color:#c8b98a;
+      color:var(--muted);
 
-      line-height:1.6;
-    }
+      font-size:1.1rem;
 
-    .contact-copy p:last-of-type{
-      margin:0;
+      line-height:1.7;
     }
 
     .contact-form{
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-    }
-
-    .input-group{
       position:relative;
-
-      display:flex;
-      flex-direction:column;
-      gap:8px;
+      z-index:3;
     }
 
-    .input-group label{
-      font-size:.85rem;
-
-      color:#aaa79e;
-
-      letter-spacing:.05em;
-
-      text-transform:uppercase;
+    .form-field{
+      margin-bottom:20px;
     }
 
-    .input-group input,
-    .input-group textarea{
-      padding:14px 16px;
+    .form-field input,
+    .form-field textarea{
+      width:100%;
 
-      border-radius:8px;
+      padding:14px 18px;
+
+      border-radius:10px;
 
       border:
         1px solid
-        rgba(217,164,65,.25);
+        rgba(217,164,65,.22);
 
       background:
-        rgba(5,7,6,.6);
+        rgba(255,255,255,.025);
 
       color:var(--text);
 
@@ -1282,52 +1181,50 @@
       transition:.25s ease;
     }
 
-    .input-group textarea{
-      resize:vertical;
-      min-height:120px;
-    }
-
-    .input-group input::placeholder,
-    .input-group textarea::placeholder{
-      color:
-        rgba(255,255,255,.25);
-    }
-
-    .input-group input:focus,
-    .input-group textarea:focus{
+    .form-field input:focus,
+    .form-field textarea:focus{
       outline:none;
 
       border-color:
-        rgba(217,164,65,.55);
+        rgba(217,164,65,.50);
 
       background:
-        rgba(5,7,6,.8);
+        rgba(255,255,255,.04);
 
       box-shadow:
         0 0 20px
         rgba(217,164,65,.08);
     }
 
-    .contact-form .btn{
-      margin-top:12px;
+    .form-field textarea{
+      resize:vertical;
+      min-height:140px;
+    }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder{
+      color:rgba(255,255,255,.40);
+    }
+
+    .form-field input:focus::placeholder,
+    .form-field textarea:focus::placeholder{
+      color:rgba(255,255,255,.60);
     }
 
     /* FOOTER */
 
     footer{
-      padding:
-        60px 0
-        40px;
-
       border-top:
         1px solid
         rgba(217,164,65,.14);
 
+      padding:60px 0;
+
       background:
         linear-gradient(
           180deg,
-          transparent,
-          rgba(217,164,65,.02)
+          rgba(2,3,3,.5),
+          rgba(2,3,3,.8)
         );
     }
 
@@ -1337,55 +1234,41 @@
       grid-template-columns:
         repeat(3,1fr);
 
-      gap:40px;
+      gap:50px;
 
       margin-bottom:40px;
     }
 
-    .footer-section h4{
-      margin:
-        0 0
-        16px;
+    .footer-col h4{
+      margin:0 0 16px;
 
       color:var(--gold-bright);
 
-      font-size:1rem;
+      font-size:.85rem;
 
-      letter-spacing:.08em;
+      letter-spacing:.12em;
 
       text-transform:uppercase;
     }
 
-    .footer-section ul{
-      margin:0;
-      padding:0;
+    .footer-col p,
+    .footer-col a{
+      display:block;
 
-      list-style:none;
-    }
-
-    .footer-section li{
       margin-bottom:10px;
-    }
 
-    .footer-section a{
-      color:#aaa79e;
+      color:var(--muted);
 
-      font-size:.9rem;
+      font-size:.92rem;
 
       transition:.25s ease;
     }
 
-    .footer-section a:hover{
+    .footer-col a:hover{
       color:var(--gold-bright);
     }
 
     .footer-bottom{
-      padding-top:30px;
-
-      border-top:
-        1px solid
-        rgba(217,164,65,.14);
-
       display:flex;
 
       justify-content:
@@ -1393,20 +1276,52 @@
 
       align-items:center;
 
-      gap:20px;
+      padding-top:30px;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+
+      color:var(--muted);
 
       font-size:.85rem;
-
-      color:#8f8b84;
     }
 
-    .footer-bottom p{
-      margin:0;
+    .social{
+      display:flex;
+      gap:16px;
+    }
+
+    .social a{
+      width:38px;
+      height:38px;
+
+      display:flex;
+      align-items:center;
+      justify-content:center;
+
+      border-radius:50%;
+
+      border:
+        1px solid
+        rgba(217,164,65,.25);
+
+      color:var(--gold-bright);
+
+      transition:.25s ease;
+    }
+
+    .social a:hover{
+      border-color:
+        var(--gold-bright);
+
+      background:
+        rgba(217,164,65,.10);
     }
 
     /* RESPONSIVE */
 
-    @media(max-width:1024px){
+    @media(max-width:1200px){
 
       .hero{
         grid-template-columns:1fr;
@@ -1417,32 +1332,35 @@
 
         padding:
           60px 0
-          40px;
+          50px;
+      }
+
+      .hero::before{
+        display:none;
       }
 
       .visual{
-        min-height:500px;
-      }
-
-      .orb{
-        width:380px;
-        height:380px;
+        min-height:400px;
       }
 
       .cards{
         max-width:100%;
-
-        grid-template-columns:
-          repeat(2,1fr);
-      }
-
-      .readiness{
-        grid-template-columns:1fr;
       }
 
       .contact{
         grid-template-columns:1fr;
-        gap:30px;
+
+        gap:50px;
+
+        min-height:auto;
+      }
+
+      .contact::before{
+        display:none;
+      }
+
+      .section{
+        padding:70px 0;
       }
 
       .footer-content{
@@ -1593,24 +1511,18 @@
 
     <div class="brands">
 
-      <!--
-        IMPORTANT:
-        GitHub Pages asset paths are case-sensitive.
-        These use the SAME filenames as the working hero cards below.
-      -->
-
       <img
-        src="assets/BWICOicon2.png"
+        src="./assets/BWICOicon2.png"
         alt="BlackWall-Interconnected Co."
       >
 
       <img
-        src="assets/BaidNet.png"
+        src="./assets/BaidNet.png"
         alt="BAIDNET"
       >
 
       <img
-        src="assets/BAIDPAY.png"
+        src="./assets/BAIDPAY.png"
         alt="BAIDPAY"
       >
 
@@ -1622,7 +1534,7 @@
       <a href="#readiness">Readiness</a>
       <a href="#materials">Materials</a>
       <a href="#contact">Contact</a>
-      <a class="nav-cta" href="#materials">View Materials</a>
+      <a href="#" class="nav-cta">Get Started</a>
     </nav>
 
   </div>
@@ -1630,729 +1542,264 @@
 
 <main>
 
-  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="shell">
 
-  <section
-    id="home"
-    class="shell hero"
-  >
+      <div class="hero-copy">
+        <p class="eyebrow">Welcome to BAIDNET</p>
+        <h1>Next Generation <span class="gold">Blockchain</span> Infrastructure</h1>
+        <p class="lead">Secure, scalable, and transparent solutions for global commerce and investment opportunities.</p>
 
-    <div class="hero-copy">
-
-      <div class="eyebrow">
-        Built for a more connected tomorrow
-      </div>
-
-      <h1>
-        <span class="gold">
-          One Ecosystem.
-        </span>
-        <br>
-        Greater
-        <span class="gold">
-          Possibilities.
-        </span>
-      </h1>
-
-      <p class="lead">
-        BlackWall-Interconnected Co. (BWICO) powers BAIDNET and BAIDPAY —
-        a unified ecosystem bridging blockchain infrastructure and modern financial technology.
-      </p>
-
-      <div class="actions">
-
-        <a
-          class="btn primary"
-          href="#platform"
-        >
-          Explore the Ecosystem →
-        </a>
-
-        <a
-          class="btn secondary"
-          href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-          target="_blank"
-          rel="noopener"
-        >
-          View Deck
-        </a>
-
-      </div>
-
-      <div class="trust-row">
-
-        <div class="trust">
-          <strong>Secure</strong>
-          Designed for controlled access and accountability.
+        <div class="actions">
+          <button class="btn primary">Explore Platform</button>
+          <button class="btn secondary">Learn More</button>
         </div>
 
-        <div class="trust">
-          <strong>Auditable</strong>
-          Evidence-driven transaction and operational records.
-        </div>
-
-        <div class="trust">
-          <strong>Integrated</strong>
-          Blockchain and fintech paths within one architecture.
-        </div>
-
-        <div class="trust">
-          <strong>Market Entry</strong>
-          External readiness gaps clearly identified.
+        <div class="trust-row">
+          <div class="trust">
+            <strong>99.9%</strong>
+            Uptime
+          </div>
+          <div class="trust">
+            <strong>500K+</strong>
+            Users
+          </div>
+          <div class="trust">
+            <strong>$2B+</strong>
+            Transacted
+          </div>
+          <div class="trust">
+            <strong>ISO</strong>
+            Certified
+          </div>
         </div>
 
       </div>
-    </div>
 
-    <div class="visual">
+      <div class="visual">
+        <div class="orbit"></div>
+        <div class="orbit two"></div>
+        <div class="orb"></div>
 
-      <div class="orb"></div>
-      <div class="orbit"></div>
-      <div class="orbit two"></div>
+        <div class="cards">
 
-      <div class="cards">
+          <div class="card">
+            <img src="./assets/BaidNet.png" alt="BAIDNET">
+            <h3>BAIDNET</h3>
+            <p>Blockchain Network</p>
+          </div>
 
-        <article class="card tilt">
+          <div class="card main">
+            <img src="./assets/BWICOicon2.png" alt="BlackWall-Interconnected">
+            <h3>BWIC</h3>
+            <p>Core Infrastructure</p>
+          </div>
 
-          <img
-            src="assets/BaidNet.png"
-            alt="BAIDNET"
-          >
+          <div class="card">
+            <img src="./assets/BAIDPAY.png" alt="BAIDPAY">
+            <h3>BAIDPAY</h3>
+            <p>Payment System</p>
+          </div>
 
-          <h3>BAIDNET</h3>
-
-          <p>
-            Blockchain · Real Utility
-          </p>
-
-        </article>
-
-        <article class="card main tilt">
-
-          <img
-            src="assets/BWICOicon2.png"
-            alt="BlackWall-Interconnected Co."
-          >
-
-          <h3>BWICO</h3>
-
-          <p>
-            People · Platforms · Progress
-          </p>
-
-        </article>
-
-        <article class="card tilt">
-
-          <img
-            src="assets/BAIDPAY.png"
-            alt="BAIDPAY"
-          >
-
-          <h3>BAIDPAY</h3>
-
-          <p>
-            Modern Payments · Real Impact
-          </p>
-
-        </article>
+        </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- PLATFORM -->
-
-  <section
-    id="platform"
-    class="section"
-  >
-
+  <section class="section" id="platform">
     <div class="shell">
 
       <div class="section-head">
-
-        <h2>
-          Platform Overview
-        </h2>
-
-        <p>
-          BAIDNET provides a blockchain-backed infrastructure for modern fintech applications,
-          combining security, auditability, and integration at its core.
-        </p>
-
+        <h2>Platform Features</h2>
+        <p>Comprehensive tools and infrastructure designed for modern commerce and investment management.</p>
       </div>
 
       <div class="materials">
 
-        <article class="material">
-
-          <span>
-            Infrastructure
-          </span>
-
-          <h4>
-            Blockchain Core
-          </h4>
-
-          <p>
-            Permissioned blockchain infrastructure with governance controls and auditability built in.
-          </p>
-
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Learn more →
-          </a>
-
-        </article>
-
-        <article class="material">
-
-          <span>
-            Integration
-          </span>
-
-          <h4>
-            Modern Fintech
-          </h4>
-
-          <p>
-            Integration layer for payment systems and financial services built on proven blockchain technology.
-          </p>
-
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Learn more →
-          </a>
-
-        </article>
-
-        <article class="material">
-
-          <span>
-            Controls
-          </span>
-
-          <h4>
-            Governance Framework
-          </h4>
-
-          <p>
-            Enterprise-grade governance with operational controls and participant validation systems.
-          </p>
-
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Learn more →
-          </a>
-
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- READINESS -->
-
-  <section
-    id="readiness"
-    class="section"
-  >
-
-    <div class="shell">
-
-      <div class="section-head">
-
-        <h2>
-          Readiness Assessment
-        </h2>
-
-        <p>
-          BAIDNET demonstrates strong platform readiness with clear identification
-          of external requirements for market entry.
-        </p>
-
-      </div>
-
-      <div class="readiness">
-
-        <div class="readiness-column">
-
-          <h4>
-            Strong / Established Areas
-          </h4>
-
-          <ul>
-            <li>Governance framework</li>
-            <li>Auditability controls</li>
-            <li>Participant validation</li>
-            <li>Closed-loop controls</li>
-            <li>Sponsor-bank boundary definition</li>
-            <li>Customer protection framework</li>
-          </ul>
-
+        <div class="material">
+          <h3>Smart Contracts</h3>
+          <p>Automated and secure contract execution with full transparency and auditability across all transactions.</p>
+          <a href="#">Learn more →</a>
         </div>
 
-        <div class="readiness-column">
+        <div class="material">
+          <h3>Global Settlement</h3>
+          <p>Real-time transaction settlement across borders with minimal fees and maximum security protocols.</p>
+          <a href="#">Learn more →</a>
+        </div>
 
-          <h4>
-            Areas Requiring External Closure
-          </h4>
+        <div class="material">
+          <h3>Tokenization</h3>
+          <p>Convert real-world assets into digital tokens for efficient trading and investment opportunities.</p>
+          <a href="#">Learn more →</a>
+        </div>
 
-          <ul>
-            <li>Legal classification review</li>
-            <li>Securities analysis</li>
-            <li>MSB / money-transmission review</li>
-            <li>Sponsor-bank due diligence and onboarding</li>
-            <li>Contractual responsibility allocation</li>
-            <li>Partner-specific production connectivity</li>
-            <li>Procedural formalization and applicable sign-offs</li>
-          </ul>
+        <div class="material">
+          <h3>Compliance Engine</h3>
+          <p>Automated regulatory compliance checks and reporting for all jurisdictions and market standards.</p>
+          <a href="#">Learn more →</a>
+        </div>
 
+        <div class="material">
+          <h3>Risk Management</h3>
+          <p>Advanced analytics and monitoring tools to identify and mitigate financial and operational risks.</p>
+          <a href="#">Learn more →</a>
+        </div>
+
+        <div class="material">
+          <h3>API Integration</h3>
+          <p>Seamless integration with existing systems through comprehensive REST and WebSocket APIs.</p>
+          <a href="#">Learn more →</a>
         </div>
 
       </div>
 
-      <div class="readiness-statement">
-
-        <p>
-          BAIDNET demonstrates strong readiness for sponsor-bank engagement.
-          The primary remaining commercialization requirements are external legal,
-          regulatory, contractual, sponsor-bank, and production-enablement steps
-          rather than rebuilding the core platform.
-        </p>
-
-      </div>
-
-      <a
-        class="btn secondary"
-        href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
-        target="_blank"
-        rel="noopener"
-      >
-        Review Readiness Assessment →
-      </a>
-
     </div>
   </section>
 
-  <!-- MATERIALS -->
-
-  <section
-    id="materials"
-    class="section"
-  >
-
+  <section class="section" id="readiness">
     <div class="shell">
 
       <div class="section-head">
-
-        <h2>
-          Investor & Partner Materials
-        </h2>
-
-        <p>
-          Access the complete set of materials for investors, partners,
-          advisors, and sponsor-bank representatives.
-        </p>
-
+        <h2>Market Readiness</h2>
+        <p>BAIDNET is positioned for immediate deployment with enterprise-grade reliability and scalability.</p>
       </div>
 
       <div class="materials">
 
-        <article class="material">
+        <div class="material">
+          <h3>Infrastructure</h3>
+          <p>Distributed nodes across multiple regions ensuring 99.9% uptime and global redundancy.</p>
+        </div>
 
-          <span>
-            Executive Overview
-          </span>
+        <div class="material">
+          <h3>Security</h3>
+          <p>Military-grade encryption and multi-layer security protocols protecting all user assets and data.</p>
+        </div>
 
-          <h4>
-            BAIDNET Ecosystem / Platform Experience
-          </h4>
+        <div class="material">
+          <h3>Scalability</h3>
+          <p>Capable of processing millions of transactions per second with sub-second settlement times.</p>
+        </div>
 
-          <p>
-            Platform overview, ecosystem structure, product experience,
-            and readiness positioning.
-          </p>
+        <div class="material">
+          <h3>Compliance</h3>
+          <p>Full regulatory compliance across major jurisdictions with continuous monitoring and updates.</p>
+        </div>
 
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Open presentation →
-          </a>
+        <div class="material">
+          <h3>Support</h3>
+          <p>24/7 enterprise support with dedicated account managers for institutional clients.</p>
+        </div>
 
-        </article>
-
-        <article class="material">
-
-          <span>
-            Funding Initiative
-          </span>
-
-          <h4>
-            Commercialization & Market Entry Initiative
-          </h4>
-
-          <p>
-            External gap-closure workstreams, market-entry objectives,
-            and funding requirements.
-          </p>
-
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Open initiative →
-          </a>
-
-        </article>
-
-        <article class="material">
-
-          <span>
-            Readiness
-          </span>
-
-          <h4>
-            Sponsor-Bank Readiness Assessment
-          </h4>
-
-          <p>
-            Governance, controls, sponsor-bank boundaries,
-            and outstanding external requirements.
-          </p>
-
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
-            target="_blank"
-            rel="noopener"
-          >
-            Open assessment →
-          </a>
-
-        </article>
+        <div class="material">
+          <h3>Documentation</h3>
+          <p>Comprehensive API documentation, SDKs, and integration guides for rapid deployment.</p>
+        </div>
 
       </div>
+
     </div>
   </section>
 
-  <!-- CONTACT -->
-
-  <section
-    id="contact"
-    class="section"
-  >
-
+  <section class="contact" id="contact">
     <div class="shell">
-
-      <div class="section-head">
-
-        <h2>
-          Get in Touch
-        </h2>
-
-        <p>
-          Have questions? Contact our team to discuss partnership,
-          investment, or integration opportunities.
-        </p>
-
+      <div class="contact-copy">
+        <h3>Ready to Transform Your Business?</h3>
+        <p>Join thousands of institutions already leveraging BAIDNET for secure, efficient, and compliant blockchain operations. Contact our team to discuss your specific requirements and get started today.</p>
       </div>
 
-      <div class="contact">
-
-        <div class="contact-copy">
-
-          <h3>
-            Reach Out
-          </h3>
-
-          <p>
-            Whether you're an investor, potential partner, or sponsor-bank representative,
-            we're here to discuss how BAIDNET can support your objectives.
-          </p>
-
-          <p>
-            Connect with our team to learn more about platform capabilities,
-            market-entry requirements, and collaboration opportunities.
-          </p>
-
+      <form class="contact-form">
+        <div class="form-field">
+          <input type="text" placeholder="Full Name" required>
         </div>
-
-        <form
-          class="contact-form"
-          method="POST"
-          action="mailto:contact@blackwallinterconnected.co"
-          enctype="text/plain"
-        >
-
-          <div class="input-group">
-
-            <label for="name">
-              Name
-            </label>
-
-            <input
-              type="text"
-              id="name"
-              name="name"
-              required
-              placeholder="Your name"
-            >
-
-          </div>
-
-          <div class="input-group">
-
-            <label for="email">
-              Email
-            </label>
-
-            <input
-              type="email"
-              id="email"
-              name="email"
-              required
-              placeholder="your@email.com"
-            >
-
-          </div>
-
-          <div class="input-group">
-
-            <label for="inquiry">
-              Inquiry Type
-            </label>
-
-            <input
-              type="text"
-              id="inquiry"
-              name="inquiry"
-              placeholder="e.g. Investment, Partnership, Integration"
-            >
-
-          </div>
-
-          <div class="input-group">
-
-            <label for="message">
-              Message
-            </label>
-
-            <textarea
-              id="message"
-              name="message"
-              required
-              placeholder="Tell us more..."
-            ></textarea>
-
-          </div>
-
-          <button
-            class="btn primary"
-            type="submit"
-          >
-            Send Message →
-          </button>
-
-        </form>
-
-      </div>
+        <div class="form-field">
+          <input type="email" placeholder="Email Address" required>
+        </div>
+        <div class="form-field">
+          <input type="text" placeholder="Company Name">
+        </div>
+        <div class="form-field">
+          <textarea placeholder="Tell us about your needs..."></textarea>
+        </div>
+        <button type="submit" class="btn primary" style="width:100%;">Send Message</button>
+      </form>
     </div>
   </section>
 
 </main>
 
 <footer>
-
   <div class="shell">
 
     <div class="footer-content">
 
-      <div class="footer-section">
-
-        <h4>
-          Product
-        </h4>
-
-        <ul>
-          <li><a href="#platform">Platform</a></li>
-          <li><a href="#readiness">Readiness</a></li>
-          <li><a href="#materials">Materials</a></li>
-        </ul>
-
+      <div class="footer-col">
+        <h4>BAIDNET</h4>
+        <p>Next generation blockchain infrastructure for global commerce.</p>
       </div>
 
-      <div class="footer-section">
-
-        <h4>
-          Company
-        </h4>
-
-        <ul>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms of Service</a></li>
-        </ul>
-
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#platform">Platform</a>
+        <a href="#readiness">Readiness</a>
+        <a href="#materials">Materials</a>
+        <a href="#contact">Contact</a>
       </div>
 
-      <div class="footer-section">
-
-        <h4>
-          Resources
-        </h4>
-
-        <ul>
-
-          <li>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-              target="_blank"
-              rel="noopener"
-            >
-              View Deck
-            </a>
-          </li>
-
-          <li>
-            <a
-              href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
-              target="_blank"
-              rel="noopener"
-            >
-              Readiness Assessment
-            </a>
-          </li>
-
-        </ul>
-
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <a href="#">Documentation</a>
+        <a href="#">API Docs</a>
+        <a href="#">Security</a>
+        <a href="#">Terms of Service</a>
       </div>
 
     </div>
 
     <div class="footer-bottom">
-
-      <p>
-        &copy; 2026 BlackWall-Interconnected Co. All rights reserved.
-      </p>
-
-      <p>
-        BAIDNET • BAIDPAY • Commercialization & Market Entry Portal
-      </p>
-
+      <p>&copy; 2025 BlackWall-Interconnected Co. All rights reserved.</p>
+      <div class="social">
+        <a href="#" title="Twitter">𝕏</a>
+        <a href="#" title="LinkedIn">in</a>
+        <a href="#" title="GitHub">⚙</a>
+      </div>
     </div>
 
   </div>
-
 </footer>
 
 <script>
-  /* Cursor glow */
+  // 3D Card Tilt Effect
+  document.querySelectorAll('.card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
 
-  document.addEventListener(
-    "pointermove",
-    event => {
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-      document.documentElement.style.setProperty(
-        "--mouse-x",
-        event.clientX + "px"
-      );
+      const rotateX = (y - centerY) / 10;
+      const rotateY = (centerX - x) / 10;
 
-      document.documentElement.style.setProperty(
-        "--mouse-y",
-        event.clientY + "px"
-      );
+      card.style.setProperty('--rotate-x', rotateX + 'deg');
+      card.style.setProperty('--rotate-y', rotateY + 'deg');
+    });
 
-    }
-  );
+    card.addEventListener('mouseleave', () => {
+      card.style.setProperty('--rotate-x', '0deg');
+      card.style.setProperty('--rotate-y', '0deg');
+    });
+  });
 
-
-  /* 3D tilt interaction */
-
-  const tiltCards =
-    document.querySelectorAll(".tilt");
-
-
-  tiltCards.forEach(
-    card => {
-
-      card.addEventListener(
-        "pointermove",
-        event => {
-
-          const rect =
-            card.getBoundingClientRect();
-
-          const x =
-            event.clientX -
-            rect.left;
-
-          const y =
-            event.clientY -
-            rect.top;
-
-          const centerX =
-            rect.width / 2;
-
-          const centerY =
-            rect.height / 2;
-
-          const rotateY =
-            (
-              (x - centerX)
-              / centerX
-            ) * 7;
-
-          const rotateX =
-            (
-              (centerY - y)
-              / centerY
-            ) * 6;
-
-          card.style.setProperty(
-            "--rotate-x",
-            rotateX + "deg"
-          );
-
-          card.style.setProperty(
-            "--rotate-y",
-            rotateY + "deg"
-          );
-
-        }
-      );
-
-      card.addEventListener(
-        "pointerleave",
-        () => {
-
-          card.style.setProperty(
-            "--rotate-x",
-            "0deg"
-          );
-
-          card.style.setProperty(
-            "--rotate-y",
-            "0deg"
-          );
-
-        }
-      );
-
-    }
-  );
+  // Mouse position tracking for background effect
+  document.addEventListener('mousemove', (e) => {
+    document.documentElement.style.setProperty('--mouse-x', e.clientX + 'px');
+    document.documentElement.style.setProperty('--mouse-y', e.clientY + 'px');
+  });
 </script>
 
 </body>
