@@ -204,6 +204,199 @@
       .contact-scheduler{padding:18px;}
       .input-group input,.input-group textarea,.input-group select{padding:13px 14px;}
     }
+
+    /* =========================================================
+       ADOBE ACROBAT INVESTOR EXPERIENCE
+       ========================================================= */
+
+    .acrobat-guide{
+      position:relative;
+      overflow:hidden;
+      margin-bottom:34px;
+      padding:34px;
+      border-radius:28px;
+      border:1px solid rgba(217,164,65,.30);
+      background:linear-gradient(145deg,rgba(17,19,16,.94),rgba(5,7,6,.97));
+      box-shadow:0 28px 80px rgba(0,0,0,.52),0 0 42px rgba(217,164,65,.07);
+      backdrop-filter:blur(20px);
+    }
+
+    .acrobat-guide::before{
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      right:-170px;
+      top:-210px;
+      border-radius:50%;
+      background:radial-gradient(circle,rgba(140,198,62,.10),rgba(217,164,65,.04) 40%,transparent 70%);
+      pointer-events:none;
+    }
+
+    .acrobat-guide-header{
+      position:relative;
+      z-index:2;
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:28px;
+      margin-bottom:28px;
+    }
+
+    .acrobat-guide-header h3{
+      margin:0 0 10px;
+      font-family:Georgia,serif;
+      color:var(--gold-bright);
+      font-size:clamp(1.8rem,3vw,2.7rem);
+    }
+
+    .acrobat-guide-header p{
+      max-width:760px;
+      margin:0;
+      color:#c8b98a;
+      line-height:1.7;
+    }
+
+    .acrobat-badge{
+      flex-shrink:0;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(217,164,65,.34);
+      color:var(--gold-bright);
+      font-size:.72rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      background:rgba(217,164,65,.055);
+    }
+
+    .acrobat-steps{
+      position:relative;
+      z-index:2;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:14px;
+    }
+
+    .acrobat-step{
+      min-height:185px;
+      padding:22px;
+      border-radius:18px;
+      border:1px solid rgba(217,164,65,.18);
+      background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(0,0,0,.15));
+    }
+
+    .acrobat-step-number{
+      width:32px;
+      height:32px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:16px;
+      border-radius:50%;
+      border:1px solid rgba(140,198,62,.45);
+      color:var(--green);
+      font-weight:700;
+      box-shadow:0 0 15px rgba(140,198,62,.08);
+    }
+
+    .acrobat-step strong{
+      display:block;
+      margin-bottom:8px;
+      color:var(--gold-bright);
+      font-size:.96rem;
+    }
+
+    .acrobat-step p{
+      margin:0;
+      color:#aaa79e;
+      font-size:.9rem;
+      line-height:1.55;
+    }
+
+    .acrobat-tip{
+      position:relative;
+      z-index:2;
+      margin-top:20px;
+      padding:18px 20px;
+      border-left:3px solid var(--green);
+      border-radius:12px;
+      background:rgba(140,198,62,.035);
+      color:#bfb7a6;
+      font-size:.9rem;
+      line-height:1.6;
+    }
+
+    /* =========================================================
+       EMAIL CONTACT METHODS
+       ========================================================= */
+
+    .email-chooser{
+      margin-top:24px;
+      padding:22px;
+      border-radius:20px;
+      border:1px solid rgba(217,164,65,.20);
+      background:linear-gradient(145deg,rgba(12,14,12,.82),rgba(4,5,5,.92));
+    }
+
+    .email-chooser-label{
+      margin-bottom:13px;
+      color:#aaa79e;
+      font-size:.76rem;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+    }
+
+    .email-methods{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:10px;
+    }
+
+    .email-provider-btn{
+      min-height:46px;
+      padding:10px 14px;
+      border-radius:11px;
+      border:1px solid rgba(217,164,65,.26);
+      background:rgba(255,255,255,.02);
+      color:var(--text);
+      font-family:inherit;
+      font-size:.88rem;
+      cursor:pointer;
+      transition:.25s ease;
+    }
+
+    .email-provider-btn:hover{
+      transform:translateY(-2px);
+      border-color:rgba(244,207,118,.62);
+      color:var(--gold-bright);
+      box-shadow:0 0 20px rgba(217,164,65,.06);
+    }
+
+    .email-help{
+      margin-top:12px;
+      color:#8f8b84;
+      font-size:.82rem;
+      line-height:1.5;
+    }
+
+    .email-copy-status{
+      margin-top:10px;
+      min-height:18px;
+      color:var(--green);
+      font-size:.82rem;
+    }
+
+    @media(max-width:1024px){
+      .acrobat-steps{grid-template-columns:repeat(2,1fr);}
+    }
+
+    @media(max-width:760px){
+      .acrobat-guide{padding:24px;}
+      .acrobat-guide-header{flex-direction:column;}
+      .acrobat-steps{grid-template-columns:1fr;}
+      .email-methods{grid-template-columns:1fr;}
+    }
+
   </style>
 </head>
 
@@ -263,98 +456,436 @@
 
   <section id="readiness" class="section"><div class="shell"><div class="section-head"><h2>Sponsor-Bank Readiness</h2><p>BAIDNET readiness materials are structured to support institutional discussions, due diligence, and strategic planning.</p></div><div class="readiness"><div class="readiness-column"><h4>Commercial Focus Areas</h4><ul><li>Investment and partnership positioning</li><li>Platform integration planning</li><li>Commercial and operational alignment</li></ul></div><div class="readiness-column"><h4>Institutional Considerations</h4><ul><li>Sponsor-bank engagement and governance</li><li>Regulatory and advisory review</li><li>Market-entry execution planning</li></ul></div></div><div class="readiness-statement"><p>These materials are intended to help stakeholders evaluate the path from concept to commercialization while preserving strong governance, technical clarity, and strategic alignment.</p></div><a class="btn secondary" href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Review Readiness Assessment →</a></div></section>
 
-  <section id="materials" class="section"><div class="shell"><div class="section-head"><h2>Investor &amp; Partner Materials</h2><p>Access the complete set of materials for investors, partners, advisors, and sponsor-bank representatives.</p></div><div class="materials"><article class="material"><span>Executive Overview</span><h4>BAIDNET Ecosystem / Platform Experience</h4><p>An overview of the BAIDNET ecosystem, its ecosystem positioning, and the user-facing experience for commercialization conversations.</p><a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:82562b30-d524-49e0-b733-4221b51ff94f" target="_blank" rel="noopener">Open executive overview →</a></article><article class="material"><span>Commercial Deck</span><h4>BAIDNET Market Entry / Sponsor Bank Presentation</h4><p>Materials intended to frame the market-entry narrative, sponsor-bank readiness, and strategic opportunity for institutional stakeholders.</p><a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">Open commercial deck →</a></article><article class="material"><span>Readiness</span><h4>Sponsor-Bank Readiness Assessment</h4><p>Governance, controls, sponsor-bank boundaries, and outstanding external requirements.</p><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Open assessment →</a></article></div></div></section>
+  <section id="materials" class="section">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Investor &amp; Partner Materials</h2>
+        <p>
+          Review BAIDNET materials through Adobe Acrobat for a faster,
+          more flexible investor and partner experience.
+        </p>
+      </div>
 
-  <section id="contact" class="section"><div class="shell"><div class="section-head"><h2>Get in Touch</h2><p>Connect with BlackWall-Interconnected Co. to discuss investment opportunities, strategic partnerships, sponsor-bank engagement, professional advisory services, platform integration, or BAIDNET commercialization.</p></div><div class="contact"><div class="contact-copy"><h3>Connect with BWICO</h3><p>Whether you're an investor, financial institution, strategic partner, advisor, or technology collaborator, the BlackWall-Interconnected Co. team is available to discuss BAIDNET's platform capabilities, commercialization strategy, sponsor-bank readiness, and partnership opportunities.</p><p>For general inquiries, partnership discussions, investment conversations, or meeting requests, contact our team directly or request a Zoom meeting.</p><div class="contact-email"><span>Official Email</span><a href="mailto:Blackwallteam@blackwall-interconnected.com">Blackwallteam@blackwall-interconnected.com</a></div><div class="actions" style="margin-top:20px;"><a class="btn secondary" href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO →</a></div></div><div class="contact-scheduler"><div class="scheduler-header"><div class="meeting-eyebrow">MEETING REQUEST</div><h3>Schedule a Conversation</h3><p>Select a preferred date and time to request a Zoom meeting with the BWICO team.</p></div><form class="contact-form" id="meeting-request-form"><div class="scheduler-grid"><div class="input-group full"><label for="fullName">Full Name</label><input type="text" id="fullName" name="fullName" required placeholder="Your full name"></div><div class="input-group full"><label for="organization">Business / Organization</label><input type="text" id="organization" name="organization" placeholder="Organization name"></div><div class="input-group full"><label for="emailAddress">Email Address</label><input type="email" id="emailAddress" name="emailAddress" required placeholder="you@example.com"></div><div class="input-group full"><label for="phoneNumber">Phone Number</label><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Optional phone number"></div><div class="input-group full"><label for="meetingTopic">Meeting Topic</label><select id="meetingTopic" name="meetingTopic" required><option value="">Select a topic</option><option>Investment Opportunity</option><option>Sponsor-Bank Partnership</option><option>Strategic Partnership</option><option>Legal / Regulatory Advisory</option><option>Platform Integration</option><option>BAIDNET Technology</option><option>Commercialization & Market Entry</option><option>General Discussion</option></select></div><div class="input-group"><label for="meetingDate">Preferred Meeting Date</label><input type="date" id="meetingDate" name="meetingDate" required></div><div class="input-group"><label for="meetingTime">Preferred Meeting Time</label><input type="time" id="meetingTime" name="meetingTime" required></div><div class="input-group full"><label for="timeZone">Time Zone</label><select id="timeZone" name="timeZone" required><option value="">Select time zone</option><option>Eastern Time</option><option>Central Time</option><option>Mountain Time</option><option>Pacific Time</option><option>UTC</option><option>Other</option></select></div><div class="input-group full"><label for="additionalNotes">Additional Notes</label><textarea id="additionalNotes" name="additionalNotes" placeholder="Share any context or questions for the BWICO team"></textarea></div></div><button class="btn primary" id="meeting-submit-btn" type="submit">Request Zoom Meeting →</button><div class="meeting-status" id="meeting-status" aria-live="polite"></div><div class="scheduler-note">Your requested date and time will be reviewed by the BWICO team. A Zoom invitation will be sent after availability is confirmed.</div></form></div></div></div></section>
+      <div class="acrobat-guide">
+        <div class="acrobat-guide-header">
+          <div>
+            <div class="eyebrow">Designed for Convenient Review</div>
+            <h3>Make the Most of Your Adobe Acrobat Experience</h3>
+            <p>
+              Each BAIDNET material opens through Adobe Acrobat so you can choose how deeply you want to review it.
+              Read the full document, generate a quick summary, ask questions about the material, jump directly to
+              supporting sections, or use available audio tools for hands-free review.
+            </p>
+          </div>
+          <div class="acrobat-badge">Adobe Acrobat Materials</div>
+        </div>
+
+        <div class="acrobat-steps">
+          <div class="acrobat-step">
+            <div class="acrobat-step-number">1</div>
+            <strong>Open the Material</strong>
+            <p>
+              Select any document below. It opens in Adobe Acrobat in a separate tab so your place on the BAIDNET
+              portal is preserved.
+            </p>
+          </div>
+
+          <div class="acrobat-step">
+            <div class="acrobat-step-number">2</div>
+            <strong>Generate a Summary</strong>
+            <p>
+              Use Acrobat's available summary tools to create a concise overview of key topics and sections for
+              faster orientation before a full review.
+            </p>
+          </div>
+
+          <div class="acrobat-step">
+            <div class="acrobat-step-number">3</div>
+            <strong>Ask the Document</strong>
+            <p>
+              Where available, use Acrobat AI tools to ask follow-up questions, explore specific topics, and move
+              back to supporting information inside the document.
+            </p>
+          </div>
+
+          <div class="acrobat-step">
+            <div class="acrobat-step-number">4</div>
+            <strong>Listen Instead</strong>
+            <p>
+              Prefer audio? Use Acrobat's available read-aloud or document-listening tools to review materials
+              hands-free when those features are available in your Acrobat experience.
+            </p>
+          </div>
+        </div>
+
+        <div class="acrobat-tip">
+          <strong style="color:var(--gold-bright);">Investor Review Tip:</strong>
+          Start with a generated summary for quick orientation. Then follow source references or document sections
+          for anything you want to examine in detail and use available AI tools for targeted questions.
+          This lets you review BAIDNET materials at the depth and pace most convenient for you.
+          <br><br>
+          Adobe AI, summary, and audio features may vary by account, sign-in status, device, language, region,
+          document permissions, or Acrobat availability.
+        </div>
+      </div>
+
+      <div class="materials">
+        <article class="material">
+          <span>Executive Overview</span>
+          <h4>BAIDNET Ecosystem / Platform Experience</h4>
+          <p>
+            Explore the BAIDNET ecosystem, live platform experience, product capabilities,
+            user workflows, and readiness positioning.
+          </p>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:82562b30-d524-49e0-b733-4221b51ff94f"
+            target="_blank"
+            rel="noopener"
+          >
+            Open in Adobe Acrobat →
+          </a>
+        </article>
+
+        <article class="material">
+          <span>Commercialization Initiative</span>
+          <h4>Commercialization &amp; Market Entry</h4>
+          <p>
+            Review the external gap-closure strategy, commercialization workstreams, funding requirements,
+            sponsor-bank engagement, and market-entry pathway.
+          </p>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+            target="_blank"
+            rel="noopener"
+          >
+            Open in Adobe Acrobat →
+          </a>
+        </article>
+
+        <article class="material">
+          <span>Sponsor-Bank Readiness</span>
+          <h4>BAIDNET Readiness Assessment</h4>
+          <p>
+            Review governance, auditability, participant validation, sponsor-bank boundaries, customer protections,
+            and the external legal and contractual requirements still to be closed.
+          </p>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
+            target="_blank"
+            rel="noopener"
+          >
+            Open in Adobe Acrobat →
+          </a>
+        </article>
+
+        <article class="material">
+          <span>Technical Evidence</span>
+          <h4>FinTech Extension A–G Verification Report</h4>
+          <p>
+            Review requirement-to-implementation traceability, fiat transaction lifecycle evidence,
+            financial API primitives, audit correlation, reconciliation, sponsor-bank boundaries,
+            and end-to-end engineering validation.
+          </p>
+          <a
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:331c857a-926b-4438-b09f-0ac4431d4a17"
+            target="_blank"
+            rel="noopener"
+          >
+            Open in Adobe Acrobat →
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<section id="contact" class="section"><div class="shell"><div class="section-head"><h2>Get in Touch</h2><p>Connect with BlackWall-Interconnected Co. to discuss investment opportunities, strategic partnerships, sponsor-bank engagement, professional advisory services, platform integration, or BAIDNET commercialization.</p></div><div class="contact"><div class="contact-copy"><h3>Connect with BWICO</h3><p>Whether you're an investor, financial institution, strategic partner, advisor, or technology collaborator, the BlackWall-Interconnected Co. team is available to discuss BAIDNET's platform capabilities, commercialization strategy, sponsor-bank readiness, and partnership opportunities.</p><p>For general inquiries, partnership discussions, investment conversations, or meeting requests, contact our team directly or request a Zoom meeting.</p><div class="contact-email">
+  <span>Official BWICO Contact</span>
+  <a href="mailto:Blackwallteam@blackwall-interconnected.com">Blackwallteam@blackwall-interconnected.com</a>
+</div>
+
+<div class="email-chooser">
+  <div class="email-chooser-label">Choose Your Email Method</div>
+
+  <div class="email-methods">
+    <button type="button" class="email-provider-btn" data-email-provider="gmail">Gmail</button>
+    <button type="button" class="email-provider-btn" data-email-provider="outlook">Outlook</button>
+    <button type="button" class="email-provider-btn" data-email-provider="zoho">Zoho Mail</button>
+    <button type="button" class="email-provider-btn" data-email-provider="default">Default Email App</button>
+    <button type="button" class="email-provider-btn" id="copy-email-btn">Copy Email Address</button>
+  </div>
+
+  <div class="email-help">
+    Choose the email service you prefer. Gmail and Outlook open a prepared message in your browser.
+    Zoho Mail opens its compose experience and copies the prepared message for convenient pasting.
+    You can also use your device's default email application.
+  </div>
+
+  <div class="email-copy-status" id="email-copy-status" aria-live="polite"></div>
+</div></div><div class="contact-scheduler"><div class="scheduler-header"><div class="meeting-eyebrow">MEETING REQUEST</div><h3>Schedule a Conversation</h3><p>Select a preferred date and time to request a Zoom meeting with the BWICO team.</p></div><form class="contact-form" id="meeting-request-form"><div class="scheduler-grid"><div class="input-group full"><label for="fullName">Full Name</label><input type="text" id="fullName" name="fullName" required placeholder="Your full name"></div><div class="input-group full"><label for="organization">Business / Organization</label><input type="text" id="organization" name="organization" placeholder="Organization name"></div><div class="input-group full"><label for="emailAddress">Email Address</label><input type="email" id="emailAddress" name="emailAddress" required placeholder="you@example.com"></div><div class="input-group full"><label for="phoneNumber">Phone Number</label><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Optional phone number"></div><div class="input-group full"><label for="meetingTopic">Meeting Topic</label><select id="meetingTopic" name="meetingTopic" required><option value="">Select a topic</option><option>Investment Opportunity</option><option>Sponsor-Bank Partnership</option><option>Strategic Partnership</option><option>Legal / Regulatory Advisory</option><option>Platform Integration</option><option>BAIDNET Technology</option><option>Commercialization & Market Entry</option><option>General Discussion</option></select></div><div class="input-group"><label for="meetingDate">Preferred Meeting Date</label><input type="date" id="meetingDate" name="meetingDate" required></div><div class="input-group"><label for="meetingTime">Preferred Meeting Time</label><input type="time" id="meetingTime" name="meetingTime" required></div><div class="input-group full"><label for="timeZone">Time Zone</label><select id="timeZone" name="timeZone" required><option value="">Select time zone</option><option>Eastern Time</option><option>Central Time</option><option>Mountain Time</option><option>Pacific Time</option><option>UTC</option><option>Other</option></select></div><div class="input-group full"><label for="emailProvider">Send Meeting Request Using</label><select id="emailProvider" name="emailProvider" required><option value="default">Default Email App</option><option value="gmail">Gmail</option><option value="outlook">Outlook</option><option value="zoho">Zoho Mail</option></select></div><div class="input-group full"><label for="additionalNotes">Additional Notes</label><textarea id="additionalNotes" name="additionalNotes" placeholder="Share any context or questions for the BWICO team"></textarea></div></div><button class="btn primary" id="meeting-submit-btn" type="submit">Request Zoom Meeting →</button><div class="meeting-status" id="meeting-status" aria-live="polite"></div><div class="scheduler-note">Your requested date and time will be reviewed by the BWICO team. A Zoom invitation will be sent after availability is confirmed.</div></form></div></div></div></section>
 
 </main>
 
-<footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
+<footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
 
 <script>
+  const OFFICIAL_EMAIL = "Blackwallteam@blackwall-interconnected.com";
   const ZOOM_SCHEDULER_URL = "YOUR_ZOOM_SCHEDULER_URL";
 
+  /* Cursor light */
   document.addEventListener("pointermove", event => {
     document.documentElement.style.setProperty("--mouse-x", event.clientX + "px");
     document.documentElement.style.setProperty("--mouse-y", event.clientY + "px");
   });
 
-  const tiltCards = document.querySelectorAll(".tilt");
-  tiltCards.forEach(card => {
+  /* 3D tilt */
+  document.querySelectorAll(".tilt").forEach(card => {
     card.addEventListener("pointermove", event => {
       const rect = card.getBoundingClientRect();
       const x = event.clientX - rect.left;
       const y = event.clientY - rect.top;
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
+
       const rotateY = ((x - centerX) / centerX) * 8;
       const rotateX = ((centerY - y) / centerY) * 8;
+
       card.style.setProperty("--rotate-x", rotateX.toFixed(2) + "deg");
       card.style.setProperty("--rotate-y", rotateY.toFixed(2) + "deg");
     });
+
     card.addEventListener("pointerleave", () => {
       card.style.setProperty("--rotate-x", "0deg");
       card.style.setProperty("--rotate-y", "0deg");
     });
   });
 
+  /* Email provider support */
+  function openEmailProvider(provider, subject, body, statusElement = null) {
+    const to = encodeURIComponent(OFFICIAL_EMAIL);
+    const encodedSubject = encodeURIComponent(subject);
+    const encodedBody = encodeURIComponent(body);
+
+    if (provider === "gmail") {
+      window.open(
+        "https://mail.google.com/mail/?view=cm&fs=1&to=" + to +
+        "&su=" + encodedSubject + "&body=" + encodedBody,
+        "_blank",
+        "noopener"
+      );
+      if (statusElement) statusElement.textContent = "Opening Gmail compose...";
+      return;
+    }
+
+    if (provider === "outlook") {
+      window.open(
+        "https://outlook.office.com/mail/deeplink/compose?to=" + to +
+        "&subject=" + encodedSubject + "&body=" + encodedBody,
+        "_blank",
+        "noopener"
+      );
+      if (statusElement) statusElement.textContent = "Opening Outlook compose...";
+      return;
+    }
+
+    if (provider === "zoho") {
+      const zohoMessage =
+        "To: " + OFFICIAL_EMAIL +
+        "
+
+Subject: " + subject +
+        "
+
+" + body;
+
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(zohoMessage).catch(() => {});
+      }
+
+      window.open("https://mail.zoho.com/zm/#compose", "_blank", "noopener");
+
+      if (statusElement) {
+        statusElement.textContent =
+          "Zoho Mail opened. The prepared message was copied to your clipboard for quick paste.";
+      }
+      return;
+    }
+
+    if (statusElement) {
+      statusElement.textContent = "Opening your default email application...";
+    }
+
+    window.location.href =
+      "mailto:" + OFFICIAL_EMAIL +
+      "?subject=" + encodedSubject +
+      "&body=" + encodedBody;
+  }
+
+  /* General contact buttons */
+  const generalSubject = "BAIDNET / BWICO Inquiry";
+  const generalBody =
+`Hello BWICO Team,
+
+I am reaching out regarding BAIDNET.
+
+I would like to discuss:
+
+[Please enter your message here]
+
+Thank you.`;
+
+  const contactStatus = document.getElementById("email-copy-status");
+
+  document.querySelectorAll("[data-email-provider]").forEach(button => {
+    button.addEventListener("click", () => {
+      openEmailProvider(
+        button.dataset.emailProvider,
+        generalSubject,
+        generalBody,
+        contactStatus
+      );
+    });
+  });
+
+  const copyEmailButton = document.getElementById("copy-email-btn");
+
+  if (copyEmailButton) {
+    copyEmailButton.addEventListener("click", () => {
+      if (!navigator.clipboard) {
+        contactStatus.textContent = OFFICIAL_EMAIL;
+        return;
+      }
+
+      navigator.clipboard.writeText(OFFICIAL_EMAIL)
+        .then(() => {
+          contactStatus.textContent = "BWICO email address copied.";
+        })
+        .catch(() => {
+          contactStatus.textContent = OFFICIAL_EMAIL;
+        });
+    });
+  }
+
+  /* Meeting request */
   const meetingForm = document.getElementById("meeting-request-form");
   const meetingDateInput = document.getElementById("meetingDate");
   const meetingStatus = document.getElementById("meeting-status");
   const meetingSubmitBtn = document.getElementById("meeting-submit-btn");
 
-  const today = new Date().toISOString().split("T")[0];
-  meetingDateInput.min = today;
+  const currentDate = new Date();
+  const year = currentDate.getFullYear();
+  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
+  const day = String(currentDate.getDate()).padStart(2, "0");
+  const today = `${year}-${month}-${day}`;
 
-  meetingDateInput.addEventListener("change", () => {
-    if (meetingDateInput.value && meetingDateInput.value < today) {
-      meetingDateInput.value = today;
-    }
-  });
+  if (meetingDateInput) {
+    meetingDateInput.min = today;
+  }
 
-  const schedulerIsConfigured = ZOOM_SCHEDULER_URL && ZOOM_SCHEDULER_URL !== "YOUR_ZOOM_SCHEDULER_URL";
-  meetingSubmitBtn.textContent = schedulerIsConfigured ? "Schedule Zoom Meeting →" : "Request Zoom Meeting →";
+  const schedulerIsConfigured =
+    ZOOM_SCHEDULER_URL &&
+    ZOOM_SCHEDULER_URL !== "YOUR_ZOOM_SCHEDULER_URL";
 
-  meetingForm.addEventListener("submit", event => {
-    if (schedulerIsConfigured) {
-      meetingStatus.textContent = "Opening the Zoom scheduler in a new tab...";
-      meetingStatus.className = "meeting-status is-success";
-      window.open(ZOOM_SCHEDULER_URL, "_blank", "noopener");
+  if (meetingSubmitBtn) {
+    meetingSubmitBtn.textContent =
+      schedulerIsConfigured
+        ? "Schedule Zoom Meeting →"
+        : "Request Zoom Meeting →";
+  }
+
+  if (meetingForm) {
+    meetingForm.addEventListener("submit", event => {
       event.preventDefault();
-      return;
-    }
 
-    event.preventDefault();
+      if (meetingDateInput.value && meetingDateInput.value < today) {
+        meetingStatus.textContent =
+          "Please choose a current or future meeting date.";
+        meetingStatus.className = "meeting-status is-error";
+        return;
+      }
 
-    const formData = new FormData(meetingForm);
-    const fullName = formData.get("fullName")?.toString().trim() || "BWICO Meeting Request";
-    const organization = formData.get("organization")?.toString().trim() || "";
-    const emailAddress = formData.get("emailAddress")?.toString().trim() || "";
-    const phoneNumber = formData.get("phoneNumber")?.toString().trim() || "";
-    const meetingTopic = formData.get("meetingTopic")?.toString().trim() || "";
-    const meetingDate = formData.get("meetingDate")?.toString().trim() || "";
-    const meetingTime = formData.get("meetingTime")?.toString().trim() || "";
-    const timeZone = formData.get("timeZone")?.toString().trim() || "";
-    const additionalNotes = formData.get("additionalNotes")?.toString().trim() || "";
+      if (schedulerIsConfigured) {
+        meetingStatus.textContent =
+          "Opening the Zoom scheduling experience...";
+        meetingStatus.className = "meeting-status is-success";
 
-    const subject = `BAIDNET Zoom Meeting Request — ${fullName}`;
-    const body = [
-      `Name: ${fullName}`,
-      `Organization: ${organization}`,
-      `Email: ${emailAddress}`,
-      `Phone: ${phoneNumber}`,
-      `Meeting Topic: ${meetingTopic}`,
-      `Preferred Date: ${meetingDate}`,
-      `Preferred Time: ${meetingTime}`,
-      `Time Zone: ${timeZone}`,
-      `Additional Notes: ${additionalNotes}`
-    ].join("\n");
+        window.open(
+          ZOOM_SCHEDULER_URL,
+          "_blank",
+          "noopener"
+        );
+        return;
+      }
 
-    const mailtoUrl = `mailto:Blackwallteam@blackwall-interconnected.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    meetingStatus.textContent = "Preparing your email request...";
-    meetingStatus.className = "meeting-status is-success";
-    window.location.href = mailtoUrl;
-  });
+      const formData = new FormData(meetingForm);
+
+      const fullName =
+        formData.get("fullName")?.toString().trim() || "";
+
+      const organization =
+        formData.get("organization")?.toString().trim() || "";
+
+      const emailAddress =
+        formData.get("emailAddress")?.toString().trim() || "";
+
+      const phoneNumber =
+        formData.get("phoneNumber")?.toString().trim() || "";
+
+      const meetingTopic =
+        formData.get("meetingTopic")?.toString().trim() || "";
+
+      const meetingDate =
+        formData.get("meetingDate")?.toString().trim() || "";
+
+      const meetingTime =
+        formData.get("meetingTime")?.toString().trim() || "";
+
+      const timeZone =
+        formData.get("timeZone")?.toString().trim() || "";
+
+      const emailProvider =
+        formData.get("emailProvider")?.toString().trim() || "default";
+
+      const additionalNotes =
+        formData.get("additionalNotes")?.toString().trim() || "";
+
+      const subject =
+        `BAIDNET Zoom Meeting Request — ${fullName}`;
+
+      const body =
+`BAIDNET / BWICO ZOOM MEETING REQUEST
+
+Name: ${fullName}
+Organization: ${organization}
+Email: ${emailAddress}
+Phone: ${phoneNumber}
+
+Meeting Topic:
+${meetingTopic}
+
+Preferred Date:
+${meetingDate}
+
+Preferred Time:
+${meetingTime}
+
+Time Zone:
+${timeZone}
+
+Additional Notes:
+${additionalNotes}
+
+Please review the requested date and time and send a Zoom invitation after availability is confirmed.`;
+
+      meetingStatus.className = "meeting-status is-success";
+
+      openEmailProvider(
+        emailProvider,
+        subject,
+        body,
+        meetingStatus
+      );
+    });
+  }
 </script>
 
 </body>
