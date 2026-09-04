@@ -123,321 +123,89 @@
     .readiness-column ul{margin:0;padding:0;list-style:none;}
     .readiness-column li{position:relative;padding:12px 0 12px 22px;color:#c8b98a;font-size:.95rem;border-bottom:1px solid rgba(217,164,65,.12);}
     .readiness-column li::before{content:"";position:absolute;width:6px;height:6px;left:0;top:50%;transform:translateY(-50%);border-radius:50%;background:var(--green);box-shadow:0 0 8px rgba(140,198,62,.4);}
-    .readiness-statement{margin:40px 0;padding:24px;border-radius:var(--radius);border:1px solid rgba(217,164,65,.20);background:rgba(217,164,65,.035);color:#d0c9bc;font-size:1.02rem;line-height:1.7;}
-    .readiness-statement p{margin:0;}
+    .readiness-statement{margin:40px 0;padding:24px;border-radius:var(--radius);border:1px solid rgba(217,164,65,.20);background:linear-gradient(145deg,rgba(25,24,19,.78),rgba(5,7,6,.94));color:#d7c68f;line-height:1.75;}
 
-    .contact{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:start;max-width:1100px;}
-    .contact-copy h3{margin:0 0 20px;font-family:Georgia,serif;color:var(--gold-bright);font-size:2rem;line-height:1.1;}
-    .contact-copy p{margin:0 0 20px;color:#c8b98a;line-height:1.6;}
-    .contact-copy p:last-of-type{margin:0;}
-    .contact-email{display:flex;flex-direction:column;gap:12px;margin:24px 0 0;padding:18px 20px;border-radius:18px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(180deg,rgba(217,164,65,.045),rgba(255,255,255,.01));box-shadow:inset 0 0 24px rgba(217,164,65,.03);}
-    .contact-email span{color:var(--green);font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;}
-    .contact-email a{font-size:1.08rem;color:var(--gold-bright);word-break:break-word;}
-    .contact-email a:hover{text-decoration:underline;}
-    .contact-form{display:flex;flex-direction:column;gap:18px;}
-    .contact-scheduler{position:relative;padding:28px;border-radius:28px;border:1px solid rgba(217,164,65,.28);background:linear-gradient(145deg,rgba(11,13,11,.88),rgba(3,4,4,.96));box-shadow:0 28px 90px rgba(0,0,0,.6),0 0 45px rgba(217,164,65,.08),0 0 35px rgba(140,198,62,.05);backdrop-filter:blur(22px) saturate(130%);overflow:hidden;}
-    .contact-scheduler::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(217,164,65,.10),transparent 32%),radial-gradient(circle at 15% 20%,rgba(140,198,62,.08),transparent 24%);pointer-events:none;}
-    .scheduler-header,.scheduler-grid,.scheduler-note,.meeting-status{position:relative;z-index:1;}
-    .scheduler-header{margin-bottom:18px;}
-    .scheduler-eyebrow,.meeting-eyebrow,.input-group label{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;}
-    .scheduler-eyebrow,.meeting-eyebrow{display:inline-flex;margin-bottom:10px;color:var(--green);}
-    .scheduler-header h3{margin:0 0 8px;font-family:Georgia,serif;color:var(--gold-bright);font-size:2rem;line-height:1.1;}
-    .scheduler-header p{margin:0;color:#c8b98a;}
-    .scheduler-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;}
-    .input-group{position:relative;display:flex;flex-direction:column;gap:8px;}
-    .input-group.full{grid-column:1 / -1;}
-    .input-group label{color:#aaa79e;}
-    .input-group input,.input-group textarea,.input-group select{width:100%;padding:14px 16px;border-radius:12px;border:1px solid rgba(217,164,65,.25);background:rgba(5,7,6,.72);color:var(--text);font-family:inherit;font-size:.95rem;transition:.25s ease;appearance:none;}
-    .input-group select{background-image:linear-gradient(45deg,transparent 50%,var(--gold-bright) 50%),linear-gradient(135deg,var(--gold-bright) 50%,transparent 50%);background-position:calc(100% - 22px) calc(50% - 3px),calc(100% - 16px) calc(50% - 3px);background-size:6px 6px,6px 6px;background-repeat:no-repeat;padding-right:42px;}
-    .input-group textarea{resize:vertical;min-height:120px;}
-    .input-group input::placeholder,.input-group textarea::placeholder{color:rgba(255,255,255,.25);}
-    .input-group input:focus,.input-group textarea:focus,.input-group select:focus{outline:none;border-color:rgba(217,164,65,.55);background:rgba(5,7,6,.84);box-shadow:0 0 20px rgba(217,164,65,.08),0 0 0 1px rgba(140,198,62,.08) inset;}
-    .contact-form .btn{margin-top:4px;width:fit-content;}
-    .scheduler-note{margin-top:14px;color:#bfb7a6;font-size:.92rem;line-height:1.6;}
-    .meeting-status{margin-top:14px;min-height:1px;color:#c8b98a;font-size:.92rem;}
-    .meeting-status.is-error{color:#f1b96a;}
-    .meeting-status.is-success{color:#b3df7a;}
+    .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:start;}
+    .contact-card{padding:30px;border:1px solid rgba(217,164,65,.24);border-radius:var(--radius);background:linear-gradient(145deg,rgba(25,24,19,.82),rgba(5,7,6,.94));box-shadow:0 18px 50px rgba(0,0,0,.38);}
+    .contact-card h3{margin:0 0 14px;color:var(--gold-bright);font-family:Georgia,serif;font-size:1.65rem;}
+    .contact-card p{color:#c8b98a;line-height:1.7;}
+    .contact-list{display:grid;gap:12px;margin-top:20px;}
+    .contact-link{display:flex;align-items:center;justify-content:space-between;gap:15px;padding:14px 16px;border-radius:12px;border:1px solid rgba(217,164,65,.18);background:rgba(255,255,255,.018);color:#d8d1c4;transition:.25s ease;}
+    .contact-link:hover{border-color:rgba(217,164,65,.50);transform:translateY(-2px);}
+    .contact-link strong{color:var(--gold-bright);}
 
-    footer{padding:60px 0 40px;border-top:1px solid rgba(217,164,65,.14);background:linear-gradient(180deg,transparent,rgba(217,164,65,.02));}
-    .footer-content{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-bottom:40px;}
-    .footer-section h4{margin:0 0 16px;color:var(--gold-bright);font-size:1rem;letter-spacing:.08em;text-transform:uppercase;}
-    .footer-section ul{margin:0;padding:0;list-style:none;}
-    .footer-section li{margin-bottom:10px;}
-    .footer-section a{color:#aaa79e;font-size:.9rem;transition:.25s ease;}
-    .footer-section a:hover{color:var(--gold-bright);}
-    .footer-bottom{padding-top:30px;border-top:1px solid rgba(217,164,65,.14);display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:.85rem;color:#8f8b84;}
-    .footer-bottom p{margin:0;}
+    .meeting-form{display:grid;gap:15px;}
+    .meeting-form label{font-size:.82rem;color:#c8b98a;letter-spacing:.05em;}
+    .meeting-form input,.meeting-form textarea{width:100%;padding:14px 15px;border-radius:11px;border:1px solid rgba(217,164,65,.24);background:#060806;color:var(--text);outline:none;font:inherit;}
+    .meeting-form input:focus,.meeting-form textarea:focus{border-color:rgba(217,164,65,.62);box-shadow:0 0 0 3px rgba(217,164,65,.08);}
+    .meeting-form textarea{min-height:115px;resize:vertical;}
+    .meeting-form button{cursor:pointer;}
 
-    @media(max-width:1024px){
-      .hero{grid-template-columns:1fr;min-height:auto;gap:40px;padding:60px 0 40px;}
+    footer{padding:34px 0;border-top:1px solid rgba(217,164,65,.15);color:#8f8a80;font-size:.84rem;}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap;}
+
+    .ai-launcher{position:fixed;right:26px;bottom:26px;z-index:1500;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;border:1px solid rgba(140,198,62,.55);background:linear-gradient(135deg,rgba(20,33,21,.96),rgba(7,10,8,.96));box-shadow:0 16px 44px rgba(0,0,0,.48),0 0 28px rgba(140,198,62,.10);color:#eef6e9;font-weight:700;cursor:pointer;}
+    .ai-launcher-dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 12px var(--green);}
+    .ai-panel{position:fixed;right:24px;bottom:88px;z-index:1499;width:min(430px,calc(100vw - 28px));height:min(650px,calc(100vh - 130px));display:none;flex-direction:column;border-radius:22px;border:1px solid rgba(217,164,65,.34);background:linear-gradient(180deg,rgba(9,12,10,.985),rgba(3,5,4,.985));box-shadow:0 30px 90px rgba(0,0,0,.72),0 0 50px rgba(217,164,65,.07);overflow:hidden;backdrop-filter:blur(20px);}
+    .ai-panel.open{display:flex;}
+    .ai-head{display:flex;justify-content:space-between;gap:18px;padding:18px 19px;border-bottom:1px solid rgba(217,164,65,.16);background:linear-gradient(180deg,rgba(217,164,65,.05),transparent);}
+    .ai-head strong{display:block;color:var(--gold-bright);font-family:Georgia,serif;font-size:1.15rem;}
+    .ai-head small{color:#9ca493;}
+    .ai-close{border:0;background:transparent;color:#d8d1c4;font-size:1.3rem;cursor:pointer;}
+    .ai-voicebar{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 14px;border-bottom:1px solid rgba(140,198,62,.12);background:rgba(140,198,62,.025);}
+    .ai-voicebar button{border:1px solid rgba(140,198,62,.28);background:rgba(140,198,62,.05);color:#dcead4;border-radius:999px;padding:7px 11px;cursor:pointer;font-size:.78rem;}
+    .ai-status{font-size:.75rem;color:#98a091;}
+    .ai-messages{flex:1;overflow:auto;padding:17px;display:flex;flex-direction:column;gap:12px;}
+    .ai-msg{max-width:87%;padding:12px 13px;border-radius:15px;font-size:.92rem;line-height:1.55;white-space:pre-wrap;}
+    .ai-msg.assistant{align-self:flex-start;border:1px solid rgba(217,164,65,.19);background:rgba(217,164,65,.045);color:#e8dfcf;}
+    .ai-msg.user{align-self:flex-end;border:1px solid rgba(140,198,62,.24);background:rgba(140,198,62,.065);color:#eef5ea;}
+    .ai-msg.system{align-self:center;max-width:95%;font-size:.76rem;text-align:center;color:#8f978b;background:transparent;padding:3px;}
+    .ai-msg small{display:block;margin-top:8px;color:#8f978b;font-size:.69rem;}
+    .ai-compose{padding:13px;border-top:1px solid rgba(217,164,65,.15);display:grid;grid-template-columns:1fr auto;gap:9px;}
+    .ai-compose textarea{min-height:48px;max-height:120px;resize:none;border-radius:13px;border:1px solid rgba(217,164,65,.22);background:#050706;color:var(--text);padding:12px 13px;outline:none;font:inherit;}
+    .ai-send{border:1px solid rgba(217,164,65,.45);background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#151008;border-radius:12px;padding:0 16px;font-weight:800;cursor:pointer;}
+    .ai-disclaimer{padding:0 14px 12px;color:#777f75;font-size:.67rem;line-height:1.35;}
+    .ai-inline{margin-top:22px;padding:18px;border-radius:16px;border:1px solid rgba(140,198,62,.18);background:linear-gradient(135deg,rgba(140,198,62,.045),rgba(217,164,65,.025));display:flex;align-items:center;justify-content:space-between;gap:18px;max-width:760px;}
+    .ai-inline strong{color:#dff0d4;display:block;margin-bottom:4px;}
+    .ai-inline span{color:#9ca493;font-size:.86rem;}
+
+    @media(max-width:1050px){
+      nav{display:none;}
+      .hero{grid-template-columns:1fr;padding-top:70px;}
       .visual{min-height:500px;}
-      .orb{width:380px;height:380px;}
-      .cards{max-width:100%;grid-template-columns:repeat(2,1fr);}
-      .readiness{grid-template-columns:1fr;}
-      .contact{grid-template-columns:1fr;gap:30px;}
-      .footer-content{grid-template-columns:repeat(2,1fr);}
-      .footer-bottom{flex-direction:column;align-items:flex-start;}
+      .readiness,.contact-grid{grid-template-columns:1fr;}
     }
-
-    @media(max-width:760px){
-      .nav{flex-direction:column;align-items:flex-start;padding:18px 0;}
-      nav{flex-wrap:wrap;gap:16px;}
-      .hero{padding-top:36px;}
-      .cards{grid-template-columns:1fr;}
+    @media(max-width:720px){
+      .shell{width:min(94%,650px);}
+      .hero{padding-top:55px;min-height:auto;}
+      h1{font-size:clamp(3rem,15vw,5rem);}
+      .cards{grid-template-columns:1fr;max-width:430px;}
+      .card,.card.main{min-height:280px;}
+      .card img,.card.main img{height:100px;}
+      .visual{min-height:1020px;}
+      .orb{width:420px;height:420px;}
+      .orbit{width:470px;height:210px;}
+      .orbit.two{width:370px;height:370px;}
       .trust-row{grid-template-columns:1fr 1fr;}
-      .section{padding:72px 0;}
-      .section-head{flex-direction:column;align-items:flex-start;}
-      .scheduler-grid{grid-template-columns:1fr;}
-      .contact-scheduler{padding:22px;}
-      .contact-form .btn,.actions .btn{width:100%;}
-      .actions{flex-direction:column;}
-      .footer-content{grid-template-columns:1fr;}
-    }
-
-    @media(max-width:520px){
-      .shell{width:min(1480px,92%);}
-      .brands{gap:12px;flex-wrap:wrap;}
+      .section{padding:78px 0;}
+      .section-head{display:block;}
+      .section-head p{margin-top:18px;}
       .brands img{max-width:110px;}
-      .brands img:nth-child(1),.brands img:nth-child(2),.brands img:nth-child(3){height:auto;max-height:40px;}
-      .trust-row{grid-template-columns:1fr;}
-      .contact-email{padding:16px;}
-      .contact-scheduler{padding:18px;}
-      .input-group input,.input-group textarea,.input-group select{padding:13px 14px;}
+      .brands img:nth-child(1),.brands img:nth-child(2),.brands img:nth-child(3){height:38px;}
+      .ai-panel{right:14px;bottom:82px;height:calc(100vh - 105px);}
+      .ai-launcher{right:14px;bottom:14px;}
+      .ai-inline{align-items:flex-start;flex-direction:column;}
     }
-
-    /* =========================================================
-       ADOBE ACROBAT INVESTOR EXPERIENCE
-       ========================================================= */
-
-    .acrobat-guide{
-      position:relative;
-      overflow:hidden;
-      margin-bottom:34px;
-      padding:34px;
-      border-radius:28px;
-      border:1px solid rgba(217,164,65,.30);
-      background:linear-gradient(145deg,rgba(17,19,16,.94),rgba(5,7,6,.97));
-      box-shadow:0 28px 80px rgba(0,0,0,.52),0 0 42px rgba(217,164,65,.07);
-      backdrop-filter:blur(20px);
-    }
-
-    .acrobat-guide::before{
-      content:"";
-      position:absolute;
-      width:420px;
-      height:420px;
-      right:-170px;
-      top:-210px;
-      border-radius:50%;
-      background:radial-gradient(circle,rgba(140,198,62,.10),rgba(217,164,65,.04) 40%,transparent 70%);
-      pointer-events:none;
-    }
-
-    .acrobat-guide-header{
-      position:relative;
-      z-index:2;
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:28px;
-      margin-bottom:28px;
-    }
-
-    .acrobat-guide-header h3{
-      margin:0 0 10px;
-      font-family:Georgia,serif;
-      color:var(--gold-bright);
-      font-size:clamp(1.8rem,3vw,2.7rem);
-    }
-
-    .acrobat-guide-header p{
-      max-width:760px;
-      margin:0;
-      color:#c8b98a;
-      line-height:1.7;
-    }
-
-    .acrobat-badge{
-      flex-shrink:0;
-      padding:8px 14px;
-      border-radius:999px;
-      border:1px solid rgba(217,164,65,.34);
-      color:var(--gold-bright);
-      font-size:.72rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      background:rgba(217,164,65,.055);
-    }
-
-    .acrobat-steps{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:14px;
-    }
-
-    .acrobat-step{
-      min-height:185px;
-      padding:22px;
-      border-radius:18px;
-      border:1px solid rgba(217,164,65,.18);
-      background:linear-gradient(145deg,rgba(255,255,255,.025),rgba(0,0,0,.15));
-    }
-
-    .acrobat-step-number{
-      width:32px;
-      height:32px;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      margin-bottom:16px;
-      border-radius:50%;
-      border:1px solid rgba(140,198,62,.45);
-      color:var(--green);
-      font-weight:700;
-      box-shadow:0 0 15px rgba(140,198,62,.08);
-    }
-
-    .acrobat-step strong{
-      display:block;
-      margin-bottom:8px;
-      color:var(--gold-bright);
-      font-size:.96rem;
-    }
-
-    .acrobat-step p{
-      margin:0;
-      color:#aaa79e;
-      font-size:.9rem;
-      line-height:1.55;
-    }
-
-    .acrobat-tip{
-      position:relative;
-      z-index:2;
-      margin-top:20px;
-      padding:18px 20px;
-      border-left:3px solid var(--green);
-      border-radius:12px;
-      background:rgba(140,198,62,.035);
-      color:#bfb7a6;
-      font-size:.9rem;
-      line-height:1.6;
-    }
-
-    /* =========================================================
-       EMAIL CONTACT METHODS
-       ========================================================= */
-
-    .email-chooser{
-      margin-top:24px;
-      padding:22px;
-      border-radius:20px;
-      border:1px solid rgba(217,164,65,.20);
-      background:linear-gradient(145deg,rgba(12,14,12,.82),rgba(4,5,5,.92));
-    }
-
-    .email-chooser-label{
-      margin-bottom:13px;
-      color:#aaa79e;
-      font-size:.76rem;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-    }
-
-    .email-methods{
-      display:grid;
-      grid-template-columns:repeat(2,1fr);
-      gap:10px;
-    }
-
-    .email-provider-btn{
-      min-height:46px;
-      padding:10px 14px;
-      border-radius:11px;
-      border:1px solid rgba(217,164,65,.26);
-      background:rgba(255,255,255,.02);
-      color:var(--text);
-      font-family:inherit;
-      font-size:.88rem;
-      cursor:pointer;
-      transition:.25s ease;
-    }
-
-    .email-provider-btn:hover{
-      transform:translateY(-2px);
-      border-color:rgba(244,207,118,.62);
-      color:var(--gold-bright);
-      box-shadow:0 0 20px rgba(217,164,65,.06);
-    }
-
-    .email-help{
-      margin-top:12px;
-      color:#8f8b84;
-      font-size:.82rem;
-      line-height:1.5;
-    }
-
-    .email-copy-status{
-      margin-top:10px;
-      min-height:18px;
-      color:var(--green);
-      font-size:.82rem;
-    }
-
-    @media(max-width:1024px){
-      .acrobat-steps{grid-template-columns:repeat(2,1fr);}
-    }
-
-    @media(max-width:760px){
-      .acrobat-guide{padding:24px;}
-      .acrobat-guide-header{flex-direction:column;}
-      .acrobat-steps{grid-template-columns:1fr;}
-      .email-methods{grid-template-columns:1fr;}
-    }
-
-  
-
-    /* =========================================================
-       BAIDNET INTELLIGENCE LAYER
-       ========================================================= */
-    .ai-launcher{position:fixed;right:24px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;border:1px solid rgba(217,164,65,.55);background:linear-gradient(135deg,rgba(217,164,65,.18),rgba(140,198,62,.08));color:var(--gold-bright);font-weight:800;box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 30px rgba(217,164,65,.12);backdrop-filter:blur(18px);cursor:pointer}
-    .ai-launcher-dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(140,198,62,.8)}
-    .ai-panel{position:fixed;right:24px;bottom:88px;z-index:1199;width:min(430px,calc(100vw - 32px));height:min(690px,calc(100vh - 140px));display:none;flex-direction:column;border-radius:24px;border:1px solid rgba(217,164,65,.30);background:linear-gradient(180deg,rgba(8,10,8,.98),rgba(3,4,4,.99));box-shadow:0 35px 100px rgba(0,0,0,.72),0 0 50px rgba(217,164,65,.09);overflow:hidden;backdrop-filter:blur(24px)}
-    .ai-panel.open{display:flex}
-    .ai-head{padding:18px 18px 14px;border-bottom:1px solid rgba(217,164,65,.16);display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(180deg,rgba(217,164,65,.04),transparent)}
-    .ai-title{display:flex;flex-direction:column;gap:3px}.ai-title strong{color:var(--gold-bright);font-family:Georgia,serif;font-size:1.2rem}.ai-title span{color:#9e9a91;font-size:.78rem}
-    .ai-close{border:0;background:transparent;color:#cfc7b8;font-size:1.4rem;cursor:pointer;padding:6px 8px}
-    .ai-voicebar{padding:12px 16px;border-bottom:1px solid rgba(217,164,65,.12);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .ai-voice-btn,.ai-mode-btn{border:1px solid rgba(217,164,65,.25);background:rgba(255,255,255,.025);color:#d8d1c4;border-radius:10px;padding:10px 12px;font-family:inherit;cursor:pointer;transition:.2s ease}.ai-voice-btn:hover,.ai-mode-btn:hover{border-color:rgba(244,207,118,.55);color:var(--gold-bright)}
-    .ai-voice-btn.live{border-color:rgba(140,198,62,.55);color:#b9e582;box-shadow:0 0 18px rgba(140,198,62,.08)}
-    .ai-status{margin-left:auto;color:#8f8b84;font-size:.78rem}
-    .ai-messages{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
-    .ai-msg{max-width:88%;padding:12px 14px;border-radius:15px;line-height:1.55;font-size:.93rem;white-space:pre-wrap}
-    .ai-msg.user{align-self:flex-end;background:linear-gradient(135deg,rgba(217,164,65,.18),rgba(217,164,65,.08));border:1px solid rgba(217,164,65,.24);color:#f3ead9}
-    .ai-msg.assistant{align-self:flex-start;background:rgba(255,255,255,.025);border:1px solid rgba(140,198,62,.14);color:#d0c9bc}
-    .ai-msg small{display:block;margin-top:8px;color:#88847c;font-size:.74rem}
-    .ai-input-wrap{padding:14px;border-top:1px solid rgba(217,164,65,.14);background:rgba(0,0,0,.24)}
-    .ai-input-row{display:flex;gap:9px;align-items:flex-end}.ai-input-row textarea{flex:1;min-height:46px;max-height:120px;resize:none;padding:12px 13px;border-radius:12px;border:1px solid rgba(217,164,65,.22);background:rgba(255,255,255,.02);color:var(--text);font-family:inherit}.ai-input-row textarea:focus{outline:none;border-color:rgba(217,164,65,.55)}
-    .ai-send{width:48px;height:46px;border-radius:12px;border:1px solid rgba(217,164,65,.5);background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#151008;font-weight:900;cursor:pointer}
-    .ai-disclaimer{margin-top:8px;color:#77736b;font-size:.72rem;line-height:1.35}
-    .ai-inline{margin-top:22px;padding:18px 20px;border-radius:18px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(145deg,rgba(217,164,65,.035),rgba(140,198,62,.02));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
-    .ai-inline strong{color:var(--gold-bright)}.ai-inline p{margin:4px 0 0;color:#aaa79e;font-size:.9rem}
-    @media(max-width:760px){.ai-launcher{right:14px;bottom:14px}.ai-panel{right:8px;bottom:76px;width:calc(100vw - 16px);height:calc(100vh - 92px)}}
-
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="shell nav">
-
     <div class="brands">
-      <img src="assets/BWICOicon2.png" alt="BlackWall-Interconnected Co.">
-      <img src="assets/BaidNet.png" alt="BAIDNET">
-      <img src="assets/BAIDPAY.png" alt="BAIDPAY">
+      <img src="Assets/BAIDNET.png" alt="BAIDNET" />
+      <img src="Assets/BAIDPAY.png" alt="BAIDPAY" />
+      <img src="Assets/BWICOicon2.png" alt="BlackWall Interconnected" />
     </div>
 
     <nav>
@@ -449,498 +217,386 @@
       <a href="#" id="nav-ai-open">Ask BAIDNET AI</a>
       <a class="nav-cta" href="#materials">View Materials</a>
     </nav>
-
   </div>
 </header>
 
-<main>
-
-  <section id="home" class="hero shell">
+<main id="home">
+  <section class="hero shell">
     <div class="hero-copy">
-      <div class="eyebrow">BlackWall-Interconnected Co. Presents</div>
-      <h1><span class="gold">BAIDNET</span><br>Commercialization &amp; Market Entry</h1>
-      <p class="lead">A premium investor-facing portal presenting BAIDNET's platform capabilities, commercialization readiness, sponsor-bank alignment, and market-entry materials for partners, advisors, and stakeholders.</p>
+      <div class="eyebrow">Commercialization Initiative</div>
+      <h1>BAIDNET <span class="gold">Commercialization</span> & Market Entry</h1>
+      <p class="lead">
+        A unified platform strategy combining blockchain-based digital asset infrastructure,
+        fintech-ready transaction architecture, sponsor-bank integration boundaries,
+        and a commercialization pathway designed for institutional engagement.
+      </p>
+
       <div class="actions">
-        <a class="btn primary" href="#materials">Explore Materials →</a>
-        <a class="btn secondary" href="#contact">Get in Touch</a>
+        <a class="btn primary" href="#materials">Explore BAIDNET</a>
+        <a class="btn secondary" href="#readiness">View Readiness</a>
       </div>
-      <div class="ai-inline"><div><strong>Ask BAIDNET AI</strong><p>Text or talk with the investor intelligence assistant about commercialization, readiness, architecture, and source materials.</p></div><button class="btn secondary" type="button" id="hero-ai-open">Start Conversation →</button></div>
+
+      <div class="ai-inline">
+        <div>
+          <strong>Ask BAIDNET Intelligence</strong>
+          <span>Ask investor, platform, readiness, security, API, and sponsor-bank boundary questions by text or voice.</span>
+        </div>
+        <button class="btn secondary" id="hero-ai-open" type="button">Start Conversation</button>
+      </div>
+
       <div class="trust-row">
-        <div class="trust"><strong>Focus</strong>Commercialization strategy and sponsor-bank readiness</div>
-        <div class="trust"><strong>Audience</strong>Investors, partners, advisors, and institutions</div>
-        <div class="trust"><strong>Platform</strong>BAIDNET ecosystem and market-entry support</div>
-        <div class="trust"><strong>Identity</strong>Black / gold / emerald BWICO visual language</div>
+        <div class="trust"><strong>Architecture</strong>Unified blockchain + fintech framework</div>
+        <div class="trust"><strong>Readiness</strong>Internal engineering complete</div>
+        <div class="trust"><strong>Evidence</strong>Workstream A-G traceability</div>
+        <div class="trust"><strong>Boundary</strong>External sponsor-bank gates explicit</div>
       </div>
     </div>
 
-    <div class="visual">
-      <div class="orbit"></div><div class="orbit two"></div><div class="orb"></div>
+    <div class="visual" aria-hidden="true">
+      <div class="orb"></div>
+      <div class="orbit"></div>
+      <div class="orbit two"></div>
+
       <div class="cards">
-        <article class="card tilt"><img src="assets/BWICOicon2.png" alt="BlackWall-Interconnected Co."><h3>BWICO</h3><p>People · Platforms · Progress</p></article>
-        <article class="card main tilt"><img src="assets/BaidNet.png" alt="BAIDNET"><h3>BAIDNET</h3><p>Commercialization · Market Entry</p></article>
-        <article class="card tilt"><img src="assets/BAIDPAY.png" alt="BAIDPAY"><h3>BAIDPAY</h3><p>Modern Payments · Real Impact</p></article>
+        <div class="card tilt-card">
+          <img src="Assets/BAIDNET.png" alt="" />
+          <h3>Blockchain</h3>
+          <p>Digital Asset Settlement</p>
+        </div>
+
+        <div class="card main tilt-card">
+          <img src="Assets/BWICOicon2.png" alt="" />
+          <h3>BAIDNET</h3>
+          <p>Unified Transaction Architecture</p>
+        </div>
+
+        <div class="card tilt-card">
+          <img src="Assets/BAIDPAY.png" alt="" />
+          <h3>FinTech</h3>
+          <p>Fiat & Sponsor-Bank Rails</p>
+        </div>
       </div>
     </div>
   </section>
 
-  <section id="platform" class="section"><div class="shell"><div class="section-head"><h2>Platform Overview</h2><p>BAIDNET provides a blockchain-backed infrastructure for modern fintech applications, combining security, auditability, and integration at its core.</p></div><div class="materials"><article class="material"><span>Infrastructure</span><h4>Blockchain Core</h4><p>Secure architecture designed to support transaction integrity, platform transparency, and extensibility across commercial use cases.</p><a href="#contact">Discuss architecture →</a></article><article class="material"><span>Commercialization</span><h4>Market Entry Strategy</h4><p>Positioning for sponsor-bank engagement, partner onboarding, and operational alignment with the requirements of regulated financial ecosystems.</p><a href="#contact">Talk commercialization →</a></article><article class="material"><span>Integration</span><h4>Platform Readiness</h4><p>Prepared for strategic integrations that require careful planning, partnership coordination, and high-trust implementation standards.</p><a href="#contact">Request integration details →</a></article></div></div></section>
-
-  <section id="readiness" class="section"><div class="shell"><div class="section-head"><h2>Sponsor-Bank Readiness</h2><p>BAIDNET readiness materials are structured to support institutional discussions, due diligence, and strategic planning.</p></div><div class="readiness"><div class="readiness-column"><h4>Commercial Focus Areas</h4><ul><li>Investment and partnership positioning</li><li>Platform integration planning</li><li>Commercial and operational alignment</li></ul></div><div class="readiness-column"><h4>Institutional Considerations</h4><ul><li>Sponsor-bank engagement and governance</li><li>Regulatory and advisory review</li><li>Market-entry execution planning</li></ul></div></div><div class="readiness-statement"><p>These materials are intended to help stakeholders evaluate the path from concept to commercialization while preserving strong governance, technical clarity, and strategic alignment.</p></div><a class="btn secondary" href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Review Readiness Assessment →</a></div></section>
-
-  <section id="materials" class="section">
+  <section class="section" id="platform">
     <div class="shell">
       <div class="section-head">
-        <h2>Investor &amp; Partner Materials</h2>
+        <h2>Platform Overview</h2>
         <p>
-          Review BAIDNET materials through Adobe Acrobat for a faster,
-          more flexible investor and partner experience.
+          BAIDNET is structured as one platform with distinct settlement paths and shared
+          transaction architecture. The blockchain side supports digital-asset settlement;
+          the fintech side extends the same core architecture into fiat workflows behind
+          regulated sponsor-bank boundaries.
         </p>
-      </div>
-
-      <div class="acrobat-guide">
-        <div class="acrobat-guide-header">
-          <div>
-            <div class="eyebrow">Designed for Convenient Review</div>
-            <h3>Make the Most of Your Adobe Acrobat Experience</h3>
-            <p>
-              Each BAIDNET material opens through Adobe Acrobat so you can choose how deeply you want to review it.
-              Read the full document, generate a quick summary, ask questions about the material, jump directly to
-              supporting sections, or use available audio tools for hands-free review.
-            </p>
-          </div>
-          <div class="acrobat-badge">Adobe Acrobat Materials</div>
-        </div>
-
-        <div class="acrobat-steps">
-          <div class="acrobat-step">
-            <div class="acrobat-step-number">1</div>
-            <strong>Open the Material</strong>
-            <p>
-              Select any document below. It opens in Adobe Acrobat in a separate tab so your place on the BAIDNET
-              portal is preserved.
-            </p>
-          </div>
-
-          <div class="acrobat-step">
-            <div class="acrobat-step-number">2</div>
-            <strong>Generate a Summary</strong>
-            <p>
-              Use Acrobat's available summary tools to create a concise overview of key topics and sections for
-              faster orientation before a full review.
-            </p>
-          </div>
-
-          <div class="acrobat-step">
-            <div class="acrobat-step-number">3</div>
-            <strong>Ask the Document</strong>
-            <p>
-              Where available, use Acrobat AI tools to ask follow-up questions, explore specific topics, and move
-              back to supporting information inside the document.
-            </p>
-          </div>
-
-          <div class="acrobat-step">
-            <div class="acrobat-step-number">4</div>
-            <strong>Listen Instead</strong>
-            <p>
-              Prefer audio? Use Acrobat's available read-aloud or document-listening tools to review materials
-              hands-free when those features are available in your Acrobat experience.
-            </p>
-          </div>
-        </div>
-
-        <div class="acrobat-tip">
-          <strong style="color:var(--gold-bright);">Investor Review Tip:</strong>
-          Start with a generated summary for quick orientation. Then follow source references or document sections
-          for anything you want to examine in detail and use available AI tools for targeted questions.
-          This lets you review BAIDNET materials at the depth and pace most convenient for you.
-          <br><br>
-          Adobe AI, summary, and audio features may vary by account, sign-in status, device, language, region,
-          document permissions, or Acrobat availability.
-        </div>
       </div>
 
       <div class="materials">
         <article class="material">
-          <span>Executive Overview</span>
-          <h4>BAIDNET Ecosystem / Platform Experience</h4>
+          <span>Blockchain</span>
+          <h4>Digital Asset Infrastructure</h4>
+          <p>Transaction execution, settlement, wallet state, validation, monitoring, and supporting blockchain services.</p>
+        </article>
+
+        <article class="material">
+          <span>FinTech</span>
+          <h4>Fiat Transaction Architecture</h4>
+          <p>In-house financial primitives, fiat lifecycle controls, reconciliation, dispute handling, and sponsor-bank integration boundaries.</p>
+        </article>
+
+        <article class="material">
+          <span>Evidence</span>
+          <h4>Auditable Engineering Baseline</h4>
+          <p>Workstreams A through G establish requirement traceability, runtime evidence, risk controls, reconciliation, and closeout verification.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="readiness">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Sponsor-Bank Readiness</h2>
+        <p>
+          BAIDNET distinguishes between what has been completed internally and what remains
+          dependent on sponsor-bank production validation, formal attestation, or contractual onboarding.
+        </p>
+      </div>
+
+      <div class="readiness">
+        <div class="readiness-column">
+          <h4>Internal Engineering Complete / Pass</h4>
+          <ul>
+            <li>Fiat transaction lifecycle engineering</li>
+            <li>Versioned financial primitives API</li>
+            <li>Risk and routing controls</li>
+            <li>Reconciliation and exception workflow</li>
+            <li>Dispute operations</li>
+            <li>Runtime and audit evidence surfaces</li>
+            <li>Workstream A-G consolidated closeout</li>
+          </ul>
+        </div>
+
+        <div class="readiness-column">
+          <h4>External Dependencies Remain Open</h4>
+          <ul>
+            <li>Live sponsor-bank settlement verification</li>
+            <li>Sponsor-bank callback parity verification</li>
+            <li>Sponsor-bank reconciliation parity verification</li>
+            <li>Partner-specific ACH / debit / FBO onboarding</li>
+            <li>Completed sponsor-bank attestations and sign-off</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="readiness-statement">
+        <strong>Readiness language:</strong> Internal engineering completion does not mean bank approval,
+        regulatory approval, commercial launch, or production banking live. BAIDNET's internal controls
+        and integration boundaries are engineered and evidence-backed; remaining live sponsor-bank gates
+        are explicitly external.
+      </div>
+
+      <a class="btn primary" target="_blank" rel="noopener noreferrer"
+        href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d">
+        View Readiness Assessment
+      </a>
+    </div>
+  </section>
+
+  <section class="section" id="materials">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Investor & Partner Materials</h2>
+        <p>
+          Reference materials covering BAIDNET's ecosystem, commercialization strategy,
+          sponsor-bank readiness, and fintech technology verification.
+        </p>
+      </div>
+
+      <div class="materials">
+        <article class="material">
+          <span>Explore BAIDNET</span>
+          <h4>BAIDNET Ecosystem</h4>
           <p>
-            Explore the BAIDNET ecosystem, live platform experience, product capabilities,
-            user workflows, and readiness positioning.
+            Overview of the BAIDNET ecosystem and platform experience, including the relationship
+            between BAIDNET, BAIDPAY, blockchain infrastructure, fintech services, and the broader commercialization initiative.
           </p>
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:82562b30-d524-49e0-b733-4221b51ff94f"
-            target="_blank"
-            rel="noopener"
-          >
-            Open in Adobe Acrobat →
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:82562b30-d524-49e0-b733-4221b51ff94f">
+            Open Ecosystem Report
           </a>
         </article>
 
         <article class="material">
-          <span>Commercialization Initiative</span>
-          <h4>Commercialization &amp; Market Entry</h4>
+          <span>Commercialization</span>
+          <h4>Commercialization & Market Entry</h4>
           <p>
-            Review the external gap-closure strategy, commercialization workstreams, funding requirements,
-            sponsor-bank engagement, and market-entry pathway.
+            Investor and partner-facing commercialization framework explaining market entry,
+            funding objectives, operating priorities, and the path from completed engineering to institutional rollout.
           </p>
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
-            target="_blank"
-            rel="noopener"
-          >
-            Open in Adobe Acrobat →
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539">
+            Open Commercialization Report
           </a>
         </article>
 
         <article class="material">
-          <span>Sponsor-Bank Readiness</span>
-          <h4>BAIDNET Readiness Assessment</h4>
+          <span>Readiness</span>
+          <h4>Sponsor-Bank Readiness Assessment</h4>
           <p>
-            Review governance, auditability, participant validation, sponsor-bank boundaries, customer protections,
-            and the external legal and contractual requirements still to be closed.
+            Readiness reference distinguishing internal BAIDNET engineering completion from
+            sponsor-bank production verification, onboarding, attestations, and other external dependencies.
           </p>
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
-            target="_blank"
-            rel="noopener"
-          >
-            Open in Adobe Acrobat →
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d">
+            Open Readiness Assessment
           </a>
         </article>
 
         <article class="material">
-          <span>Technical Evidence</span>
-          <h4>FinTech Extension A–G Verification Report</h4>
+          <span>FinTech Technology</span>
+          <h4>FinTech Extension A-G Verification</h4>
           <p>
-            Review requirement-to-implementation traceability, fiat transaction lifecycle evidence,
-            financial API primitives, audit correlation, reconciliation, sponsor-bank boundaries,
-            and end-to-end engineering validation.
+            Technical verification of the BAIDNET fintech extension program. The report traces the platform
+            from baseline inventory through fiat lifecycle implementation, financial primitives, auditability,
+            reconciliation, sponsor-bank integration boundaries, runtime validation, and final A-G closeout.
           </p>
-          <a
-            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:331c857a-926b-4438-b09f-0ac4431d4a17"
-            target="_blank"
-            rel="noopener"
-          >
-            Open in Adobe Acrobat →
+          <a target="_blank" rel="noopener noreferrer"
+            href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:331c857a-926b-4438-b09f-0ac4431d4a17">
+            View FinTech Verification Report
           </a>
         </article>
       </div>
     </div>
   </section>
 
-<section id="contact" class="section"><div class="shell"><div class="section-head"><h2>Get in Touch</h2><p>Connect with BlackWall-Interconnected Co. to discuss investment opportunities, strategic partnerships, sponsor-bank engagement, professional advisory services, platform integration, or BAIDNET commercialization.</p></div><div class="contact"><div class="contact-copy"><h3>Connect with BWICO</h3><p>Whether you're an investor, financial institution, strategic partner, advisor, or technology collaborator, the BlackWall-Interconnected Co. team is available to discuss BAIDNET's platform capabilities, commercialization strategy, sponsor-bank readiness, and partnership opportunities.</p><p>For general inquiries, partnership discussions, investment conversations, or meeting requests, contact our team directly or request a Zoom meeting.</p><div class="contact-email">
-  <span>Official BWICO Contact</span>
-  <a href="mailto:Blackwallteam@blackwall-interconnected.com">Blackwallteam@blackwall-interconnected.com</a>
-</div>
+  <section class="section" id="contact">
+    <div class="shell">
+      <div class="section-head">
+        <h2>Investor & Partner Contact</h2>
+        <p>
+          Connect with BlackWall-Interconnected Co. regarding BAIDNET commercialization,
+          investment, strategic partnerships, sponsor-bank engagement, and institutional review.
+        </p>
+      </div>
 
-<div class="email-chooser">
-  <div class="email-chooser-label">Choose Your Email Method</div>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Contact BAIDNET</h3>
+          <p>Use your preferred email provider or submit a meeting request.</p>
 
-  <div class="email-methods">
-    <button type="button" class="email-provider-btn" data-email-provider="gmail">Gmail</button>
-    <button type="button" class="email-provider-btn" data-email-provider="outlook">Outlook</button>
-    <button type="button" class="email-provider-btn" data-email-provider="zoho">Zoho Mail</button>
-    <button type="button" class="email-provider-btn" data-email-provider="default">Default Email App</button>
-    <button type="button" class="email-provider-btn" id="copy-email-btn">Copy Email Address</button>
-  </div>
+          <div class="contact-list">
+            <a class="contact-link" id="email-gmail" href="#"><span>Gmail</span><strong>Compose</strong></a>
+            <a class="contact-link" id="email-outlook" href="#"><span>Outlook</span><strong>Compose</strong></a>
+            <a class="contact-link" id="email-zoho" href="#"><span>Zoho Mail</span><strong>Compose</strong></a>
+            <a class="contact-link" id="email-default" href="#"><span>Default Email App</span><strong>Compose</strong></a>
+          </div>
+        </div>
 
-  <div class="email-help">
-    Choose the email service you prefer. Gmail and Outlook open a prepared message in your browser.
-    Zoho Mail opens its compose experience and copies the prepared message for convenient pasting.
-    You can also use your device's default email application.
-  </div>
-
-  <div class="email-copy-status" id="email-copy-status" aria-live="polite"></div>
-</div></div><div class="contact-scheduler"><div class="scheduler-header"><div class="meeting-eyebrow">MEETING REQUEST</div><h3>Schedule a Conversation</h3><p>Select a preferred date and time to request a Zoom meeting with the BWICO team.</p></div><form class="contact-form" id="meeting-request-form"><div class="scheduler-grid"><div class="input-group full"><label for="fullName">Full Name</label><input type="text" id="fullName" name="fullName" required placeholder="Your full name"></div><div class="input-group full"><label for="organization">Business / Organization</label><input type="text" id="organization" name="organization" placeholder="Organization name"></div><div class="input-group full"><label for="emailAddress">Email Address</label><input type="email" id="emailAddress" name="emailAddress" required placeholder="you@example.com"></div><div class="input-group full"><label for="phoneNumber">Phone Number</label><input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Optional phone number"></div><div class="input-group full"><label for="meetingTopic">Meeting Topic</label><select id="meetingTopic" name="meetingTopic" required><option value="">Select a topic</option><option>Investment Opportunity</option><option>Sponsor-Bank Partnership</option><option>Strategic Partnership</option><option>Legal / Regulatory Advisory</option><option>Platform Integration</option><option>BAIDNET Technology</option><option>Commercialization & Market Entry</option><option>General Discussion</option></select></div><div class="input-group"><label for="meetingDate">Preferred Meeting Date</label><input type="date" id="meetingDate" name="meetingDate" required></div><div class="input-group"><label for="meetingTime">Preferred Meeting Time</label><input type="time" id="meetingTime" name="meetingTime" required></div><div class="input-group full"><label for="timeZone">Time Zone</label><select id="timeZone" name="timeZone" required><option value="">Select time zone</option><option>Eastern Time</option><option>Central Time</option><option>Mountain Time</option><option>Pacific Time</option><option>UTC</option><option>Other</option></select></div><div class="input-group full"><label for="emailProvider">Send Meeting Request Using</label><select id="emailProvider" name="emailProvider" required><option value="default">Default Email App</option><option value="gmail">Gmail</option><option value="outlook">Outlook</option><option value="zoho">Zoho Mail</option></select></div><div class="input-group full"><label for="additionalNotes">Additional Notes</label><textarea id="additionalNotes" name="additionalNotes" placeholder="Share any context or questions for the BWICO team"></textarea></div></div><button class="btn primary" id="meeting-submit-btn" type="submit">Request Zoom Meeting →</button><div class="meeting-status" id="meeting-status" aria-live="polite"></div><div class="scheduler-note">Your requested date and time will be reviewed by the BWICO team. A Zoom invitation will be sent after availability is confirmed.</div></form></div></div></div></section>
-
+        <div class="contact-card">
+          <h3>Request a Meeting</h3>
+          <form class="meeting-form" id="meeting-form">
+            <div>
+              <label for="meeting-name">Name</label>
+              <input id="meeting-name" required />
+            </div>
+            <div>
+              <label for="meeting-email">Email</label>
+              <input id="meeting-email" type="email" required />
+            </div>
+            <div>
+              <label for="meeting-org">Organization</label>
+              <input id="meeting-org" />
+            </div>
+            <div>
+              <label for="meeting-message">Purpose / Message</label>
+              <textarea id="meeting-message"></textarea>
+            </div>
+            <button class="btn primary" type="submit">Prepare Meeting Request</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
+<footer>
+  <div class="shell footer-row">
+    <span>© 2026 BlackWall-Interconnected Co. • BAIDNET Commercialization Initiative</span>
+    <a href="#" class="footer-ai-open">Ask BAIDNET Intelligence</a>
+  </div>
+</footer>
 
-<button class="ai-launcher" id="ai-launcher" type="button" aria-controls="ai-panel" aria-expanded="false"><span class="ai-launcher-dot"></span>Ask BAIDNET AI</button>
-<aside class="ai-panel" id="ai-panel" aria-label="BAIDNET investor AI assistant">
-  <div class="ai-head"><div class="ai-title"><strong>BAIDNET Investor AI</strong><span>Grounded answers • text + voice</span></div><button class="ai-close" id="ai-close" type="button" aria-label="Close assistant">×</button></div>
+<button class="ai-launcher" id="ai-launcher" type="button" aria-expanded="false" aria-controls="ai-panel">
+  <span class="ai-launcher-dot"></span>
+  Ask BAIDNET AI
+</button>
+
+<section class="ai-panel" id="ai-panel" aria-label="BAIDNET Investor AI">
+  <div class="ai-head">
+    <div>
+      <strong>BAIDNET Investor AI</strong>
+      <small>Grounded answers • text + voice</small>
+    </div>
+    <button class="ai-close" id="ai-close" type="button" aria-label="Close AI assistant">×</button>
+  </div>
+
   <div class="ai-voicebar">
-    <button class="ai-voice-btn" id="ai-mic" type="button">🎙 Start voice</button>
-    <button class="ai-mode-btn" id="ai-speak-toggle" type="button">🔊 Spoken replies: On</button>
+    <button id="ai-mic" type="button">Start voice</button>
+    <button id="ai-speak-toggle" type="button">Spoken replies: On</button>
     <span class="ai-status" id="ai-status">Ready</span>
   </div>
-  <div class="ai-messages" id="ai-messages">
-    <div class="ai-msg assistant">Welcome. Ask about BAIDNET's commercialization strategy, platform readiness, sponsor-bank dependencies, technical architecture, or investor materials.<small>Answers should be grounded in approved BAIDNET source materials.</small></div>
-  </div>
-  <div class="ai-input-wrap">
-    <div class="ai-input-row"><textarea id="ai-input" placeholder="Ask about readiness, architecture, controls, APIs, sponsor-bank dependencies, or the platform roadmap..." aria-label="Ask BAIDNET AI"></textarea><button class="ai-send" id="ai-send" type="button">➤</button></div>
-    <div class="ai-disclaimer">Voice uses your browser microphone and speech capabilities. For production AI answers, connect this panel to a secure backend endpoint; never place model API keys in this HTML.</div>
-  </div>
-</aside>
 
-<footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a>
-      <a href="#" class="footer-ai-open">Ask BAIDNET AI</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
+  <div class="ai-messages" id="ai-messages">
+    <div class="ai-msg assistant">
+      Welcome. I can answer questions about BAIDNET's platform, internal engineering readiness,
+      sponsor-bank dependencies, security controls, API architecture, and supporting investor materials.
+      <small>Answers should be grounded in approved BAIDNET sources.</small>
+    </div>
+  </div>
+
+  <div class="ai-compose">
+    <textarea id="ai-input" placeholder="Ask about BAIDNET readiness, architecture, controls, APIs, or commercialization…"></textarea>
+    <button class="ai-send" id="ai-send" type="button">Send</button>
+  </div>
+  <div class="ai-disclaimer">BAIDNET Intelligence should distinguish verified internal engineering status from external sponsor-bank, legal, and production dependencies.</div>
+</section>
 
 <script>
   const OFFICIAL_EMAIL = "Blackwallteam@blackwall-interconnected.com";
   const ZOOM_SCHEDULER_URL = "YOUR_ZOOM_SCHEDULER_URL";
 
-  /* Cursor light */
-  document.addEventListener("pointermove", event => {
-    document.documentElement.style.setProperty("--mouse-x", event.clientX + "px");
-    document.documentElement.style.setProperty("--mouse-y", event.clientY + "px");
+  function emailContent(){
+    const subject = "BAIDNET Investor / Partner Inquiry";
+    const body = "Hello BlackWall-Interconnected Co.,\n\nI would like to discuss BAIDNET commercialization, investment, partnership, or institutional review.\n\nBest regards,";
+    return {subject, body};
+  }
+
+  document.getElementById("email-gmail")?.addEventListener("click",e=>{
+    e.preventDefault();
+    const {subject,body}=emailContent();
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(OFFICIAL_EMAIL)}&su=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,'_blank');
   });
 
-  /* 3D tilt */
-  document.querySelectorAll(".tilt").forEach(card => {
-    card.addEventListener("pointermove", event => {
-      const rect = card.getBoundingClientRect();
-      const x = event.clientX - rect.left;
-      const y = event.clientY - rect.top;
-      const centerX = rect.width / 2;
-      const centerY = rect.height / 2;
-
-      const rotateY = ((x - centerX) / centerX) * 8;
-      const rotateX = ((centerY - y) / centerY) * 8;
-
-      card.style.setProperty("--rotate-x", rotateX.toFixed(2) + "deg");
-      card.style.setProperty("--rotate-y", rotateY.toFixed(2) + "deg");
-    });
-
-    card.addEventListener("pointerleave", () => {
-      card.style.setProperty("--rotate-x", "0deg");
-      card.style.setProperty("--rotate-y", "0deg");
-    });
+  document.getElementById("email-outlook")?.addEventListener("click",e=>{
+    e.preventDefault();
+    const {subject,body}=emailContent();
+    window.open(`https://outlook.office.com/mail/deeplink/compose?to=${encodeURIComponent(OFFICIAL_EMAIL)}&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`,'_blank');
   });
 
-  /* Email provider support */
-  function openEmailProvider(provider, subject, body, statusElement = null) {
-    const to = encodeURIComponent(OFFICIAL_EMAIL);
-    const encodedSubject = encodeURIComponent(subject);
-    const encodedBody = encodeURIComponent(body);
-
-    if (provider === "gmail") {
-      window.open(
-        "https://mail.google.com/mail/?view=cm&fs=1&to=" + to +
-        "&su=" + encodedSubject + "&body=" + encodedBody,
-        "_blank",
-        "noopener"
-      );
-      if (statusElement) statusElement.textContent = "Opening Gmail compose...";
-      return;
-    }
-
-    if (provider === "outlook") {
-      window.open(
-        "https://outlook.office.com/mail/deeplink/compose?to=" + to +
-        "&subject=" + encodedSubject + "&body=" + encodedBody,
-        "_blank",
-        "noopener"
-      );
-      if (statusElement) statusElement.textContent = "Opening Outlook compose...";
-      return;
-    }
-
-    if (provider === "zoho") {
-      const zohoMessage =
-        "To: " + OFFICIAL_EMAIL + "\n\nSubject: " + subject + "\n\n" + body;
-
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(zohoMessage).catch(() => {});
-      }
-
-      window.open("https://mail.zoho.com/zm/#compose", "_blank", "noopener");
-
-      if (statusElement) {
-        statusElement.textContent =
-          "Zoho Mail opened. The prepared message was copied to your clipboard for quick paste.";
-      }
-      return;
-    }
-
-    if (statusElement) {
-      statusElement.textContent = "Opening your default email application...";
-    }
-
-    window.location.href =
-      "mailto:" + OFFICIAL_EMAIL +
-      "?subject=" + encodedSubject +
-      "&body=" + encodedBody;
-  }
-
-  /* General contact buttons */
-  const generalSubject = "BAIDNET / BWICO Inquiry";
-  const generalBody =
-`Hello BWICO Team,
-
-I am reaching out regarding BAIDNET.
-
-I would like to discuss:
-
-[Please enter your message here]
-
-Thank you.`;
-
-  const contactStatus = document.getElementById("email-copy-status");
-
-  document.querySelectorAll("[data-email-provider]").forEach(button => {
-    button.addEventListener("click", () => {
-      openEmailProvider(
-        button.dataset.emailProvider,
-        generalSubject,
-        generalBody,
-        contactStatus
-      );
-    });
+  document.getElementById("email-zoho")?.addEventListener("click",e=>{
+    e.preventDefault();
+    const {subject,body}=emailContent();
+    const zohoMessage = "To: " + OFFICIAL_EMAIL + "\n\nSubject: " + subject + "\n\n" + body;
+    navigator.clipboard?.writeText(zohoMessage);
+    window.open('https://mail.zoho.com/','_blank');
   });
 
-  const copyEmailButton = document.getElementById("copy-email-btn");
+  document.getElementById("email-default")?.addEventListener("click",e=>{
+    e.preventDefault();
+    const {subject,body}=emailContent();
+    window.location.href=`mailto:${OFFICIAL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
 
-  if (copyEmailButton) {
-    copyEmailButton.addEventListener("click", () => {
-      if (!navigator.clipboard) {
-        contactStatus.textContent = OFFICIAL_EMAIL;
-        return;
-      }
+  document.getElementById("meeting-form")?.addEventListener("submit",e=>{
+    e.preventDefault();
+    const name=document.getElementById("meeting-name").value.trim();
+    const email=document.getElementById("meeting-email").value.trim();
+    const org=document.getElementById("meeting-org").value.trim();
+    const message=document.getElementById("meeting-message").value.trim();
+    const subject="BAIDNET Meeting Request";
+    const body=`Name: ${name}\nEmail: ${email}\nOrganization: ${org}\n\nPurpose / Message:\n${message}`;
+    window.location.href=`mailto:${OFFICIAL_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  });
 
-      navigator.clipboard.writeText(OFFICIAL_EMAIL)
-        .then(() => {
-          contactStatus.textContent = "BWICO email address copied.";
-        })
-        .catch(() => {
-          contactStatus.textContent = OFFICIAL_EMAIL;
-        });
+  document.addEventListener("mousemove",e=>{
+    document.body.style.setProperty("--mouse-x",`${e.clientX}px`);
+    document.body.style.setProperty("--mouse-y",`${e.clientY}px`);
+  });
+
+  document.querySelectorAll('.tilt-card').forEach(card=>{
+    card.addEventListener('mousemove',e=>{
+      const rect=card.getBoundingClientRect();
+      const x=e.clientX-rect.left;
+      const y=e.clientY-rect.top;
+      const rotateY=((x/rect.width)-.5)*10;
+      const rotateX=-((y/rect.height)-.5)*10;
+      card.style.setProperty('--rotate-x',`${rotateX}deg`);
+      card.style.setProperty('--rotate-y',`${rotateY}deg`);
     });
-  }
-
-  /* Meeting request */
-  const meetingForm = document.getElementById("meeting-request-form");
-  const meetingDateInput = document.getElementById("meetingDate");
-  const meetingStatus = document.getElementById("meeting-status");
-  const meetingSubmitBtn = document.getElementById("meeting-submit-btn");
-
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = String(currentDate.getMonth() + 1).padStart(2, "0");
-  const day = String(currentDate.getDate()).padStart(2, "0");
-  const today = `${year}-${month}-${day}`;
-
-  if (meetingDateInput) {
-    meetingDateInput.min = today;
-  }
-
-  const schedulerIsConfigured =
-    ZOOM_SCHEDULER_URL &&
-    ZOOM_SCHEDULER_URL !== "YOUR_ZOOM_SCHEDULER_URL";
-
-  if (meetingSubmitBtn) {
-    meetingSubmitBtn.textContent =
-      schedulerIsConfigured
-        ? "Schedule Zoom Meeting →"
-        : "Request Zoom Meeting →";
-  }
-
-  if (meetingForm) {
-    meetingForm.addEventListener("submit", event => {
-      event.preventDefault();
-
-      if (meetingDateInput.value && meetingDateInput.value < today) {
-        meetingStatus.textContent =
-          "Please choose a current or future meeting date.";
-        meetingStatus.className = "meeting-status is-error";
-        return;
-      }
-
-      if (schedulerIsConfigured) {
-        meetingStatus.textContent =
-          "Opening the Zoom scheduling experience...";
-        meetingStatus.className = "meeting-status is-success";
-
-        window.open(
-          ZOOM_SCHEDULER_URL,
-          "_blank",
-          "noopener"
-        );
-        return;
-      }
-
-      const formData = new FormData(meetingForm);
-
-      const fullName =
-        formData.get("fullName")?.toString().trim() || "";
-
-      const organization =
-        formData.get("organization")?.toString().trim() || "";
-
-      const emailAddress =
-        formData.get("emailAddress")?.toString().trim() || "";
-
-      const phoneNumber =
-        formData.get("phoneNumber")?.toString().trim() || "";
-
-      const meetingTopic =
-        formData.get("meetingTopic")?.toString().trim() || "";
-
-      const meetingDate =
-        formData.get("meetingDate")?.toString().trim() || "";
-
-      const meetingTime =
-        formData.get("meetingTime")?.toString().trim() || "";
-
-      const timeZone =
-        formData.get("timeZone")?.toString().trim() || "";
-
-      const emailProvider =
-        formData.get("emailProvider")?.toString().trim() || "default";
-
-      const additionalNotes =
-        formData.get("additionalNotes")?.toString().trim() || "";
-
-      const subject =
-        `BAIDNET Zoom Meeting Request — ${fullName}`;
-
-      const body =
-`BAIDNET / BWICO ZOOM MEETING REQUEST
-
-Name: ${fullName}
-Organization: ${organization}
-Email: ${emailAddress}
-Phone: ${phoneNumber}
-
-Meeting Topic:
-${meetingTopic}
-
-Preferred Date:
-${meetingDate}
-
-Preferred Time:
-${meetingTime}
-
-Time Zone:
-${timeZone}
-
-Additional Notes:
-${additionalNotes}
-
-Please review the requested date and time and send a Zoom invitation after availability is confirmed.`;
-
-      meetingStatus.className = "meeting-status is-success";
-
-      openEmailProvider(
-        emailProvider,
-        subject,
-        body,
-        meetingStatus
-      );
+    card.addEventListener('mouseleave',()=>{
+      card.style.setProperty('--rotate-x','0deg');
+      card.style.setProperty('--rotate-y','0deg');
     });
-  }
-
+  });
 
   /* =========================================================
-     BAIDNET Investor AI - text + browser voice shell
-     Production requirement: set AI_API_ENDPOINT to your backend route.
-     Example: https://api.yourdomain.com/baidnet/ask
+     BAIDNET Investor AI - same-origin Vercel Function
      ========================================================= */
   const AI_API_ENDPOINT =
     window.BAIDNET_AI_API_ENDPOINT ||
     localStorage.getItem("baidnetAiEndpoint") ||
-    "https://YOUR-BAIDNET-BACKEND.vercel.app/api/baidnet-ai";
+    "/api/baidnet-ai";
   const aiLauncher = document.getElementById("ai-launcher");
   const aiPanel = document.getElementById("ai-panel");
   const aiClose = document.getElementById("ai-close");
@@ -961,6 +617,7 @@ Please review the requested date and time and send a Zoom invitation after avail
     if(open) setTimeout(()=>aiInput.focus(),80);
   }
   [aiLauncher, navAiOpen, heroAiOpen].forEach(el => el && el.addEventListener("click", e => { e.preventDefault(); setAiOpen(true); }));
+  document.querySelectorAll('.footer-ai-open').forEach(el => el.addEventListener('click', e => {e.preventDefault(); setAiOpen(true);}));
   aiClose && aiClose.addEventListener("click",()=>setAiOpen(false));
 
   function addAiMessage(role, text, note=""){
@@ -1014,18 +671,10 @@ Please review the requested date and time and send a Zoom invitation after avail
     aiInput.value="";
     aiStatus.textContent="Thinking...";
 
-    if(!AI_API_ENDPOINT || AI_API_ENDPOINT.includes("YOUR-BAIDNET-BACKEND")){
-      const demo="BAIDNET Intelligence is ready, but the secure backend URL has not been set on this deployment. Configure the backend endpoint to connect the live knowledge base.";
-      addAiMessage("assistant",demo,"Knowledge layer ready • backend URL pending");
-      speakText(demo);
-      aiStatus.textContent="Backend URL not configured";
-      return;
-    }
-
     try{
       const response=await fetch(AI_API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question, audience:"investor", page:window.location.href})});
-      if(!response.ok) throw new Error("AI service unavailable");
-      const data=await response.json();
+      const data=await response.json().catch(()=>({}));
+      if(!response.ok) throw new Error(data.error || "AI service unavailable");
       const answer=data.answer || "I could not produce an answer from the approved source material.";
       addAiMessage("assistant",answer,data.sourceLabel || "Grounded BAIDNET response");
 
@@ -1036,7 +685,8 @@ Please review the requested date and time and send a Zoom invitation after avail
       speakText(answer, data.audioBase64 || null, data.audioMime || "audio/mpeg");
       aiStatus.textContent="Ready";
     }catch(err){
-      addAiMessage("assistant","The BAIDNET AI service is temporarily unavailable. Please review the investor materials or contact BWICO directly.");
+      console.error("BAIDNET AI request failed:",err);
+      addAiMessage("assistant","BAIDNET Intelligence is connected to the site, but the AI service could not complete this request. Please try again in a moment.");
       aiStatus.textContent="Service unavailable";
     }
   }
@@ -1046,33 +696,28 @@ Please review the requested date and time and send a Zoom invitation after avail
 
   aiSpeakToggle && aiSpeakToggle.addEventListener("click",()=>{
     spokenRepliesEnabled=!spokenRepliesEnabled;
+    aiSpeakToggle.textContent=`Spoken replies: ${spokenRepliesEnabled?'On':'Off'}`;
     if(!spokenRepliesEnabled && 'speechSynthesis' in window) window.speechSynthesis.cancel();
-    aiSpeakToggle.textContent=spokenRepliesEnabled ? "🔊 Spoken replies: On" : "🔇 Spoken replies: Off";
   });
 
-  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(SpeechRecognition){
     recognition=new SpeechRecognition();
-    recognition.lang="en-US";
+    recognition.lang='en-US';
     recognition.interimResults=false;
-    recognition.continuous=false;
-    recognition.onstart=()=>{ aiMic.classList.add("live"); aiMic.textContent="● Listening..."; aiStatus.textContent="Listening"; };
-    recognition.onend=()=>{ aiMic.classList.remove("live"); aiMic.textContent="🎙 Start voice"; if(aiStatus.textContent==="Listening") aiStatus.textContent="Ready"; };
-    recognition.onerror=()=>{ aiStatus.textContent="Microphone unavailable"; };
+    recognition.maxAlternatives=1;
+    recognition.onstart=()=>{ aiStatus.textContent='Listening...'; aiMic.textContent='Listening...'; };
+    recognition.onend=()=>{ aiStatus.textContent='Ready'; aiMic.textContent='Start voice'; };
+    recognition.onerror=()=>{ aiStatus.textContent='Voice input unavailable'; aiMic.textContent='Start voice'; };
     recognition.onresult=e=>{
-      const transcript=e.results[0][0].transcript;
-      aiInput.value=transcript;
+      aiInput.value=e.results[0][0].transcript;
       askBaidnet();
     };
-    aiMic && aiMic.addEventListener("click",()=>{
-      try{ recognition.start(); }catch(e){}
-    });
+    aiMic && aiMic.addEventListener('click',()=>recognition.start());
   }else if(aiMic){
+    aiMic.textContent='Voice input unsupported';
     aiMic.disabled=true;
-    aiMic.textContent="Voice input unsupported";
   }
-
 </script>
-
 </body>
 </html>
