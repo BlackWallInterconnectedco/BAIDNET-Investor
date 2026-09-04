@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "scripts": {
+    "build": "node build.mjs"
+  },
   "dependencies": {
     "openai": "^5.0.0"
   }
