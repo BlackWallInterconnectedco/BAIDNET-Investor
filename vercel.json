@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "rewrites": [
+    { "source": "/Assets/BAIDNET.png", "destination": "/assets/BaidNet.png" },
+    { "source": "/Assets/BAIDPAY.png", "destination": "/assets/BAIDPAY.png" },
+    { "source": "/Assets/BWICOicon2.png", "destination": "/assets/BWICOicon2.png" }
+  ]
+}
