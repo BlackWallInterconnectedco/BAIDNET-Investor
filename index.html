@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="BAIDNET commercialization and market-entry information portal by BlackWall-Interconnected Co." />
+  <title>BAIDNET | Commercialization & Market Entry</title>
+  <style>
+    :root{
+      --bg:#040404; --panel:#0b0b0b; --gold:#d9a441; --gold2:#f4cf76;
+      --text:#f6f1e8; --muted:#b8b1a4; --line:rgba(217,164,65,.30); --green:#8cc63e;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:
+        radial-gradient(circle at 78% 20%, rgba(217,164,65,.12), transparent 28%),
+        #040404;
+      color:var(--text);
+      font-family:Arial, Helvetica, sans-serif;
+      line-height:1.5;
+    }
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .shell{width:min(1450px,94%);margin:auto}
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(4,4,4,.88);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brands{display:flex;align-items:center;gap:20px}
+    .brands img{height:48px;width:auto;object-fit:contain}
+    .brands img:nth-child(2){height:44px}
+    nav{display:flex;align-items:center;gap:22px;color:#ddd6c9}
+    nav a:hover{color:var(--gold2)}
+    .nav-cta{border:1px solid var(--gold);border-radius:999px;padding:10px 18px;color:var(--gold2)}
+    .hero{
+      min-height:720px;
+      display:grid;grid-template-columns:1.05fr .95fr;
+      gap:48px;align-items:center;padding:70px 0 55px;
+    }
+    .eyebrow{
+      color:#ddd6c9;text-transform:uppercase;letter-spacing:.32em;
+      font-size:.82rem;margin-bottom:20px
+    }
+    h1{
+      font-family:Georgia,serif;
+      font-size:clamp(3.2rem,6vw,6.4rem);
+      line-height:.92;margin:0;
+    }
+    .gold{color:var(--gold2)}
+    .lead{font-size:1.22rem;color:#d3ccc0;max-width:760px;margin:28px 0}
+    .actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      min-height:52px;padding:0 24px;border:1px solid var(--gold);
+      border-radius:10px;font-weight:700;
+    }
+    .btn.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#151008}
+    .btn.secondary{background:#090909}
+    .trust-row{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:34px}
+    .trust{padding:14px 8px;border-top:1px solid var(--line);font-size:.92rem;color:#d8d1c5}
+    .trust strong{display:block;color:var(--gold2);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase}
+    .visual{position:relative;min-height:560px;display:flex;align-items:center;justify-content:center}
+    .orb{
+      position:absolute;width:520px;height:520px;border-radius:50%;
+      border:1px solid rgba(217,164,65,.28);
+      background:
+        radial-gradient(circle,rgba(217,164,65,.11),transparent 60%),
+        repeating-radial-gradient(circle,transparent 0 28px,rgba(217,164,65,.08) 29px 30px);
+      box-shadow:0 0 80px rgba(217,164,65,.12);
+    }
+    .cards{position:relative;z-index:2;display:grid;grid-template-columns:repeat(3,1fr);gap:14px;width:100%;max-width:650px;align-items:end}
+    .card{
+      min-height:330px;padding:26px 18px;border:1px solid #8f6524;border-radius:16px;
+      background:linear-gradient(180deg,#11100d,#050505);
+      text-align:center;display:flex;flex-direction:column;justify-content:center;align-items:center;
+    }
+    .card.main{min-height:390px;transform:translateY(-16px);border-color:var(--gold)}
+    .card img{height:100px;width:100%;object-fit:contain;margin-bottom:18px}
+    .card.main img{height:128px}
+    .card h3{font-family:Georgia,serif;color:var(--gold2);font-size:1.55rem;margin:0 0 8px}
+    .card p{color:#cdbb8c;text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+    .section{padding:74px 0;border-top:1px solid var(--line)}
+    .section-head{display:flex;justify-content:space-between;gap:24px;align-items:end;margin-bottom:30px}
+    .section h2{font-family:Georgia,serif;font-size:clamp(2.1rem,4vw,4rem);margin:0}
+    .section-head p{max-width:650px;color:var(--muted);margin:0}
+    .feature-grid,.materials{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    .feature,.material,.status{
+      border:1px solid var(--line);border-radius:16px;background:var(--panel);padding:28px;
+    }
+    .feature{min-height:280px}
+    .feature h3{font-family:Georgia,serif;color:var(--gold2);font-size:2rem;margin-top:0}
+    .feature p,.material p,.status p{color:var(--muted)}
+    .status-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+    .kicker{color:var(--green);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+    .material span{color:var(--gold);text-transform:uppercase;letter-spacing:.12em;font-size:.78rem}
+    .material h4{font-size:1.2rem;margin:8px 0}
+    .material a{color:var(--gold2);font-weight:700}
+    .closing{text-align:center;padding:90px 0}
+    .closing h2{font-family:Georgia,serif;font-size:clamp(2.5rem,5vw,5rem);max-width:950px;margin:0 auto 18px}
+    .closing p{max-width:780px;margin:0 auto 28px;color:var(--muted);font-size:1.08rem}
+    footer{border-top:1px solid var(--line);padding:28px 0;color:#948c80}
+    .footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    @media(max-width:1100px){
+      .hero{grid-template-columns:1fr}
+      .status-grid{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:800px){
+      nav a:not(.nav-cta){display:none}
+      .brands img:nth-child(2),.brands img:nth-child(3){display:none}
+      .trust-row,.status-grid,.feature-grid,.materials{grid-template-columns:1fr}
+      .cards{grid-template-columns:1fr;max-width:430px}
+      .card,.card.main{min-height:220px;transform:none}
+      .orb{display:none}
+      .section-head{display:block}
+      .section-head p{margin-top:12px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="shell nav">
+    <div class="brands">
+      <img src="assets/bwico-logo.png" alt="BWICO">
+      <img src="assets/baidnet-logo.png" alt="BaidNet">
+      <img src="assets/baidpay-logo.png" alt="BAIDPAY">
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#platform">Platform</a>
+      <a href="#readiness">Readiness</a>
+      <a href="#materials">Materials</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="#materials">View Materials</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section id="home" class="shell hero">
+  <div>
+    <div class="eyebrow">Built for a more connected tomorrow</div>
+
+    <h1>
+      <span class="gold">One Ecosystem.</span><br>
+      Greater <span class="gold">Possibilities.</span>
+    </h1>
+
+    <p class="lead">
+      BlackWall-Interconnected Co. (BWICO) powers BAIDNET and BAIDPAY —
+      a unified ecosystem bridging blockchain infrastructure and modern financial technology.
+    </p>
+
+    <div class="actions">
+      <a class="btn primary" href="#platform">Explore the Ecosystem →</a>
+      <a class="btn secondary" href="#" target="_blank">View Deck</a>
+    </div>
+
+    <div class="trust-row">
+      <div class="trust"><strong>Secure</strong>Designed for controlled access and accountability.</div>
+      <div class="trust"><strong>Auditable</strong>Evidence-driven transaction and operational records.</div>
+      <div class="trust"><strong>Integrated</strong>Blockchain and fintech paths within one architecture.</div>
+      <div class="trust"><strong>Market Entry</strong>External readiness gaps clearly identified.</div>
+    </div>
+  </div>
+
+  <div class="visual">
+    <div class="orb"></div>
+    <div class="cards">
+      <article class="card">
+        <img src="assets/baidnet-logo.png" alt="BaidNet">
+        <h3>BAIDNET</h3>
+        <p>Blockchain · Real Utility</p>
+      </article>
+
+      <article class="card main">
+        <img src="assets/bwico-logo.png" alt="BlackWall-Interconnected Co.">
+        <h3>BWICO</h3>
+        <p>People · Platforms · Progress</p>
+      </article>
+
+      <article class="card">
+        <img src="assets/baidpay-logo.png" alt="BAIDPAY">
+        <h3>BAIDPAY</h3>
+        <p>Modern Payments · Real Impact</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="platform" class="section">
+  <div class="shell">
+    <div class="section-head">
+      <h2>The Ecosystem</h2>
+      <p>
+        BAIDNET combines existing blockchain infrastructure with an in-house fintech extension
+        designed to support regulated banking integrations without duplicating the core platform.
+      </p>
+    </div>
+
+    <div class="feature-grid">
+      <article class="feature">
+        <h3>Blockchain Freedom</h3>
+        <p>
+          BAIDNET provides the blockchain-side infrastructure, wallet experience,
+          transaction workflows, auditability, and ecosystem governance foundation.
+        </p>
+        <a class="btn secondary" href="#readiness">Explore BAIDNET →</a>
+      </article>
+
+      <article class="feature">
+        <h3>Fintech Made Simple</h3>
+        <p>
+          The BAIDNET FinTech Extension adds fiat lifecycle management, financial API primitives,
+          reconciliation, audit correlation, sponsor-bank boundaries, and end-to-end verification.
+        </p>
+        <a class="btn secondary" href="#materials">Review Evidence →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="readiness" class="section">
+  <div class="shell">
+    <div class="section-head">
+      <h2>Current Readiness Position</h2>
+      <p>
+        BAIDNET distinguishes completed internal engineering from external legal,
+        regulatory, contractual, and sponsor-bank requirements.
+      </p>
+    </div>
+
+    <div class="status-grid">
+      <article class="status">
+        <div class="kicker">Complete</div>
+        <h4>Core Platform</h4>
+        <p>Existing blockchain and platform capabilities form the engineering foundation.</p>
+      </article>
+
+      <article class="status">
+        <div class="kicker">Complete / Pass</div>
+        <h4>FinTech Extension A–G</h4>
+        <p>Internal engineering requirements have been reconciled through implementation and verification evidence.</p>
+      </article>
+
+      <article class="status">
+        <div class="kicker">External Review</div>
+        <h4>Legal & Regulatory</h4>
+        <p>Formal classification and related counsel work remain external dependencies.</p>
+      </article>
+
+      <article class="status">
+        <div class="kicker">External</div>
+        <h4>Sponsor-Bank Authorization</h4>
+        <p>Production parity, onboarding attestations, and bank-specific requirements remain external.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="materials" class="section">
+  <div class="shell">
+    <div class="section-head">
+      <h2>Investor & Partner Materials</h2>
+      <p>
+        Replace the placeholder links below with your Publuu flipbooks or controlled document links.
+      </p>
+    </div>
+
+    <div class="materials">
+      <article class="material">
+        <span>Executive Overview</span>
+        <h4>BAIDNET Ecosystem / Platform Experience</h4>
+        <p>Platform overview, ecosystem structure, product experience, and readiness positioning.</p>
+        <a href="#" target="_blank">Open presentation →</a>
+      </article>
+
+      <article class="material">
+        <span>Funding Initiative</span>
+        <h4>Commercialization & Market Entry Initiative</h4>
+        <p>External gap-closure workstreams, market-entry objectives, and funding requirements.</p>
+        <a href="#" target="_blank">Open initiative →</a>
+      </article>
+
+      <article class="material">
+        <span>Readiness</span>
+        <h4>Sponsor-Bank Readiness Assessment</h4>
+        <p>Governance, controls, sponsor-bank boundaries, and outstanding external requirements.</p>
+        <a href="#" target="_blank">Review assessment →</a>
+      </article>
+
+      <article class="material">
+        <span>Technical Evidence</span>
+        <h4>FinTech Extension A–G Verification Report</h4>
+        <p>Traceability from plan requirements through implementation, testing, and engineering closure.</p>
+        <a href="#" target="_blank">Review verification →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="shell closing">
+  <div class="eyebrow">Commercialization & Market Entry</div>
+  <h2>
+    The technology is built.
+    <span class="gold">Now we close the external path to market.</span>
+  </h2>
+  <p>
+    BAIDNET is engaging qualified funders, strategic partners, professional advisors,
+    and financial institutions to support legal and regulatory validation,
+    sponsor-bank diligence, production enablement, and controlled market entry.
+  </p>
+  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Contact BWICO →</a>
+</section>
+
+</main>
+
+<footer>
+  <div class="shell footer-row">
+    <div>© 2026 BlackWall-Interconnected Co. All rights reserved.</div>
+    <div>BWICO · BAIDNET · BAIDPAY</div>
+  </div>
+</footer>
+
+</body>
+</html>
