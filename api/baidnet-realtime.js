@@ -26,19 +26,19 @@ async function readSdp(req) {
   if (typeof req.body === "string") return req.body;
   if (Buffer.isBuffer(req.body)) return req.body.toString("utf8");
   if (req.body && typeof req.body.sdp === "string") return req.body.sdp;
-
   const chunks = [];
   for await (const chunk of req) chunks.push(Buffer.from(chunk));
   return Buffer.concat(chunks).toString("utf8");
 }
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
+  if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  if (!process.env.OPENAI_API_KEY) {
-    return res.status(500).json({ error: "OPENAI_API_KEY is not configured." });
+  // Vercel already has this project secret under this exact name.
+  // Keep compatibility with the conventional uppercase name if it is added later.
+  const apiKey = process.env.Openai_api_key || process.env.OPENAI_API_KEY;
+  if (!apiKey) {
+    return res.status(500).json({ error: "Openai_api_key is not configured for this deployment." });
   }
 
   try {
@@ -54,11 +54,7 @@ export default async function handler(req, res) {
       output_modalities: ["audio"],
       instructions: VOICE_INSTRUCTIONS,
       max_output_tokens: 900,
-      audio: {
-        output: {
-          voice: process.env.OPENAI_REALTIME_VOICE || "marin"
-        }
-      }
+      audio: { output: { voice: process.env.OPENAI_REALTIME_VOICE || "marin" } }
     };
 
     const form = new FormData();
@@ -67,10 +63,7 @@ export default async function handler(req, res) {
 
     const openaiResponse = await fetch("https://api.openai.com/v1/realtime/calls", {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-        Accept: "application/sdp"
-      },
+      headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/sdp" },
       body: form
     });
 
@@ -80,7 +73,6 @@ export default async function handler(req, res) {
       res.setHeader("Content-Type", "text/plain; charset=utf-8");
       return res.status(openaiResponse.status).send(body);
     }
-
     if (!body.includes("v=0")) {
       console.error("BAIDNET Realtime: OpenAI returned a non-SDP success response.");
       return res.status(502).json({ error: "Realtime provider did not return a valid SDP answer." });
