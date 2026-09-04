@@ -397,6 +397,35 @@
       .email-methods{grid-template-columns:1fr;}
     }
 
+  
+
+    /* =========================================================
+       BAIDNET INTELLIGENCE LAYER
+       ========================================================= */
+    .ai-launcher{position:fixed;right:24px;bottom:24px;z-index:1200;display:flex;align-items:center;gap:10px;padding:14px 18px;border-radius:999px;border:1px solid rgba(217,164,65,.55);background:linear-gradient(135deg,rgba(217,164,65,.18),rgba(140,198,62,.08));color:var(--gold-bright);font-weight:800;box-shadow:0 18px 50px rgba(0,0,0,.55),0 0 30px rgba(217,164,65,.12);backdrop-filter:blur(18px);cursor:pointer}
+    .ai-launcher-dot{width:10px;height:10px;border-radius:50%;background:var(--green);box-shadow:0 0 14px rgba(140,198,62,.8)}
+    .ai-panel{position:fixed;right:24px;bottom:88px;z-index:1199;width:min(430px,calc(100vw - 32px));height:min(690px,calc(100vh - 140px));display:none;flex-direction:column;border-radius:24px;border:1px solid rgba(217,164,65,.30);background:linear-gradient(180deg,rgba(8,10,8,.98),rgba(3,4,4,.99));box-shadow:0 35px 100px rgba(0,0,0,.72),0 0 50px rgba(217,164,65,.09);overflow:hidden;backdrop-filter:blur(24px)}
+    .ai-panel.open{display:flex}
+    .ai-head{padding:18px 18px 14px;border-bottom:1px solid rgba(217,164,65,.16);display:flex;align-items:center;justify-content:space-between;gap:16px;background:linear-gradient(180deg,rgba(217,164,65,.04),transparent)}
+    .ai-title{display:flex;flex-direction:column;gap:3px}.ai-title strong{color:var(--gold-bright);font-family:Georgia,serif;font-size:1.2rem}.ai-title span{color:#9e9a91;font-size:.78rem}
+    .ai-close{border:0;background:transparent;color:#cfc7b8;font-size:1.4rem;cursor:pointer;padding:6px 8px}
+    .ai-voicebar{padding:12px 16px;border-bottom:1px solid rgba(217,164,65,.12);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .ai-voice-btn,.ai-mode-btn{border:1px solid rgba(217,164,65,.25);background:rgba(255,255,255,.025);color:#d8d1c4;border-radius:10px;padding:10px 12px;font-family:inherit;cursor:pointer;transition:.2s ease}.ai-voice-btn:hover,.ai-mode-btn:hover{border-color:rgba(244,207,118,.55);color:var(--gold-bright)}
+    .ai-voice-btn.live{border-color:rgba(140,198,62,.55);color:#b9e582;box-shadow:0 0 18px rgba(140,198,62,.08)}
+    .ai-status{margin-left:auto;color:#8f8b84;font-size:.78rem}
+    .ai-messages{flex:1;overflow:auto;padding:18px;display:flex;flex-direction:column;gap:12px;scroll-behavior:smooth}
+    .ai-msg{max-width:88%;padding:12px 14px;border-radius:15px;line-height:1.55;font-size:.93rem;white-space:pre-wrap}
+    .ai-msg.user{align-self:flex-end;background:linear-gradient(135deg,rgba(217,164,65,.18),rgba(217,164,65,.08));border:1px solid rgba(217,164,65,.24);color:#f3ead9}
+    .ai-msg.assistant{align-self:flex-start;background:rgba(255,255,255,.025);border:1px solid rgba(140,198,62,.14);color:#d0c9bc}
+    .ai-msg small{display:block;margin-top:8px;color:#88847c;font-size:.74rem}
+    .ai-input-wrap{padding:14px;border-top:1px solid rgba(217,164,65,.14);background:rgba(0,0,0,.24)}
+    .ai-input-row{display:flex;gap:9px;align-items:flex-end}.ai-input-row textarea{flex:1;min-height:46px;max-height:120px;resize:none;padding:12px 13px;border-radius:12px;border:1px solid rgba(217,164,65,.22);background:rgba(255,255,255,.02);color:var(--text);font-family:inherit}.ai-input-row textarea:focus{outline:none;border-color:rgba(217,164,65,.55)}
+    .ai-send{width:48px;height:46px;border-radius:12px;border:1px solid rgba(217,164,65,.5);background:linear-gradient(135deg,var(--gold-bright),var(--gold));color:#151008;font-weight:900;cursor:pointer}
+    .ai-disclaimer{margin-top:8px;color:#77736b;font-size:.72rem;line-height:1.35}
+    .ai-inline{margin-top:22px;padding:18px 20px;border-radius:18px;border:1px solid rgba(217,164,65,.18);background:linear-gradient(145deg,rgba(217,164,65,.035),rgba(140,198,62,.02));display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+    .ai-inline strong{color:var(--gold-bright)}.ai-inline p{margin:4px 0 0;color:#aaa79e;font-size:.9rem}
+    @media(max-width:760px){.ai-launcher{right:14px;bottom:14px}.ai-panel{right:8px;bottom:76px;width:calc(100vw - 16px);height:calc(100vh - 92px)}}
+
   </style>
 </head>
 
@@ -417,6 +446,7 @@
       <a href="#readiness">Readiness</a>
       <a href="#materials">Materials</a>
       <a href="#contact">Contact</a>
+      <a href="#" id="nav-ai-open">Ask BAIDNET AI</a>
       <a class="nav-cta" href="#materials">View Materials</a>
     </nav>
 
@@ -434,6 +464,7 @@
         <a class="btn primary" href="#materials">Explore Materials →</a>
         <a class="btn secondary" href="#contact">Get in Touch</a>
       </div>
+      <div class="ai-inline"><div><strong>Ask BAIDNET AI</strong><p>Text or talk with the investor intelligence assistant about commercialization, readiness, architecture, and source materials.</p></div><button class="btn secondary" type="button" id="hero-ai-open">Start Conversation →</button></div>
       <div class="trust-row">
         <div class="trust"><strong>Focus</strong>Commercialization strategy and sponsor-bank readiness</div>
         <div class="trust"><strong>Audience</strong>Investors, partners, advisors, and institutions</div>
@@ -625,7 +656,26 @@
 
 </main>
 
-<footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
+
+<button class="ai-launcher" id="ai-launcher" type="button" aria-controls="ai-panel" aria-expanded="false"><span class="ai-launcher-dot"></span>Ask BAIDNET AI</button>
+<aside class="ai-panel" id="ai-panel" aria-label="BAIDNET investor AI assistant">
+  <div class="ai-head"><div class="ai-title"><strong>BAIDNET Investor AI</strong><span>Grounded answers • text + voice</span></div><button class="ai-close" id="ai-close" type="button" aria-label="Close assistant">×</button></div>
+  <div class="ai-voicebar">
+    <button class="ai-voice-btn" id="ai-mic" type="button">🎙 Start voice</button>
+    <button class="ai-mode-btn" id="ai-speak-toggle" type="button">🔊 Spoken replies: On</button>
+    <span class="ai-status" id="ai-status">Ready</span>
+  </div>
+  <div class="ai-messages" id="ai-messages">
+    <div class="ai-msg assistant">Welcome. Ask about BAIDNET's commercialization strategy, platform readiness, sponsor-bank dependencies, technical architecture, or investor materials.<small>Answers should be grounded in approved BAIDNET source materials.</small></div>
+  </div>
+  <div class="ai-input-wrap">
+    <div class="ai-input-row"><textarea id="ai-input" placeholder="Ask a question about BAIDNET..." aria-label="Ask BAIDNET AI"></textarea><button class="ai-send" id="ai-send" type="button">➤</button></div>
+    <div class="ai-disclaimer">Voice uses your browser microphone and speech capabilities. For production AI answers, connect this panel to a secure backend endpoint; never place model API keys in this HTML.</div>
+  </div>
+</aside>
+
+<footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a>
+      <a href="#" id="nav-ai-open">Ask BAIDNET AI</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
 
 <script>
   const OFFICIAL_EMAIL = "Blackwallteam@blackwall-interconnected.com";
@@ -886,6 +936,114 @@ Please review the requested date and time and send a Zoom invitation after avail
       );
     });
   }
+
+
+  /* =========================================================
+     BAIDNET Investor AI - text + browser voice shell
+     Production requirement: set AI_API_ENDPOINT to your backend route.
+     Example: https://api.yourdomain.com/baidnet/ask
+     ========================================================= */
+  const AI_API_ENDPOINT = "YOUR_SECURE_BACKEND_AI_ENDPOINT";
+  const aiLauncher = document.getElementById("ai-launcher");
+  const aiPanel = document.getElementById("ai-panel");
+  const aiClose = document.getElementById("ai-close");
+  const aiInput = document.getElementById("ai-input");
+  const aiSend = document.getElementById("ai-send");
+  const aiMessages = document.getElementById("ai-messages");
+  const aiMic = document.getElementById("ai-mic");
+  const aiSpeakToggle = document.getElementById("ai-speak-toggle");
+  const aiStatus = document.getElementById("ai-status");
+  const navAiOpen = document.getElementById("nav-ai-open");
+  const heroAiOpen = document.getElementById("hero-ai-open");
+  let spokenRepliesEnabled = true;
+  let recognition = null;
+
+  function setAiOpen(open){
+    aiPanel.classList.toggle("open", open);
+    aiLauncher.setAttribute("aria-expanded", String(open));
+    if(open) setTimeout(()=>aiInput.focus(),80);
+  }
+  [aiLauncher, navAiOpen, heroAiOpen].forEach(el => el && el.addEventListener("click", e => { e.preventDefault(); setAiOpen(true); }));
+  aiClose && aiClose.addEventListener("click",()=>setAiOpen(false));
+
+  function addAiMessage(role, text, note=""){
+    const div=document.createElement("div");
+    div.className=`ai-msg ${role}`;
+    div.textContent=text;
+    if(note){ const small=document.createElement("small"); small.textContent=note; div.appendChild(small); }
+    aiMessages.appendChild(div);
+    aiMessages.scrollTop=aiMessages.scrollHeight;
+  }
+
+  function speakText(text){
+    if(!spokenRepliesEnabled || !('speechSynthesis' in window)) return;
+    window.speechSynthesis.cancel();
+    const utterance=new SpeechSynthesisUtterance(text);
+    utterance.rate=1;
+    utterance.pitch=1;
+    window.speechSynthesis.speak(utterance);
+  }
+
+  async function askBaidnet(){
+    const question=aiInput.value.trim();
+    if(!question) return;
+    addAiMessage("user", question);
+    aiInput.value="";
+    aiStatus.textContent="Thinking...";
+
+    if(!AI_API_ENDPOINT || AI_API_ENDPOINT === "YOUR_SECURE_BACKEND_AI_ENDPOINT"){
+      const demo="The intelligence layer is installed, but the secure AI backend endpoint has not been configured yet. Connect this panel to your server-side RAG/API route so answers can be grounded in the BAIDNET knowledge base and investor documents.";
+      addAiMessage("assistant",demo,"Frontend ready • backend connection pending");
+      speakText(demo);
+      aiStatus.textContent="Backend not configured";
+      return;
+    }
+
+    try{
+      const response=await fetch(AI_API_ENDPOINT,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({question, audience:"investor", page:window.location.href})});
+      if(!response.ok) throw new Error("AI service unavailable");
+      const data=await response.json();
+      const answer=data.answer || "I could not produce an answer from the approved source material.";
+      addAiMessage("assistant",answer,data.sourceLabel || "Grounded BAIDNET response");
+      speakText(answer);
+      aiStatus.textContent="Ready";
+    }catch(err){
+      addAiMessage("assistant","The BAIDNET AI service is temporarily unavailable. Please review the investor materials or contact BWICO directly.");
+      aiStatus.textContent="Service unavailable";
+    }
+  }
+
+  aiSend && aiSend.addEventListener("click",askBaidnet);
+  aiInput && aiInput.addEventListener("keydown",e=>{ if(e.key==="Enter" && !e.shiftKey){ e.preventDefault(); askBaidnet(); }});
+
+  aiSpeakToggle && aiSpeakToggle.addEventListener("click",()=>{
+    spokenRepliesEnabled=!spokenRepliesEnabled;
+    if(!spokenRepliesEnabled && 'speechSynthesis' in window) window.speechSynthesis.cancel();
+    aiSpeakToggle.textContent=spokenRepliesEnabled ? "🔊 Spoken replies: On" : "🔇 Spoken replies: Off";
+  });
+
+  const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if(SpeechRecognition){
+    recognition=new SpeechRecognition();
+    recognition.lang="en-US";
+    recognition.interimResults=false;
+    recognition.continuous=false;
+    recognition.onstart=()=>{ aiMic.classList.add("live"); aiMic.textContent="● Listening..."; aiStatus.textContent="Listening"; };
+    recognition.onend=()=>{ aiMic.classList.remove("live"); aiMic.textContent="🎙 Start voice"; if(aiStatus.textContent==="Listening") aiStatus.textContent="Ready"; };
+    recognition.onerror=()=>{ aiStatus.textContent="Microphone unavailable"; };
+    recognition.onresult=e=>{
+      const transcript=e.results[0][0].transcript;
+      aiInput.value=transcript;
+      askBaidnet();
+    };
+    aiMic && aiMic.addEventListener("click",()=>{
+      try{ recognition.start(); }catch(e){}
+    });
+  }else if(aiMic){
+    aiMic.disabled=true;
+    aiMic.textContent="Voice input unsupported";
+  }
+
 </script>
 
 </body>
