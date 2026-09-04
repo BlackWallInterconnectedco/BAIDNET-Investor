@@ -31,12 +31,73 @@ async function readSdp(req) {
   return Buffer.concat(chunks).toString("utf8");
 }
 
+function getApiKey() {
+  return process.env.Openai_api_key || process.env.OPENAI_API_KEY || "";
+}
+
+function sanitizeOpenAIError(body, status) {
+  try {
+    const parsed = JSON.parse(body);
+    const err = parsed?.error || {};
+    return {
+      status,
+      type: err.type || null,
+      code: err.code || null,
+      message: err.message || "OpenAI request failed"
+    };
+  } catch {
+    return { status, type: null, code: null, message: String(body || "OpenAI request failed").slice(0, 500) };
+  }
+}
+
 export default async function handler(req, res) {
+  const apiKey = getApiKey();
+
+  if (req.method === "GET") {
+    if (!apiKey) {
+      return res.status(200).json({
+        ok: false,
+        keyConfigured: false,
+        modelAccessible: false,
+        realtimeModel: "gpt-realtime-2.1",
+        reason: "Openai_api_key is not configured for this deployment."
+      });
+    }
+
+    try {
+      const modelResponse = await fetch("https://api.openai.com/v1/models/gpt-realtime-2.1", {
+        headers: { Authorization: `Bearer ${apiKey}` }
+      });
+      const body = await modelResponse.text();
+      if (!modelResponse.ok) {
+        const error = sanitizeOpenAIError(body, modelResponse.status);
+        return res.status(200).json({
+          ok: false,
+          keyConfigured: true,
+          modelAccessible: false,
+          realtimeModel: "gpt-realtime-2.1",
+          openai: error
+        });
+      }
+      return res.status(200).json({
+        ok: true,
+        keyConfigured: true,
+        modelAccessible: true,
+        realtimeModel: "gpt-realtime-2.1"
+      });
+    } catch (error) {
+      return res.status(200).json({
+        ok: false,
+        keyConfigured: true,
+        modelAccessible: false,
+        realtimeModel: "gpt-realtime-2.1",
+        reason: error?.message || "Diagnostic request failed"
+      });
+    }
+  }
+
   if (req.method !== "POST") return res.status(405).json({ error: "Method not allowed" });
 
-  // Vercel already has this project secret under this exact name.
-  // Keep compatibility with the conventional uppercase name if it is added later.
-  const apiKey = process.env.Openai_api_key || process.env.OPENAI_API_KEY;
   if (!apiKey) {
     return res.status(500).json({ error: "Openai_api_key is not configured for this deployment." });
   }
@@ -69,9 +130,10 @@ export default async function handler(req, res) {
 
     const body = await openaiResponse.text();
     if (!openaiResponse.ok) {
-      console.error("BAIDNET Realtime session error:", openaiResponse.status, body);
-      res.setHeader("Content-Type", "text/plain; charset=utf-8");
-      return res.status(openaiResponse.status).send(body);
+      const error = sanitizeOpenAIError(body, openaiResponse.status);
+      console.error("BAIDNET Realtime session error:", error);
+      res.setHeader("Content-Type", "application/json");
+      return res.status(openaiResponse.status).json({ error: "OpenAI Realtime session failed", openai: error });
     }
     if (!body.includes("v=0")) {
       console.error("BAIDNET Realtime: OpenAI returned a non-SDP success response.");
