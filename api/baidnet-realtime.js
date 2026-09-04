@@ -22,6 +22,16 @@ EVIDENCE RULES
 APPROVED BAIDNET KNOWLEDGE BASE
 ${KNOWLEDGE}`;
 
+async function readSdp(req) {
+  if (typeof req.body === "string") return req.body;
+  if (Buffer.isBuffer(req.body)) return req.body.toString("utf8");
+  if (req.body && typeof req.body.sdp === "string") return req.body.sdp;
+
+  const chunks = [];
+  for await (const chunk of req) chunks.push(Buffer.from(chunk));
+  return Buffer.concat(chunks).toString("utf8");
+}
+
 export default async function handler(req, res) {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -32,10 +42,9 @@ export default async function handler(req, res) {
   }
 
   try {
-    const chunks = [];
-    for await (const chunk of req) chunks.push(chunk);
-    const sdp = Buffer.concat(chunks).toString("utf8");
+    const sdp = await readSdp(req);
     if (!sdp || !sdp.includes("v=0")) {
+      console.error("BAIDNET Realtime: SDP missing or already consumed by request parser.");
       return res.status(400).json({ error: "A valid WebRTC SDP offer is required." });
     }
 
@@ -59,7 +68,8 @@ export default async function handler(req, res) {
     const openaiResponse = await fetch("https://api.openai.com/v1/realtime/calls", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`
+        Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
+        Accept: "application/sdp"
       },
       body: form
     });
@@ -67,14 +77,20 @@ export default async function handler(req, res) {
     const body = await openaiResponse.text();
     if (!openaiResponse.ok) {
       console.error("BAIDNET Realtime session error:", openaiResponse.status, body);
+      res.setHeader("Content-Type", "text/plain; charset=utf-8");
       return res.status(openaiResponse.status).send(body);
+    }
+
+    if (!body.includes("v=0")) {
+      console.error("BAIDNET Realtime: OpenAI returned a non-SDP success response.");
+      return res.status(502).json({ error: "Realtime provider did not return a valid SDP answer." });
     }
 
     res.setHeader("Content-Type", "application/sdp");
     res.setHeader("Cache-Control", "no-store");
     return res.status(200).send(body);
   } catch (error) {
-    console.error("BAIDNET Realtime connection error:", error);
+    console.error("BAIDNET Realtime connection error:", error?.stack || error);
     return res.status(500).json({ error: "Unable to create BAIDNET live voice session." });
   }
 }
