@@ -1000,203 +1000,129 @@
        FEATURE CARDS
        ========================================================= */
 
-    .feature-grid{
+    .materials{
       display:grid;
 
       grid-template-columns:
-        1fr 1fr;
+        repeat(
+          auto-fit,
+          minmax(320px, 1fr)
+        );
 
       gap:24px;
+
+      max-width:1200px;
     }
 
-    .feature{
+    .material{
       position:relative;
 
-      padding:32px;
+      padding:32px 24px;
 
       border-radius:var(--radius);
 
       border:
         1px solid
-        var(--line);
+        rgba(217,164,65,.28);
 
       background:
         linear-gradient(
           145deg,
-          rgba(25,24,19,.45),
-          rgba(5,7,6,.65)
+          rgba(25,24,19,.85),
+          rgba(5,7,6,.92)
         );
 
-      backdrop-filter:
-        blur(12px);
+      backdrop-filter:blur(18px);
 
       box-shadow:
-        inset 0 1px
-        rgba(255,255,255,.035),
-
         0 20px 50px
-        rgba(0,0,0,.40);
+        rgba(0,0,0,.48),
 
-      min-height:280px;
+        inset 0 1px
+        rgba(255,255,255,.03);
 
       display:flex;
       flex-direction:column;
+      gap:12px;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
     }
 
-    .feature::before{
-      content:"";
-      position:absolute;
+    .material:hover{
+      transform:translateY(-4px);
 
-      inset:0;
-      border-radius:inherit;
+      border-color:
+        rgba(217,164,65,.48);
 
-      background:
-        linear-gradient(
-          130deg,
-          rgba(217,164,65,.04),
-          transparent 40%,
-          transparent 60%,
-          rgba(140,198,62,.02)
-        );
+      box-shadow:
+        0 30px 70px
+        rgba(0,0,0,.55),
 
-      pointer-events:none;
+        0 0 30px
+        rgba(217,164,65,.08);
     }
 
-    .feature h3{
-      position:relative;
-      z-index:2;
+    .material span{
+      display:block;
 
-      margin:0 0 18px 0;
+      color:#8f8b84;
 
-      font-family:Georgia,serif;
+      font-size:.75rem;
+
+      letter-spacing:.12em;
+
+      text-transform:uppercase;
+    }
+
+    .material h4{
+      margin:0;
+
+      font-size:1.35rem;
 
       color:var(--gold-bright);
 
-      font-size:1.9rem;
+      font-family:Georgia, serif;
 
       line-height:1.2;
     }
 
-    .feature p{
-      position:relative;
-      z-index:2;
+    .material p{
+      margin:8px 0 0;
 
-      margin:0 0 24px 0;
+      font-size:.95rem;
 
-      color:var(--muted);
+      color:#c8b98a;
+
+      line-height:1.5;
 
       flex-grow:1;
-
-      font-size:.98rem;
-
-      line-height:1.7;
     }
 
-    .feature .btn{
-      position:relative;
-      z-index:2;
+    .material a{
+      margin-top:16px;
 
-      align-self:flex-start;
-    }
+      display:inline-flex;
 
-
-    /* =========================================================
-       REPORT SUMMARY
-       ========================================================= */
-
-    .report-summary{
-      background:linear-gradient(135deg,rgba(11,11,11,.8),rgba(5,5,5,.8));
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:0;
-      overflow:hidden;
-      margin:24px 0;
-    }
-
-    .report-summary-intro{
-      padding:28px;
-      border-bottom:1px solid var(--line);
-    }
-
-    .report-summary-intro p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.6;
-      font-size:.98rem;
-    }
-
-    .report-label{
-      color:var(--gold);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.78rem;
-      margin-bottom:12px;
-      display:block;
-    }
-
-    .report-summary-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:0;
-    }
-
-    .report-point{
-      padding:24px 28px;
-      border-right:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-    }
-
-    .report-point:nth-child(odd){
-      border-right:1px solid var(--line);
-    }
-
-    .report-point:nth-child(even){
-      border-right:0;
-    }
-
-    .report-point:nth-last-child(-n+2){
-      border-bottom:0;
-    }
-
-    .report-point strong{
-      display:block;
-      color:var(--gold-bright);
-      font-size:.95rem;
-      margin-bottom:8px;
-      font-family:Georgia,serif;
-    }
-
-    .report-point p{
-      margin:0;
       font-size:.9rem;
-      color:var(--muted);
-      line-height:1.5;
+
+      color:var(--gold-bright);
+
+      border-bottom:
+        1px solid
+        rgba(217,164,65,.35);
+
+      padding-bottom:4px;
+
+      transition:.25s ease;
     }
 
-    .boundary-note{
-      background:linear-gradient(135deg,rgba(8,20,8,.4),rgba(5,5,5,.6));
-      border-left:4px solid var(--green);
-      border:1px solid rgba(140,198,62,.2);
-      border-left:4px solid var(--green);
-      border-radius:8px;
-      padding:24px 28px;
-      margin:0;
-    }
+    .material a:hover{
+      border-color:rgba(217,164,65,.65);
 
-    .boundary-note strong{
-      display:block;
-      color:var(--green);
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      font-size:.78rem;
-      margin-bottom:12px;
-    }
-
-    .boundary-note p{
-      margin:0;
-      color:var(--muted);
-      font-size:.95rem;
-      line-height:1.6;
+      color:#f4cf76;
     }
 
 
@@ -1204,357 +1130,209 @@
        READINESS SECTION
        ========================================================= */
 
-    .status-grid{
-      display:grid;
-
-      grid-template-columns:
-        repeat(4,1fr);
-
-      gap:16px;
-
-      margin-bottom:48px;
-    }
-
-    .status{
-      position:relative;
-
-      padding:28px;
-
-      border-radius:var(--radius);
-
-      border:
-        1px solid
-        var(--line);
-
-      background:
-        linear-gradient(
-          145deg,
-          rgba(25,24,19,.45),
-          rgba(5,7,6,.65)
-        );
-
-      backdrop-filter:
-        blur(12px);
-
-      box-shadow:
-        inset 0 1px
-        rgba(255,255,255,.035),
-
-        0 20px 50px
-        rgba(0,0,0,.40);
-    }
-
-    .status::before{
-      content:"";
-      position:absolute;
-
-      inset:0;
-      border-radius:inherit;
-
-      background:
-        linear-gradient(
-          130deg,
-          rgba(217,164,65,.04),
-          transparent 40%,
-          transparent 60%,
-          rgba(140,198,62,.02)
-        );
-
-      pointer-events:none;
-    }
-
-    .status h4{
-      position:relative;
-      z-index:2;
-
-      margin:0 0 12px 0;
-
-      color:var(--text);
-
-      font-size:1.05rem;
-    }
-
-    .status p{
-      position:relative;
-      z-index:2;
-
-      margin:0;
-
-      color:var(--muted);
-
-      font-size:.9rem;
-
-      line-height:1.6;
-    }
-
-    .kicker{
-      position:relative;
-      z-index:2;
-
-      color:var(--green);
-
-      font-size:.76rem;
-
-      letter-spacing:.10em;
-
-      text-transform:uppercase;
-
-      margin-bottom:8px;
-    }
-
-
-    /* =========================================================
-       READINESS CALLOUT
-       ========================================================= */
-
-    .readiness-callout{
-      background:linear-gradient(135deg,rgba(11,11,11,.8),rgba(5,5,5,.8));
-      border:1px solid var(--line);
-      border-radius:16px;
-      padding:48px;
-      margin-top:48px;
-    }
-
-    .readiness-callout .eyebrow{
-      margin-bottom:12px;
-    }
-
-    .readiness-callout h3{
-      font-family:Georgia,serif;
-      font-size:clamp(1.8rem,3vw,2.8rem);
-      color:var(--gold-bright);
-      margin:0 0 24px;
-    }
-
-    .readiness-intro{
-      color:var(--muted);
-      font-size:1.02rem;
-      line-height:1.7;
-      margin-bottom:32px;
-      max-width:900px;
-    }
-
-    .readiness-columns{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:40px;
-      margin-bottom:32px;
-    }
-
-    .readiness-column h4{
-      color:var(--gold-bright);
-      font-size:1.1rem;
-      text-transform:uppercase;
-      letter-spacing:.08em;
-      margin:0 0 20px;
-      display:flex;
-      align-items:center;
-      gap:12px;
-    }
-
-    .readiness-column h4::before{
-      content:'';
-      display:inline-block;
-      width:6px;
-      height:6px;
-      background:var(--green);
-      border-radius:50%;
-    }
-
-    .readiness-column ul{
-      list-style:none;
-      padding:0;
-      margin:0;
-    }
-
-    .readiness-column li{
-      color:var(--muted);
-      font-size:.95rem;
-      line-height:1.6;
-      padding-left:24px;
-      margin-bottom:14px;
-      position:relative;
-    }
-
-    .readiness-column li::before{
-      content:'→';
-      position:absolute;
-      left:0;
-      color:var(--gold);
-      font-weight:bold;
-    }
-
-    .readiness-statement{
-      background:linear-gradient(135deg,rgba(8,20,8,.3),rgba(5,5,5,.5));
-      border-left:4px solid var(--green);
-      border:1px solid rgba(140,198,62,.2);
-      border-left:4px solid var(--green);
-      border-radius:8px;
-      padding:24px 28px;
-      margin-bottom:24px;
-    }
-
-    .readiness-statement p{
-      margin:0;
-      color:var(--muted);
-      font-size:.98rem;
-      line-height:1.7;
-    }
-
-
-    /* =========================================================
-       MATERIALS GRID
-       ========================================================= */
-
-    .materials{
+    .readiness{
       display:grid;
 
       grid-template-columns:
         1fr 1fr;
 
-      gap:24px;
+      gap:40px;
+
+      align-items:start;
+
+      margin-bottom:40px;
     }
 
-    .material{
+    .readiness-column h4{
+      margin:0 0 20px;
+
+      color:var(--gold-bright);
+
+      font-family:Georgia, serif;
+
+      font-size:1.15rem;
+    }
+
+    .readiness-column ul{
+      margin:0;
+      padding:0;
+
+      list-style:none;
+    }
+
+    .readiness-column li{
       position:relative;
 
-      padding:32px;
+      padding:12px 0 12px 22px;
+
+      color:#c8b98a;
+
+      font-size:.95rem;
+
+      border-bottom:
+        1px solid
+        rgba(217,164,65,.12);
+    }
+
+    .readiness-column li::before{
+      content:"";
+
+      position:absolute;
+
+      width:6px;
+      height:6px;
+
+      left:0;
+      top:50%;
+
+      transform:translateY(-50%);
+
+      border-radius:50%;
+
+      background:var(--green);
+
+      box-shadow:
+        0 0 8px
+        rgba(140,198,62,.4);
+    }
+
+    .readiness-statement{
+      margin:40px 0;
+
+      padding:24px;
 
       border-radius:var(--radius);
 
       border:
         1px solid
-        var(--line);
+        rgba(217,164,65,.20);
 
       background:
-        linear-gradient(
-          145deg,
-          rgba(25,24,19,.45),
-          rgba(5,7,6,.65)
-        );
+        rgba(217,164,65,.035);
 
-      backdrop-filter:
-        blur(12px);
+      color:#d0c9bc;
 
-      box-shadow:
-        inset 0 1px
-        rgba(255,255,255,.035),
+      font-size:1.02rem;
 
-        0 20px 50px
-        rgba(0,0,0,.40);
+      line-height:1.7;
     }
 
-    .material::before{
-      content:"";
-      position:absolute;
-
-      inset:0;
-      border-radius:inherit;
-
-      background:
-        linear-gradient(
-          130deg,
-          rgba(217,164,65,.04),
-          transparent 40%,
-          transparent 60%,
-          rgba(140,198,62,.02)
-        );
-
-      pointer-events:none;
-    }
-
-    .material span{
-      position:relative;
-      z-index:2;
-
-      display:block;
-
-      color:var(--gold);
-
-      text-transform:uppercase;
-
-      letter-spacing:.12em;
-
-      font-size:.78rem;
-
-      margin-bottom:12px;
-    }
-
-    .material h4{
-      position:relative;
-      z-index:2;
-
-      margin:0 0 16px 0;
-
-      font-size:1.2rem;
-
-      color:var(--text);
-    }
-
-    .material p{
-      position:relative;
-      z-index:2;
-
-      margin:0 0 20px 0;
-
-      color:var(--muted);
-
-      font-size:.95rem;
-
-      line-height:1.6;
-    }
-
-    .material a{
-      position:relative;
-      z-index:2;
-
-      color:var(--gold-bright);
-
-      font-weight:700;
-
-      transition:.25s ease;
-    }
-
-    .material a:hover{
-      color:var(--green);
+    .readiness-statement p{
+      margin:0;
     }
 
 
     /* =========================================================
-       CLOSING SECTION
+       CONTACT SECTION
        ========================================================= */
 
-    .closing{
-      text-align:center;
+    .contact{
+      display:grid;
 
-      padding:100px 0;
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:50px;
+
+      align-items:center;
+
+      max-width:1100px;
     }
 
-    .closing h2{
-      margin:0 0 24px 0;
+    .contact-copy h3{
+      margin:0 0 20px;
 
-      font-family:Georgia,serif;
+      font-family:Georgia, serif;
 
-      font-size:
-        clamp(
-          2.6rem,
-          5vw,
-          5.2rem
-        );
+      color:var(--gold-bright);
+
+      font-size:2rem;
 
       line-height:1.1;
-
-      text-wrap:balance;
     }
 
-    .closing p{
-      max-width:780px;
+    .contact-copy p{
+      margin:0 0 20px;
 
-      margin:0 auto 32px;
+      color:#c8b98a;
 
-      color:var(--muted);
+      line-height:1.6;
+    }
 
-      font-size:1.06rem;
+    .contact-copy p:last-of-type{
+      margin:0;
+    }
+
+    .contact-form{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+    }
+
+    .input-group{
+      position:relative;
+
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .input-group label{
+      font-size:.85rem;
+
+      color:#aaa79e;
+
+      letter-spacing:.05em;
+
+      text-transform:uppercase;
+    }
+
+    .input-group input,
+    .input-group textarea{
+      padding:14px 16px;
+
+      border-radius:8px;
+
+      border:
+        1px solid
+        rgba(217,164,65,.25);
+
+      background:rgba(5,7,6,.6);
+
+      color:var(--text);
+
+      font-family:inherit;
+
+      font-size:.95rem;
+
+      transition:.25s ease;
+    }
+
+    .input-group textarea{
+      resize:vertical;
+      min-height:120px;
+    }
+
+    .input-group input::placeholder,
+    .input-group textarea::placeholder{
+      color:rgba(255,255,255,.25);
+    }
+
+    .input-group input:focus,
+    .input-group textarea:focus{
+      outline:none;
+
+      border-color:rgba(217,164,65,.55);
+
+      background:rgba(5,7,6,.8);
+
+      box-shadow:
+        0 0 20px
+        rgba(217,164,65,.08);
+    }
+
+    .contact-form .btn{
+      margin-top:12px;
     }
 
 
@@ -1563,25 +1341,87 @@
        ========================================================= */
 
     footer{
+      padding:60px 0 40px;
+
       border-top:
         1px solid
         rgba(217,164,65,.14);
 
-      padding:36px 0;
-
-      color:#8f8783;
-
-      font-size:.9rem;
+      background:
+        linear-gradient(
+          180deg,
+          transparent,
+          rgba(217,164,65,.02)
+        );
     }
 
-    .footer-row{
+    .footer-content{
+      display:grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:40px;
+
+      margin-bottom:40px;
+    }
+
+    .footer-section h4{
+      margin:0 0 16px;
+
+      color:var(--gold-bright);
+
+      font-size:1rem;
+
+      letter-spacing:.08em;
+
+      text-transform:uppercase;
+    }
+
+    .footer-section ul{
+      margin:0;
+      padding:0;
+
+      list-style:none;
+    }
+
+    .footer-section li{
+      margin-bottom:10px;
+    }
+
+    .footer-section a{
+      color:#aaa79e;
+
+      font-size:.9rem;
+
+      transition:.25s ease;
+    }
+
+    .footer-section a:hover{
+      color:var(--gold-bright);
+    }
+
+    .footer-bottom{
+      padding-top:30px;
+
+      border-top:
+        1px solid
+        rgba(217,164,65,.14);
+
       display:flex;
 
       justify-content:space-between;
+      align-items:center;
 
       gap:20px;
 
-      flex-wrap:wrap;
+      font-size:.85rem;
+
+      color:#8f8b84;
+    }
+
+    .footer-bottom p{
+      margin:0;
     }
 
 
@@ -1589,106 +1429,100 @@
        RESPONSIVE
        ========================================================= */
 
-    @media(max-width:1240px){
+    @media(max-width: 1024px){
       .hero{
         grid-template-columns:1fr;
-        gap:48px;
-      }
 
-      .hero::before{
-        display:none;
+        min-height:auto;
+        gap:40px;
+
+        padding:60px 0 40px;
       }
 
       .visual{
-        min-height:500px;
+        min-height:400px;
       }
 
-      .status-grid{
-        grid-template-columns:repeat(2,1fr);
+      .orb{
+        width:380px;
+        height:380px;
       }
 
-      .feature-grid,
-      .materials{
+      .cards{
+        max-width:100%;
+
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .readiness{
         grid-template-columns:1fr;
       }
 
-      .readiness-columns{
+      .contact{
         grid-template-columns:1fr;
-        gap:28px;
+        gap:30px;
+      }
+
+      .footer-content{
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .footer-bottom{
+        flex-direction:column;
+        align-items:flex-start;
       }
     }
 
-    @media(max-width:800px){
+    @media(max-width: 768px){
       .nav{
-        justify-content:center;
-        text-align:center;
+        flex-direction:column;
+        gap:16px;
       }
 
-      nav a:not(.nav-cta){
+      nav{
+        flex-direction:column;
+        width:100%;
+      }
+
+      nav > a{
+        padding:8px 0;
+      }
+
+      nav > a:not(.nav-cta)::after{
         display:none;
-      }
-
-      .brands img:nth-child(2),
-      .brands img:nth-child(3){
-        display:none;
-      }
-
-      .trust-row{
-        grid-template-columns:1fr;
       }
 
       .cards{
         grid-template-columns:1fr;
-        max-width:380px;
       }
 
-      .card,
-      .card.main{
-        min-height:240px;
+      .trust-row{
+        grid-template-columns:
+          repeat(2, 1fr);
       }
 
-      .orb,
-      .orbit,
-      .orbit.two{
-        display:none;
+      .contact-copy h3{
+        font-size:1.5rem;
       }
 
-      .section-head{
-        display:block;
-      }
-
-      .section-head p{
-        margin-top:16px;
-      }
-
-      .status-grid{
+      .footer-content{
         grid-template-columns:1fr;
       }
 
-      .report-summary-grid{
+      .materials{
         grid-template-columns:1fr;
       }
 
-      .report-point{
-        border-right:0;
-        padding:18px 20px;
+      h1{
+        font-size:
+          clamp(2rem, 5vw, 3.3rem);
       }
 
-      .readiness-callout{
-        padding:28px;
-      }
-
-      .readiness-columns{
-        gap:20px;
-      }
-
-      .boundary-note,
-      .readiness-statement{
-        padding:18px 20px;
-      }
-
-      .closing h2{
-        font-size:clamp(1.8rem,4vw,3.2rem);
+      .section h2{
+        font-size:
+          clamp(1.8rem, 4vw, 2.2rem);
       }
     }
   </style>
@@ -1698,9 +1532,9 @@
 <header>
   <div class="shell nav">
     <div class="brands">
-      <img src="assets/bwico-logo.png" alt="BWICO">
-      <img src="assets/baidnet-logo.png" alt="BaidNet">
-      <img src="assets/baidpay-logo.png" alt="BAIDPAY">
+      <img src="./assets/bwico-logo.png" alt="BlackWall-Interconnected Co.">
+      <img src="./assets/baidnet-logo.png" alt="BAIDNET">
+      <img src="./assets/baidpay-logo.png" alt="BAIDPAY">
     </div>
     <nav>
       <a href="#home">Home</a>
@@ -1732,7 +1566,7 @@
     <div class="actions">
       <a class="btn primary" href="#platform">Explore the Ecosystem →</a>
       <a class="btn secondary"
-         href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:28e5c90c-ba8d-4920-90e2-35c1c6daa161"
+         href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
          target="_blank"
          rel="noopener">
         View Deck
@@ -1753,19 +1587,19 @@
     <div class="orbit two"></div>
     <div class="cards">
       <article class="card">
-        <img src="assets/BaidNet.png" alt="BaidNet">
+        <img src="./assets/BaidNet.png" alt="BaidNet">
         <h3>BAIDNET</h3>
         <p>Blockchain · Real Utility</p>
       </article>
 
       <article class="card main">
-        <img src="assets/BWICOicon2.png" alt="BlackWall-Interconnected Co.">
+        <img src="./assets/BWICOicon2.png" alt="BlackWall-Interconnected Co.">
         <h3>BWICO</h3>
         <p>People · Platforms · Progress</p>
       </article>
 
       <article class="card">
-        <img src="assets/BAIDPAY.png" alt="BAIDPAY">
+        <img src="./assets/BAIDPAY.png" alt="BAIDPAY">
         <h3>BAIDPAY</h3>
         <p>Modern Payments · Real Impact</p>
       </article>
@@ -1776,90 +1610,33 @@
 <section id="platform" class="section">
   <div class="shell">
     <div class="section-head">
-      <h2>The Ecosystem</h2>
+      <h2>Platform Overview</h2>
       <p>
-        BAIDNET combines existing blockchain infrastructure with an in-house fintech extension
-        designed to support regulated banking integrations without duplicating the core platform.
+        BAIDNET provides a blockchain-backed infrastructure for modern fintech applications, 
+        combining security, auditability, and integration at its core.
       </p>
     </div>
 
-    <div class="feature-grid">
-      <article class="feature">
-        <div class="eyebrow">Blockchain Infrastructure</div>
-        <h3>Blockchain Freedom</h3>
-        <p>
-          Explore the live BAIDNET platform experience, including the unified wallet, transaction activity, 
-          digital-card controls, NFC tap-to-pay, payment requests and approvals, notifications, dispute and 
-          escalation workflows, and end-to-end payment flows.
-        </p>
-        <a class="btn secondary" 
-           href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:82562b30-d524-49e0-b733-4221b51ff94f"
-           target="_blank"
-           rel="noopener">
-          Explore BAIDNET →
-        </a>
+    <div class="materials">
+      <article class="material">
+        <span>Infrastructure</span>
+        <h4>Blockchain Core</h4>
+        <p>Permissioned blockchain infrastructure with governance controls and auditability built in.</p>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">Learn more →</a>
       </article>
 
-      <article class="feature">
-        <div class="eyebrow">FinTech Technology</div>
-        <h3>FinTech Extension A–G</h3>
-        <div class="report-summary">
-          <div class="report-summary-intro">
-            <p>
-              The BAIDNET FinTech Extension extends the existing platform architecture into a structured fiat 
-              and sponsor-bank integration model without duplicating the core platform. Workstreams A–G trace the 
-              implementation from capability mapping through transaction lifecycle design, API primitives, auditability, 
-              reconciliation, sponsor-bank boundaries, and end-to-end validation.
-            </p>
-          </div>
-          <div style="padding:28px;border-bottom:1px solid var(--line)">
-            <span class="report-label">What the Report Verifies</span>
-          </div>
-          <div class="report-summary-grid">
-            <div class="report-point">
-              <strong>A — Capability Mapping</strong>
-              <p>Existing blockchain and platform capabilities are mapped to their corresponding fiat implementation or disposition.</p>
-            </div>
-            <div class="report-point">
-              <strong>B — Fiat Transaction Lifecycle</strong>
-              <p>Fiat transactions have defined, testable states for initiation, validation, authorization, settlement, failure, reversal, refund, dispute, and exception handling.</p>
-            </div>
-            <div class="report-point">
-              <strong>C — Financial API Primitives</strong>
-              <p>BAIDNET-controlled financial functionality is exposed through defined and versioned in-house API surfaces.</p>
-            </div>
-            <div class="report-point">
-              <strong>D — Auditability & Correlation</strong>
-              <p>Transaction activity can be correlated across API requests, events, status changes, evidence records, and final outcomes.</p>
-            </div>
-            <div class="report-point">
-              <strong>E — Reconciliation & Exceptions</strong>
-              <p>Fiat settlement includes reconciliation reporting, exception detection, and operational review workflows.</p>
-            </div>
-            <div class="report-point">
-              <strong>F — Sponsor-Bank Integration Boundary</strong>
-              <p>Bank-specific connectivity is isolated behind defined interfaces, with BAIDNET-controlled responsibilities separated from sponsor-bank authority and regulated decisions.</p>
-            </div>
-            <div class="report-point">
-              <strong>G — End-to-End Validation</strong>
-              <p>Required scenarios—including success, rejection, risk blocks, duplicates, failure/recovery, reversals, refunds, disputes, settlement, reconciliation exceptions, and audit reconstruction—are validated through internal engineering evidence.</p>
-            </div>
-          </div>
-          <div class="boundary-note">
-            <strong>Engineering Position</strong>
-            <p>
-              <strong>BAIDNET FinTech Extension internal engineering: COMPLETE / PASS.</strong><br><br>
-              Live sponsor-bank production parity, partner attestations, contractual approvals, legal determinations, 
-              regulatory sign-offs, and operational certification remain external dependencies.
-            </p>
-          </div>
-        </div>
-        <a class="btn secondary" 
-           href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:331c857a-926b-4438-b09f-0ac4431d4a17"
-           target="_blank"
-           rel="noopener">
-          Review FinTech Technology Report →
-        </a>
+      <article class="material">
+        <span>Integration</span>
+        <h4>Modern Fintech</h4>
+        <p>Integration layer for payment systems and financial services built on proven blockchain technology.</p>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">Learn more →</a>
+      </article>
+
+      <article class="material">
+        <span>Controls</span>
+        <h4>Governance Framework</h4>
+        <p>Enterprise-grade governance with operational controls and participant validation systems.</p>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">Learn more →</a>
       </article>
     </div>
   </div>
@@ -1868,88 +1645,52 @@
 <section id="readiness" class="section">
   <div class="shell">
     <div class="section-head">
-      <h2>Current Readiness Position</h2>
+      <h2>Readiness Assessment</h2>
       <p>
-        BAIDNET distinguishes completed internal engineering from external legal,
-        regulatory, contractual, and sponsor-bank requirements.
+        BAIDNET demonstrates strong platform readiness with clear identification of external requirements for market entry.
       </p>
     </div>
 
-    <div class="status-grid">
-      <article class="status">
-        <div class="kicker">Complete</div>
-        <h4>Core Platform</h4>
-        <p>Existing blockchain and platform capabilities form the engineering foundation.</p>
-      </article>
-
-      <article class="status">
-        <div class="kicker">Complete / Pass</div>
-        <h4>FinTech Extension A–G</h4>
-        <p>Internal engineering requirements have been reconciled through implementation and verification evidence.</p>
-      </article>
-
-      <article class="status">
-        <div class="kicker">External Review</div>
-        <h4>Legal & Regulatory</h4>
-        <p>Formal classification and related counsel work remain external dependencies.</p>
-      </article>
-
-      <article class="status">
-        <div class="kicker">External</div>
-        <h4>Sponsor-Bank Authorization</h4>
-        <p>Production parity, onboarding attestations, and bank-specific requirements remain external.</p>
-      </article>
+    <div class="readiness">
+      <div class="readiness-column">
+        <h4>Strong / Established Areas</h4>
+        <ul>
+          <li>Governance framework</li>
+          <li>Auditability controls</li>
+          <li>Participant validation</li>
+          <li>Closed-loop controls</li>
+          <li>Sponsor-bank boundary definition</li>
+          <li>Customer protection framework</li>
+        </ul>
+      </div>
+      <div class="readiness-column">
+        <h4>Areas Requiring External Closure</h4>
+        <ul>
+          <li>Legal classification review</li>
+          <li>Securities analysis</li>
+          <li>MSB / money-transmission review</li>
+          <li>Sponsor-bank due diligence and onboarding</li>
+          <li>Contractual responsibility allocation</li>
+          <li>Partner-specific production connectivity</li>
+          <li>Procedural formalization and applicable sign-offs</li>
+        </ul>
+      </div>
     </div>
 
-    <div class="readiness-callout">
-      <div class="eyebrow">Sponsor-Bank Readiness</div>
-      <h3>Readiness Assessment</h3>
-      <p class="readiness-intro">
-        The Sponsor-Bank Readiness Assessment evaluates BAIDNET from the perspective of sponsor-bank compliance, 
-        risk management, regulatory counsel, third-party oversight, governance, operational controls, and contractual readiness.
+    <div class="readiness-statement">
+      <p>
+        BAIDNET demonstrates strong readiness for sponsor-bank engagement. The primary remaining commercialization 
+        requirements are external legal, regulatory, contractual, sponsor-bank, and production-enablement steps rather 
+        than rebuilding the core platform.
       </p>
-
-      <div class="readiness-columns">
-        <div class="readiness-column">
-          <h4>Strong / Established Areas</h4>
-          <ul>
-            <li>Governance framework</li>
-            <li>Auditability controls</li>
-            <li>Participant validation</li>
-            <li>Closed-loop controls</li>
-            <li>Sponsor-bank boundary definition</li>
-            <li>Customer protection framework</li>
-          </ul>
-        </div>
-        <div class="readiness-column">
-          <h4>Areas Requiring External Closure</h4>
-          <ul>
-            <li>Legal classification review</li>
-            <li>Securities analysis</li>
-            <li>MSB / money-transmission review</li>
-            <li>Sponsor-bank due diligence and onboarding</li>
-            <li>Contractual responsibility allocation</li>
-            <li>Partner-specific production connectivity</li>
-            <li>Procedural formalization and applicable sign-offs</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="readiness-statement">
-        <p>
-          BAIDNET demonstrates strong readiness for sponsor-bank engagement. The primary remaining commercialization 
-          requirements are external legal, regulatory, contractual, sponsor-bank, and production-enablement steps rather 
-          than rebuilding the core platform.
-        </p>
-      </div>
-
-      <a class="btn secondary" 
-         href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
-         target="_blank"
-         rel="noopener">
-        Review Readiness Assessment →
-      </a>
     </div>
+
+    <a class="btn secondary" 
+       href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
+       target="_blank"
+       rel="noopener">
+      Review Readiness Assessment →
+    </a>
   </div>
 </section>
 
@@ -1967,7 +1708,7 @@
         <span>Executive Overview</span>
         <h4>BAIDNET Ecosystem / Platform Experience</h4>
         <p>Platform overview, ecosystem structure, product experience, and readiness positioning.</p>
-        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:28e5c90c-ba8d-4920-90e2-35c1c6daa161"
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
            target="_blank"
            rel="noopener">
           Open presentation →
@@ -1978,7 +1719,11 @@
         <span>Funding Initiative</span>
         <h4>Commercialization & Market Entry Initiative</h4>
         <p>External gap-closure workstreams, market-entry objectives, and funding requirements.</p>
-        <a href="#" target="_blank">Open initiative →</a>
+        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539"
+           target="_blank"
+           rel="noopener">
+          Open initiative →
+        </a>
       </article>
 
       <article class="material">
@@ -1988,79 +1733,100 @@
         <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d"
            target="_blank"
            rel="noopener">
-          Review assessment →
-        </a>
-      </article>
-
-      <article class="material">
-        <span>Technical Evidence</span>
-        <h4>FinTech Extension A–G Verification Report</h4>
-        <p>Traceability from plan requirements through implementation, testing, and engineering closure.</p>
-        <a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:331c857a-926b-4438-b09f-0ac4431d4a17"
-           target="_blank"
-           rel="noopener">
-          Review verification →
+          Open assessment →
         </a>
       </article>
     </div>
   </div>
 </section>
 
-<section id="contact" class="shell closing">
-  <div class="eyebrow">Commercialization & Market Entry</div>
-  <h2>
-    The technology is built.
-    <span class="gold">Now we close the external path to market.</span>
-  </h2>
-  <p>
-    BAIDNET is engaging qualified funders, strategic partners, professional advisors,
-    and financial institutions to support legal and regulatory validation,
-    sponsor-bank diligence, production enablement, and controlled market entry.
-  </p>
-  <a class="btn primary" href="mailto:YOUR-EMAIL@example.com">Contact BWICO →</a>
+<section id="contact" class="section">
+  <div class="shell">
+    <div class="section-head">
+      <h2>Get in Touch</h2>
+      <p>
+        Have questions? Contact our team to discuss partnership, investment, or integration opportunities.
+      </p>
+    </div>
+
+    <div class="contact">
+      <div class="contact-copy">
+        <h3>Reach Out</h3>
+        <p>
+          Whether you're an investor, potential partner, or sponsor-bank representative, 
+          we're here to discuss how BAIDNET can support your objectives.
+        </p>
+        <p>
+          Connect with our team to learn more about platform capabilities, 
+          market-entry requirements, and collaboration opportunities.
+        </p>
+      </div>
+
+      <form class="contact-form" method="POST" action="mailto:contact@blackwallinterconnected.co">
+        <div class="input-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required placeholder="Your name">
+        </div>
+
+        <div class="input-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required placeholder="your@email.com">
+        </div>
+
+        <div class="input-group">
+          <label for="inquiry">Inquiry Type</label>
+          <input type="text" id="inquiry" name="inquiry" placeholder="e.g. Investment, Partnership, Integration">
+        </div>
+
+        <div class="input-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required placeholder="Tell us more..."></textarea>
+        </div>
+
+        <button class="btn primary" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </div>
 </section>
 
 </main>
 
 <footer>
-  <div class="shell footer-row">
-    <div>© 2026 BlackWall-Interconnected Co. All rights reserved.</div>
-    <div>BWICO · BAIDNET · BAIDPAY</div>
+  <div class="shell">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h4>Product</h4>
+        <ul>
+          <li><a href="#platform">Platform</a></li>
+          <li><a href="#readiness">Readiness</a></li>
+          <li><a href="#materials">Materials</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-section">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:va6c2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank">View Deck</a></li>
+          <li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank">Readiness Assessment</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2024 BlackWall-Interconnected Co. All rights reserved.</p>
+      <p>BAIDNET • BAIDPAY • Commercialization & Market Entry Portal</p>
+    </div>
   </div>
 </footer>
-
-<script>
-document.addEventListener("mousemove", (e) => {
-  const x = (e.clientX / window.innerWidth) * 100;
-  const y = (e.clientY / window.innerHeight) * 100;
-  document.documentElement.style.setProperty("--mouse-x", `${x}%`);
-  document.documentElement.style.setProperty("--mouse-y", `${y}%`);
-});
-
-const cards = document.querySelectorAll(".card");
-
-cards.forEach((card) => {
-  card.addEventListener("mousemove", (e) => {
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-
-    const rotateX = (y - centerY) / 8;
-    const rotateY = (centerX - x) / 8;
-
-    card.style.setProperty("--rotate-x", `${rotateX}deg`);
-    card.style.setProperty("--rotate-y", `${rotateY}deg`);
-  });
-
-  card.addEventListener("mouseleave", () => {
-    card.style.setProperty("--rotate-x", "0deg");
-    card.style.setProperty("--rotate-y", "0deg");
-  });
-});
-</script>
 
 </body>
 </html>
