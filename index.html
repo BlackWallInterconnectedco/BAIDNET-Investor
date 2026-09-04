@@ -675,7 +675,7 @@
 </aside>
 
 <footer><div class="shell"><div class="footer-content"><div class="footer-section"><h4>Product</h4><ul><li><a href="#platform">Platform</a></li><li><a href="#readiness">Readiness</a></li><li><a href="#materials">Materials</a></li></ul></div><div class="footer-section"><h4>Company</h4><ul><li><a href="#contact">Contact</a>
-      <a href="#" id="nav-ai-open">Ask BAIDNET AI</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
+      <a href="#" class="footer-ai-open">Ask BAIDNET AI</a></li><li><a href="mailto:Blackwallteam@blackwall-interconnected.com">Email BWICO</a></li><li><a href="#contact">Schedule a Meeting</a></li><li><a href="#">Privacy Policy</a></li><li><a href="#">Terms of Service</a></li></ul></div><div class="footer-section"><h4>Resources</h4><ul><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:7521e21f-cf69-4e11-bfe8-78598e0cb539" target="_blank" rel="noopener">View Deck</a></li><li><a href="https://acrobat.adobe.com/id/urn:aaid:sc:VA6C2:a681f326-b16b-438e-9659-84a0f8496c9d" target="_blank" rel="noopener">Readiness Assessment</a></li></ul></div></div><div class="footer-bottom"><p>&copy; 2026 BlackWall-Interconnected Co. All rights reserved.</p><p>BAIDNET • BAIDPAY • Commercialization &amp; Market Entry Portal</p></div></div></footer>
 
 <script>
   const OFFICIAL_EMAIL = "Blackwallteam@blackwall-interconnected.com";
@@ -739,13 +739,7 @@
 
     if (provider === "zoho") {
       const zohoMessage =
-        "To: " + OFFICIAL_EMAIL +
-        "
-
-Subject: " + subject +
-        "
-
-" + body;
+        "To: " + OFFICIAL_EMAIL + "\n\nSubject: " + subject + "\n\n" + body;
 
       if (navigator.clipboard) {
         navigator.clipboard.writeText(zohoMessage).catch(() => {});
