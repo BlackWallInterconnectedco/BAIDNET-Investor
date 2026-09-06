@@ -4,6 +4,12 @@
   "rewrites": [
     { "source": "/Assets/BAIDNET.png", "destination": "/assets/BaidNet.png" },
     { "source": "/Assets/BAIDPAY.png", "destination": "/assets/BAIDPAY.png" },
-    { "source": "/Assets/BWICOicon2.png", "destination": "/assets/BWICOicon2.png" }
+    { "source": "/Assets/BWICOicon2.png", "destination": "/assets/BWICOicon2.png" },
+    { "source": "/investment-snapshot", "destination": "/investment-snapshot.html" },
+    { "source": "/investment-snapshot.html", "destination": "/investment-snapshot.html" },
+    { "source": "/docs", "destination": "/docs.html" },
+    { "source": "/docs.html", "destination": "/docs.html" },
+    { "source": "/funding-communique", "destination": "/funding-communique.html" },
+    { "source": "/funding-communique.html", "destination": "/funding-communique.html" }
   ]
 }
