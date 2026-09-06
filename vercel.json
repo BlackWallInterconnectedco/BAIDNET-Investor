@@ -1,15 +1,12 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "cleanUrls": true,
-  "rewrites": [
-    { "source": "/Assets/BAIDNET.png", "destination": "/assets/BaidNet.png" },
-    { "source": "/Assets/BAIDPAY.png", "destination": "/assets/BAIDPAY.png" },
-    { "source": "/Assets/BWICOicon2.png", "destination": "/assets/BWICOicon2.png" },
-    { "source": "/investment-snapshot", "destination": "/investment-snapshot.html" },
-    { "source": "/investment-snapshot.html", "destination": "/investment-snapshot.html" },
-    { "source": "/docs", "destination": "/docs.html" },
-    { "source": "/docs.html", "destination": "/docs.html" },
-    { "source": "/funding-communique", "destination": "/funding-communique.html" },
-    { "source": "/funding-communique.html", "destination": "/funding-communique.html" }
+  "$schema":"https://openapi.vercel.sh/vercel.json",
+  "framework":"vite",
+  "buildCommand":"npm run build",
+  "outputDirectory":"dist",
+  "rewrites":[
+    {"source":"/Assets/BAIDNET.png","destination":"/assets/BaidNet.png"},
+    {"source":"/Assets/BAIDPAY.png","destination":"/assets/BAIDPAY.png"},
+    {"source":"/Assets/BWICOicon2.png","destination":"/assets/BWICOicon2.png"},
+    {"source":"/((?!api/|assets/).*)","destination":"/index.html"}
   ]
 }
