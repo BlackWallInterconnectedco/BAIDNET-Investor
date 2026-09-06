@@ -40,7 +40,9 @@ async function sendEmail({ from, to, replyTo, subject, html, idempotencyKey }) {
 export default async function handler(request, response) {
   response.setHeader("Cache-Control", "no-store");
   if (request.method !== "POST") return response.status(405).json({ error: "Method not allowed." });
-  if (!process.env.RESEND_API_KEY || !process.env.INQUIRY_FROM_EMAIL) {
+  const emailDomain = clean(process.env.RESEND_EMAIL_DOMAIN, 253);
+  const from = process.env.INQUIRY_FROM_EMAIL || (emailDomain ? `BAIDNET <inquiries@${emailDomain}>` : "");
+  if (!process.env.RESEND_API_KEY || !from) {
     return response.status(503).json({ error: "Inquiry email service is not configured yet." });
   }
 
@@ -68,7 +70,6 @@ export default async function handler(request, response) {
   const reference = `BAID-${new Date().toISOString().slice(0, 10).replaceAll("-", "")}-${crypto.randomBytes(3).toString("hex").toUpperCase()}`;
   const receivedAt = new Date().toISOString();
   const safe = Object.fromEntries(Object.entries(inquiry).map(([key, value]) => [key, escapeHtml(value)]));
-  const from = process.env.INQUIRY_FROM_EMAIL;
   const teamHtml = `
     <div style="font-family:Arial,sans-serif;max-width:680px;margin:auto;color:#171717">
       <h1 style="color:#8a641c">New BAIDNET institutional inquiry</h1>
