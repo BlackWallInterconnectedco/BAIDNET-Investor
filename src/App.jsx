@@ -14,28 +14,31 @@ const pages={
   '/terms':termsHtml,'/terms.html':termsHtml,
 };
 const priority=['home','funding','readiness','proof-evidence','commercial-model','platform','outcomes','faq','leadership','contact'];
-const managedHeadSelector='meta[name],meta[property],link[rel="canonical"],link[rel="icon"],link[rel="shortcut icon"],link[rel="apple-touch-icon"],link[rel="stylesheet"],style';
+const managedHeadSelector='meta[name],meta[property],link[rel="canonical"],link[rel="icon"],link[rel="shortcut icon"],link[rel="apple-touch-icon"]';
 
 function prepare(html,isOverview){
   const doc=new DOMParser().parseFromString(html,'text/html');
   if(isOverview){
     const main=doc.querySelector('main');
     if(main){
-      const known=new Map([...main.querySelectorAll(':scope > section[id]')].map(el=>[el.id,el]));
+      const known=new Map([...main.children].filter(el=>el.tagName==='SECTION'&&el.id).map(el=>[el.id,el]));
       priority.forEach(id=>{const el=known.get(id);if(el)main.appendChild(el)});
     }
     const nav=doc.querySelector('header nav');
     if(nav){
       const links=[...nav.querySelectorAll('a')];
       const byHref=new Map(links.map(a=>[a.getAttribute('href'),a]));
-      const ordered=['/funding-communique.html','#readiness','#proof-evidence','#faq','#contact'];
-      ordered.forEach(h=>{const a=byHref.get(h);if(a)nav.appendChild(a)});
+      ['/funding-communique.html','#readiness','#proof-evidence','#faq','#contact'].forEach(h=>{const a=byHref.get(h);if(a)nav.appendChild(a)});
       const ai=links.find(a=>a.id==='nav-ai-open');if(ai)nav.appendChild(ai);
     }
   }
+  const styles=[...doc.head.querySelectorAll('style')].map(n=>n.textContent||'').join('\n');
+  const stylesheetLinks=[...doc.head.querySelectorAll('link[rel="stylesheet"]')].map(n=>n.outerHTML).join('\n');
   return {
     title:doc.title,
     head:[...doc.head.querySelectorAll(managedHeadSelector)].map(n=>n.outerHTML).join('\n'),
+    styles,
+    stylesheetLinks,
     body:doc.body.innerHTML,
     scripts:[...doc.querySelectorAll('script')].map(s=>({src:s.getAttribute('src'),type:s.getAttribute('type')||'',text:s.textContent||''}))
   };
@@ -43,8 +46,8 @@ function prepare(html,isOverview){
 
 function syncHead(page){
   document.querySelectorAll('[data-react-legacy-head]').forEach(n=>n.remove());
-  const holder=document.createElement('div');holder.innerHTML=page.head;
-  [...holder.children].forEach(n=>{n.setAttribute('data-react-legacy-head','');document.head.appendChild(n)});
+  const template=document.createElement('template');template.innerHTML=page.head;
+  [...template.content.children].forEach(n=>{n.setAttribute('data-react-legacy-head','');document.head.appendChild(n)});
   document.title=page.title||'BAIDNET Investor Portal';
 }
 
@@ -73,7 +76,11 @@ function LegacyReactPage({html,isOverview=false,hash=''}){
     scrollToHash(hash);
     return()=>{scripts.forEach(s=>s.remove());document.querySelectorAll('[data-react-legacy-head]').forEach(n=>n.remove())};
   },[page,hash]);
-  return <div className="legacy-react-page" dangerouslySetInnerHTML={{__html:page.body}}/>;
+  return <div className="legacy-react-page">
+    {page.styles?<style dangerouslySetInnerHTML={{__html:page.styles}}/>:null}
+    {page.stylesheetLinks?<div style={{display:'none'}} dangerouslySetInnerHTML={{__html:page.stylesheetLinks}}/>:null}
+    <div dangerouslySetInnerHTML={{__html:page.body}}/>
+  </div>;
 }
 
 function NotFound(){
